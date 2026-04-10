@@ -334,6 +334,11 @@ export const translations: Record<Language, Record<string, string>> = {
       "listings.phoenix.cta": "Book a Viewing",
       "listings.azure.price": "65,000 AED / year",
       "listings.phoenix.price": "80,000 AED / year",
+      "listings.phantom.status": "Available for Rent",
+      "listings.phantom.type": "Fully Furnished Apartment",
+      "listings.phantom.price": "110,000 AED / year",
+      "listings.phantom.furnished": "Fully furnished",
+      "listings.phantom.cta": "Book a Viewing",
 
       "about.eyebrow": "About Me",
       "nav.sendRequest": "Send Request",
@@ -703,6 +708,11 @@ export const translations: Record<Language, Record<string, string>> = {
           "listings.phoenix.cta": "حجز معاينة",
           "listings.azure.price": "٦٥٬٠٠٠ درهم / سنوياً",
           "listings.phoenix.price": "٨٠٬٠٠٠ درهم / سنوياً",
+          "listings.phantom.status": "متاح للإيجار",
+          "listings.phantom.type": "شقة مفروشة بالكامل",
+          "listings.phantom.price": "١١٠٬٠٠٠ درهم / سنوياً",
+          "listings.phantom.furnished": "مفروشة بالكامل",
+          "listings.phantom.cta": "حجز معاينة",
 
           "about.eyebrow": "نبذة عني",
         "nav.sendRequest": "أرسل طلباً",

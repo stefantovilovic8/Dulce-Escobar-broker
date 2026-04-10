@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 
 export default function InvestmentListings() {
@@ -11,33 +12,63 @@ export default function InvestmentListings() {
   const LISTINGS = [
     {
       id: 1,
-        project: "Binghatti Azure",
-        statusKey: "listings.azure.status",
-        badgeKey: "listings.azure.badge" as string | null,
-        typeKey: "listings.azure.type",
-        priceKey: "listings.azure.price",
-        termsKey: "listings.azure.terms" as string | null,
+      project: "Binghatti Azure",
+      statusKey: "listings.azure.status",
+      badgeKey: "listings.azure.badge" as string | null,
+      typeKey: "listings.azure.type",
+      priceKey: "listings.azure.price",
+      termsKey: "listings.azure.terms" as string | null,
       contractKey: "listings.azure.contract" as string | null,
+      furnishedKey: null as string | null,
       ctaKey: "listings.azure.cta",
       ctaHref: "/contact-us",
       status: "rented",
-      image:
+      images: [
         "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/1017953b-88db-4b32-a0de-2aa467c6e8ef-1773006353346.JPG?width=1600&height=1600&resize=contain",
+      ],
     },
     {
       id: 2,
-        project: "Binghatti Phoenix",
-        statusKey: "listings.phoenix.status",
-        badgeKey: null,
-        typeKey: "listings.phoenix.type",
-        priceKey: "listings.phoenix.price",
-        termsKey: null,
+      project: "Binghatti Phoenix",
+      statusKey: "listings.phoenix.status",
+      badgeKey: null,
+      typeKey: "listings.phoenix.type",
+      priceKey: "listings.phoenix.price",
+      termsKey: null,
       contractKey: null,
+      furnishedKey: null as string | null,
       ctaKey: "listings.phoenix.cta",
       ctaHref: "/contact-us",
       status: "available",
-      image:
+      images: [
         "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/007aea4c-54d1-406e-bf6e-b272ac2f0e58-1773006354631.JPG?width=1600&height=1600&resize=contain",
+      ],
+    },
+    {
+      id: 3,
+      project: "Binghatti Phantom",
+      statusKey: "listings.phantom.status",
+      badgeKey: null,
+      typeKey: "listings.phantom.type",
+      priceKey: "listings.phantom.price",
+      termsKey: null,
+      contractKey: null,
+      furnishedKey: "listings.phantom.furnished" as string | null,
+      ctaKey: "listings.phantom.cta",
+      ctaHref: "/contact-us",
+      status: "available",
+      images: [
+        "/phantom-3.jpg",
+        "/phantom-1.jpg",
+        "/phantom-2.jpg",
+        "/phantom-4.jpg",
+        "/phantom-5.jpg",
+        "/phantom-6.jpg",
+        "/phantom-7.jpg",
+        "/phantom-8.jpg",
+        "/phantom-9.jpg",
+        "/phantom-10.jpg",
+      ],
     },
   ];
 
@@ -61,8 +92,8 @@ export default function InvestmentListings() {
           <div className="w-10 h-px bg-[#C5A059] mt-5" />
         </motion.div>
 
-        {/* Cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 max-w-[900px] mx-auto">
+        {/* Cards grid — 3 columns on large screens, centered */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10 max-w-[1200px] mx-auto">
           {LISTINGS.map((listing, i) => (
             <PropertyCard key={listing.id} listing={listing} index={i} t={t} />
           ))}
@@ -77,11 +108,38 @@ function PropertyCard({
   index,
   t,
 }: {
-  listing: ReturnType<typeof buildListings>[0];
+  listing: {
+    id: number;
+    project: string;
+    statusKey: string;
+    badgeKey: string | null;
+    typeKey: string;
+    priceKey: string;
+    termsKey: string | null;
+    contractKey: string | null;
+    furnishedKey: string | null;
+    ctaKey: string;
+    ctaHref: string;
+    status: string;
+    images: string[];
+  };
   index: number;
   t: (key: string) => string;
 }) {
   const [hovered, setHovered] = useState(false);
+  const [currentImg, setCurrentImg] = useState(0);
+
+  const hasMultiple = listing.images.length > 1;
+
+  const prev = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setCurrentImg((c) => (c === 0 ? listing.images.length - 1 : c - 1));
+  };
+
+  const next = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setCurrentImg((c) => (c === listing.images.length - 1 ? 0 : c + 1));
+  };
 
   return (
     <motion.div
@@ -104,16 +162,52 @@ function PropertyCard({
         transition: "box-shadow 0.4s ease",
       }}
     >
-      {/* Image */}
+      {/* Image with optional arrow navigation */}
       <div
         className="relative overflow-hidden"
         style={{ borderRadius: "50px 50px 0 0", aspectRatio: "4/3" }}
       >
         <img
-          src={listing.image}
-          alt={listing.project}
+          src={listing.images[currentImg]}
+          alt={`${listing.project} – ${currentImg + 1}`}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
         />
+
+        {/* Arrow buttons — only shown when multiple images */}
+        {hasMultiple && (
+          <>
+            <button
+              onClick={prev}
+              aria-label="Previous image"
+              className="absolute left-3 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 text-white transition-all duration-200 backdrop-blur-sm"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <button
+              onClick={next}
+              aria-label="Next image"
+              className="absolute right-3 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 text-white transition-all duration-200 backdrop-blur-sm"
+            >
+              <ChevronRight size={18} />
+            </button>
+
+            {/* Dot indicators */}
+            <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
+              {listing.images.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={(e) => { e.preventDefault(); setCurrentImg(idx); }}
+                  aria-label={`Go to image ${idx + 1}`}
+                  className="w-1.5 h-1.5 rounded-full transition-all duration-200"
+                  style={{
+                    background: idx === currentImg ? "#C5A059" : "rgba(255,255,255,0.6)",
+                    transform: idx === currentImg ? "scale(1.3)" : "scale(1)",
+                  }}
+                />
+              ))}
+            </div>
+          </>
+        )}
 
         {/* Status pill + Investment badge */}
         <div className="absolute top-5 left-5 right-5 flex flex-wrap gap-2">
@@ -171,12 +265,12 @@ function PropertyCard({
             {t("listings.annual_rent")}
           </p>
           <p className="font-display text-[26px] md:text-[28px] text-[#1A1A1A] leading-none">
-              {t(listing.priceKey)}
-            </p>
+            {t(listing.priceKey)}
+          </p>
         </div>
 
         {/* Details */}
-        {(listing.termsKey || listing.contractKey) && (
+        {(listing.termsKey || listing.contractKey || listing.furnishedKey) && (
           <div className="flex flex-col gap-2 pt-1">
             {listing.termsKey && (
               <div className="flex items-center gap-3">
@@ -193,6 +287,14 @@ function PropertyCard({
                 <span className="font-body text-[13px] text-[#5A5A5A]">
                   <span className="font-medium text-[#1A1A1A]">{t("listings.contract")}:</span>{" "}
                   {t(listing.contractKey)}
+                </span>
+              </div>
+            )}
+            {listing.furnishedKey && (
+              <div className="flex items-center gap-3">
+                <span className="w-3 h-px bg-[#C5A059] flex-shrink-0" />
+                <span className="font-body text-[13px] text-[#5A5A5A] font-medium text-[#1A1A1A]">
+                  {t(listing.furnishedKey)}
                 </span>
               </div>
             )}
@@ -224,24 +326,4 @@ function PropertyCard({
       </div>
     </motion.div>
   );
-}
-
-// Helper type — not actually called at runtime
-function buildListings() {
-  return [
-    {
-      id: 0,
-      project: "",
-      statusKey: "",
-      badgeKey: null as string | null,
-      typeKey: "",
-      priceKey: "",
-      termsKey: null as string | null,
-      contractKey: null as string | null,
-      ctaKey: "",
-      ctaHref: "",
-      status: "",
-      image: "",
-    },
-  ];
 }
