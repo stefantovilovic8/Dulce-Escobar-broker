@@ -12,14 +12,11 @@ const ServicesHero = () => {
   return (
     <section className="relative w-full h-screen min-h-[700px] overflow-hidden">
       {/* Background Image */}
-      <div
-        className="absolute inset-0 w-full h-full z-0"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 30%',
-          backgroundAttachment: 'fixed',
-        }}
+      <img
+        src={heroImage}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full z-0 object-cover object-[center_30%]"
       />
 
       {/* Soft overlay */}
