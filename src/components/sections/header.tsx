@@ -9,11 +9,12 @@ export default function Header({ bgColor }: { bgColor?: string }) {
   const { t } = useLanguage();
 
     const NAV_LINKS = [
-      { label: t("nav.home"), href: "/" },              // 1. Home
-      { label: t("nav.offplan"), href: "/off-plan" },   // 2. Off-Plan
-      { label: t("nav.holidayhomes"), href: "/services" }, // 3. Holiday Homes
-
-      { label: t("nav.contact"), href: "/contact-us" }, // 5. Contact Us
+      { label: t("nav.home"), href: "/" },
+      { label: t("nav.offplan"), href: "/off-plan" },
+      { label: t("nav.offplan_properties"), href: "/off-plan-properties" },
+      { label: t("nav.sale"), href: "/sale" },
+      { label: t("nav.holidayhomes"), href: "/services" },
+      { label: t("nav.contact"), href: "/contact-us" },
     ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

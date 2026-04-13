@@ -14,7 +14,7 @@ export default function InvestmentListings() {
       id: 1,
       project: "Binghatti Azure",
       statusKey: "listings.azure.status",
-      badgeKey: "listings.azure.badge" as string | null,
+      badgeKey: null,
       typeKey: "listings.azure.type",
       priceKey: "listings.azure.price",
       termsKey: "listings.azure.terms" as string | null,
@@ -57,6 +57,66 @@ export default function InvestmentListings() {
       ctaKey: "listings.phantom.cta",
       ctaHref: "/contact-us",
       status: "available",
+      images: [
+        "/phantom-3.jpg",
+        "/phantom-1.jpg",
+        "/phantom-2.jpg",
+        "/phantom-4.jpg",
+        "/phantom-5.jpg",
+        "/phantom-6.jpg",
+        "/phantom-7.jpg",
+        "/phantom-8.jpg",
+        "/phantom-9.jpg",
+        "/phantom-10.jpg",
+      ],
+    },
+    {
+      id: 4,
+      project: "Binghatti Azure",
+      statusKey: "listings.status.for_sale",
+      badgeKey: null,
+      typeKey: "listings.azure.type",
+      priceKey: "listings.azure.price",
+      termsKey: null,
+      contractKey: null,
+      furnishedKey: null as string | null,
+      ctaKey: "listings.azure.cta",
+      ctaHref: "/contact-us",
+      status: "for_sale",
+      images: [
+        "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/1017953b-88db-4b32-a0de-2aa467c6e8ef-1773006353346.JPG?width=1600&height=1600&resize=contain",
+      ],
+    },
+    {
+      id: 5,
+      project: "Binghatti Phoenix",
+      statusKey: "listings.status.for_sale",
+      badgeKey: null,
+      typeKey: "listings.phoenix.type",
+      priceKey: "listings.phoenix.price",
+      termsKey: null,
+      contractKey: null,
+      furnishedKey: null as string | null,
+      ctaKey: "listings.phoenix.cta",
+      ctaHref: "/contact-us",
+      status: "for_sale",
+      images: [
+        "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/007aea4c-54d1-406e-bf6e-b272ac2f0e58-1773006354631.JPG?width=1600&height=1600&resize=contain",
+      ],
+    },
+    {
+      id: 6,
+      project: "Binghatti Phantom",
+      statusKey: "listings.status.for_sale",
+      badgeKey: null,
+      typeKey: "listings.phantom.type",
+      priceKey: "listings.phantom.price",
+      termsKey: null,
+      contractKey: null,
+      furnishedKey: "listings.phantom.furnished" as string | null,
+      ctaKey: "listings.phantom.cta",
+      ctaHref: "/contact-us",
+      status: "for_sale",
       images: [
         "/phantom-3.jpg",
         "/phantom-1.jpg",
@@ -215,13 +275,22 @@ function PropertyCard({
             className="font-body text-[11px] tracking-[0.16em] uppercase px-4 py-1.5 rounded-full"
             style={{
               background:
-                listing.status === "available"
+                listing.status === "for_sale"
+                  ? "rgba(197,160,89,0.92)"
+                  : listing.status === "available"
                   ? "rgba(255,255,255,0.92)"
                   : "rgba(30,30,30,0.75)",
-              color: listing.status === "available" ? "#C5A059" : "#F5E9CB",
+              color:
+                listing.status === "for_sale"
+                  ? "#fff"
+                  : listing.status === "available"
+                  ? "#C5A059"
+                  : "#F5E9CB",
               backdropFilter: "blur(6px)",
               border:
-                listing.status === "available"
+                listing.status === "for_sale"
+                  ? "1px solid rgba(197,160,89,0.6)"
+                  : listing.status === "available"
                   ? "1px solid rgba(197,160,89,0.4)"
                   : "1px solid rgba(245,233,203,0.3)",
             }}

@@ -15,7 +15,7 @@ import { useLanguage } from "@/lib/language-context";
 export default function AboutPage() {
   const { t } = useLanguage();
   const pageBg = "#FFFFFF";
-  
+
   return (
     <div className="min-h-screen text-outline" style={{ backgroundColor: pageBg }}>
       <Header bgColor={pageBg} />
@@ -24,7 +24,7 @@ export default function AboutPage() {
           <HumanSignature />
            <TheValues />
              <ExpertInsight />
-         
+
           <div className="flex flex-col items-center text-center pt-8 pb-4 px-6" style={{ backgroundColor: pageBg }}>
             <p className="text-[1.1rem] md:text-[1.3rem] font-display text-[#1A1A1A] leading-tight mb-4">
               {t("offplan.more_opportunities")}

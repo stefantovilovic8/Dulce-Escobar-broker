@@ -6,7 +6,7 @@
     "bun install; bun run dev"
   ],
   "templateId": "any",
-  "vercelProjectId": "prj_O1pAxOsfAkjl7vygJtHpH0JrassW",
+  "vercelProjectId": "prj_k2vgqy3CIK88Vbars0gRPpepT37A",
   "deployedWithUserToken": true,
   "detectedFramework": "nextjs"
 }
