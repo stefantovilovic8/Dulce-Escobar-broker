@@ -33,7 +33,7 @@ export default function CtaContact() {
         <div className="absolute inset-0 w-full h-full z-0 bg-[#FFFFFF]">
         <div className="absolute inset-0 bg-black/60 z-10" /> {/* Dark Overlay for text contrast */}
           <video
-            className="w-full h-full object-cover"
+            loading="lazy" className="w-full h-full object-cover"
             autoPlay
             loop
             muted

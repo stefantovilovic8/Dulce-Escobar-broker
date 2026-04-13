@@ -65,7 +65,7 @@ export default function ServicesIntro() {
                 <img
                   src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=85&fit=crop"
                   alt="Luxury interior with floor-to-ceiling windows and city view"
-                  className="w-full h-full object-cover"
+                  loading="lazy" className="w-full h-full object-cover"
                 />
               </motion.div>
               {/* gold accent corner */}
@@ -94,7 +94,7 @@ export default function ServicesIntro() {
                 <img
                   src="https://images.unsplash.com/photo-1616137466211-f939a420be84?w=1200&q=85&fit=crop"
                   alt="Warm sophisticated living room with soft natural light"
-                  className="w-full h-full object-cover"
+                  loading="lazy" className="w-full h-full object-cover"
                 />
               </motion.div>
               <div className="absolute top-6 left-6 w-12 h-12 border-t border-l border-[#C5A059]/60 pointer-events-none" />

@@ -20,7 +20,7 @@ export default function OffPlanContent() {
 
   return (
     <>
-      {/* ── Why Off-Plan ── */}
+      {/* Why Off-Plan */}
       <section className="bg-[#FAFAF8] py-[100px] lg:py-[120px] overflow-hidden">
         <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-[1400px]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -61,9 +61,9 @@ export default function OffPlanContent() {
                 className="absolute inset-0 w-full h-[116%] -top-[8%]"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1582407947304-fd86f28f4b57?q=80&w=2296&auto=format&fit=crop"
-                  alt="Dubai skyline"
-                  className="w-full h-full object-cover"
+                  src="/offplan-intro.png"
+                  alt="Dubai off-plan construction"
+                  loading="lazy" className="w-full h-full object-cover"
                 />
               </motion.div>
               <div className="absolute top-6 right-6 w-12 h-12 border-t border-r border-[#C5A059]/60 pointer-events-none" />
@@ -73,7 +73,7 @@ export default function OffPlanContent() {
         </div>
       </section>
 
-      {/* ── Benefits Grid ── */}
+      {/* Benefits Grid */}
       <section className="bg-[#F5F3EE] py-[100px] lg:py-[120px]">
         <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-[1200px]">
           <motion.div
@@ -117,7 +117,7 @@ export default function OffPlanContent() {
         </div>
       </section>
 
-      {/* ── CTA Banner ── */}
+      {/* CTA Banner */}
       <section className="bg-[#1A1A1A] py-20 lg:py-24">
         <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-[900px] text-center">
           <motion.div
