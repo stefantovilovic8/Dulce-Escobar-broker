@@ -70,13 +70,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" style={{ backgroundColor: "#FFFFFF" }}>
-      <head>
-        <script
+      <body className="antialiased" style={{ backgroundColor: "#FFFFFF" }}>
+        <Script
+          id="json-ld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          strategy="beforeInteractive"
         />
-      </head>
-      <body className="antialiased" style={{ backgroundColor: "#FFFFFF" }}>
         <Script
           id="orchids-browser-logs"
           src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts/orchids-browser-logs.js"
