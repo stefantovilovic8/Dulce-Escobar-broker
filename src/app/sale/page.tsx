@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Header from "@/components/sections/header";
 import SaleHero from "@/components/sections/sale-hero";
-import SaleIntro from "@/components/sections/sale-intro";
 import SaleListings from "@/components/sections/sale-listings";
 import { PartnerCarousel } from "@/components/sections/who-we-are";
 import { FriendsAndPartnersTitle } from "@/components/sections/services-we-offer";
@@ -29,7 +28,6 @@ export default function SalePage() {
       <Header bgColor={pageBg} />
       <main>
         <SaleHero />
-        <SaleIntro />
         <SaleListings />
         <FriendsAndPartnersTitle />
         <PartnerCarousel />
