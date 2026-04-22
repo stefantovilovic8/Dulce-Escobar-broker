@@ -175,9 +175,8 @@ function PropertyCard({
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
     >
-      <Link
-        href={`/listing/${listing.slug}`}
-        className="group flex flex-col bg-white overflow-hidden rounded-2xl h-full"
+      <div
+        className="group flex flex-col bg-white overflow-hidden rounded-2xl h-full relative"
         style={{
           boxShadow: "0 2px 16px rgba(0,0,0,0.07)",
           transition: "box-shadow 0.3s ease, transform 0.3s ease",
@@ -191,6 +190,13 @@ function PropertyCard({
           (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
         }}
       >
+        {/* Clickable overlay for card navigation (sits below interactive elements) */}
+        <Link
+          href={`/listing/${listing.slug}`}
+          className="absolute inset-0 z-[1]"
+          aria-label={`View ${listing.project}`}
+        />
+
         {/* Image */}
         <div className="relative overflow-hidden rounded-t-2xl" style={{ aspectRatio: "4/3" }}>
           <img
@@ -208,11 +214,11 @@ function PropertyCard({
           {hasMultiple && (
             <>
               <button onClick={prev} aria-label="Previous image"
-                className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-black/40 hover:bg-black/65 text-white flex items-center justify-center backdrop-blur-sm transition-all">
+                className="relative z-10 absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/40 hover:bg-black/65 text-white flex items-center justify-center backdrop-blur-sm transition-all">
                 <ChevronLeft size={14} />
               </button>
               <button onClick={next} aria-label="Next image"
-                className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-black/40 hover:bg-black/65 text-white flex items-center justify-center backdrop-blur-sm transition-all">
+                className="relative z-10 absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/40 hover:bg-black/65 text-white flex items-center justify-center backdrop-blur-sm transition-all">
                 <ChevronRight size={14} />
               </button>
               <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1 z-10">
@@ -220,7 +226,7 @@ function PropertyCard({
                   <button
                     key={idx}
                     onClick={(e) => { e.preventDefault(); e.stopPropagation(); setCurrentImg(idx); }}
-                    className="w-1.5 h-1.5 rounded-full transition-all duration-200"
+                    className="relative z-10 w-1.5 h-1.5 rounded-full transition-all duration-200"
                     style={{ background: idx === currentImg ? "#C5A059" : "rgba(255,255,255,0.65)" }}
                   />
                 ))}
@@ -269,7 +275,7 @@ function PropertyCard({
           </div>
 
           {/* Agent footer */}
-          <div className="flex items-center gap-3 mt-auto pt-1">
+          <div className="relative z-[2] flex items-center gap-3 mt-auto pt-1">
             <img
               src="/dulce-portrait.png"
               alt="Dulce Escobar"
@@ -282,9 +288,8 @@ function PropertyCard({
             <div className="flex items-center gap-2 flex-shrink-0">
               <a
                 href="tel:+971509092424"
-                onClick={(e) => e.stopPropagation()}
                 aria-label="Call agent"
-                className="w-8 h-8 rounded-full border border-[#EDE6D8] flex items-center justify-center text-[#C5A059] hover:bg-[#C5A059] hover:text-white hover:border-[#C5A059] transition-all duration-200"
+                className="relative z-[2] w-8 h-8 rounded-full border border-[#EDE6D8] flex items-center justify-center text-[#C5A059] hover:bg-[#C5A059] hover:text-white hover:border-[#C5A059] transition-all duration-200"
               >
                 <Phone size={13} />
               </a>
@@ -292,16 +297,15 @@ function PropertyCard({
                 href="https://wa.me/971509092424"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
                 aria-label="WhatsApp agent"
-                className="w-8 h-8 rounded-full border border-[#EDE6D8] flex items-center justify-center text-[#C5A059] hover:bg-[#C5A059] hover:text-white hover:border-[#C5A059] transition-all duration-200"
+                className="relative z-[2] w-8 h-8 rounded-full border border-[#EDE6D8] flex items-center justify-center text-[#C5A059] hover:bg-[#C5A059] hover:text-white hover:border-[#C5A059] transition-all duration-200"
               >
                 <MessageCircle size={13} />
               </a>
             </div>
           </div>
         </div>
-      </Link>
+      </div>
     </motion.div>
   );
 }
