@@ -3,104 +3,116 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Bed, Bath, Maximize2, MapPin, Phone, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
+
+export const LISTINGS_DATA = [
+  {
+    id: 2,
+    slug: "binghatti-aurora",
+    project: "Binghatti Aurora",
+    category: "Studio",
+    location: "Business Bay, Dubai",
+    beds: 0,
+    baths: 1,
+    sqft: 452,
+    statusKey: "listings.phoenix.status",
+    typeKey: "listings.phoenix.type",
+    priceKey: "listings.phoenix.price",
+    pricePeriod: "Yearly",
+    furnishedKey: null as string | null,
+    status: "available",
+    images: [
+      "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/1017953b-88db-4b32-a0de-2aa467c6e8ef-1773006353346.JPG?width=1600&height=1600&resize=contain",
+    ],
+    description: "Elegant studio apartment in the prestigious Binghatti Aurora tower, located in the heart of Business Bay. This thoughtfully designed unit offers breathtaking views, premium finishes, and access to world-class amenities.",
+  },
+  {
+    id: 4,
+    slug: "binghatti-tulip-3007",
+    project: "Binghatti Tulip 3007",
+    category: "Studio",
+    location: "Jumeirah Village Circle, Dubai",
+    beds: 0,
+    baths: 1,
+    sqft: 420,
+    statusKey: "listings.tulip.status",
+    typeKey: "listings.tulip.type",
+    priceKey: "listings.tulip.price",
+    pricePeriod: "Monthly",
+    furnishedKey: "listings.tulip.furnished" as string | null,
+    status: "available",
+    images: [
+      "/tulip-1.jpg",
+      "/tulip-2.jpg",
+      "/tulip-3.jpg",
+      "/tulip-4.jpg",
+      "/tulip-5.jpg",
+      "/tulip-6.jpg",
+      "/tulip-7.jpg",
+    ],
+    description: "Stunning fully furnished studio on the 30th floor of Binghatti Tulip. Modern interiors, high-end appliances, and a prime location in JVC make this an exceptional choice for both short and long-term rental.",
+  },
+  {
+    id: 5,
+    slug: "binghatti-tulip-2806",
+    project: "Binghatti Tulip 2806",
+    category: "Studio",
+    location: "Jumeirah Village Circle, Dubai",
+    beds: 0,
+    baths: 1,
+    sqft: 420,
+    statusKey: "listings.tulip.status",
+    typeKey: "listings.tulip.type",
+    priceKey: "listings.tulip.price",
+    pricePeriod: "Monthly",
+    furnishedKey: "listings.tulip.furnished" as string | null,
+    status: "available",
+    images: [
+      "/tulip2-1.jpg",
+      "/tulip2-2.jpg",
+      "/tulip2-3.jpg",
+      "/tulip2-4.jpg",
+      "/tulip2-5.jpg",
+      "/tulip2-6.jpg",
+      "/tulip2-7.jpg",
+      "/tulip2-8.jpg",
+    ],
+    description: "Beautifully furnished studio on the 28th floor of Binghatti Tulip. Featuring premium finishes, a fully equipped kitchen, and panoramic views. Ideal for professionals or couples seeking luxury living in JVC.",
+  },
+  {
+    id: 3,
+    slug: "binghatti-phantom",
+    project: "Binghatti Phantom",
+    category: "Apartment",
+    location: "Business Bay, Dubai",
+    beds: 1,
+    baths: 2,
+    sqft: 780,
+    statusKey: "listings.phantom.status",
+    typeKey: "listings.phantom.type",
+    priceKey: "listings.phantom.price",
+    pricePeriod: "Yearly",
+    furnishedKey: "listings.phantom.furnished" as string | null,
+    status: "available",
+    images: [
+      "/phantom-3.jpg",
+      "/phantom-1.jpg",
+      "/phantom-2.jpg",
+      "/phantom-4.jpg",
+      "/phantom-5.jpg",
+      "/phantom-6.jpg",
+      "/phantom-7.jpg",
+      "/phantom-8.jpg",
+      "/phantom-9.jpg",
+      "/phantom-10.jpg",
+    ],
+    description: "Exquisite fully furnished 1-bedroom apartment in the iconic Binghatti Phantom. Featuring designer interiors, a spacious open-plan living area, gourmet kitchen, and stunning city views. A rare opportunity in one of Dubai's most sought-after addresses.",
+  },
+];
 
 export default function InvestmentListings() {
   const { t } = useLanguage();
-
-  const LISTINGS = [
-    {
-      id: 2,
-      project: "Binghatti Aurora",
-      statusKey: "listings.phoenix.status",
-      badgeKey: null,
-      typeKey: "listings.phoenix.type",
-      priceKey: "listings.phoenix.price",
-      termsKey: null,
-      contractKey: null,
-      furnishedKey: null as string | null,
-      ctaKey: "listings.phoenix.cta",
-      ctaHref: "/contact-us",
-      status: "available",
-      images: [
-        "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/1017953b-88db-4b32-a0de-2aa467c6e8ef-1773006353346.JPG?width=1600&height=1600&resize=contain",
-      ],
-    },
-    {
-      id: 4,
-      project: "Binghatti Tulip 3007",
-      statusKey: "listings.tulip.status",
-      badgeKey: null,
-      typeKey: "listings.tulip.type",
-      priceKey: "listings.tulip.price",
-      termsKey: null,
-      contractKey: null,
-      furnishedKey: "listings.tulip.furnished" as string | null,
-      ctaKey: "listings.tulip.cta",
-      ctaHref: "/contact-us",
-      status: "available",
-      images: [
-        "/tulip-1.jpg",
-        "/tulip-2.jpg",
-        "/tulip-3.jpg",
-        "/tulip-4.jpg",
-        "/tulip-5.jpg",
-        "/tulip-6.jpg",
-        "/tulip-7.jpg",
-      ],
-    },
-    {
-      id: 5,
-      project: "Binghatti Tulip 2806",
-      statusKey: "listings.tulip.status",
-      badgeKey: null,
-      typeKey: "listings.tulip.type",
-      priceKey: "listings.tulip.price",
-      termsKey: null,
-      contractKey: null,
-      furnishedKey: "listings.tulip.furnished" as string | null,
-      ctaKey: "listings.tulip.cta",
-      ctaHref: "/contact-us",
-      status: "available",
-      images: [
-        "/tulip2-1.jpg",
-        "/tulip2-2.jpg",
-        "/tulip2-3.jpg",
-        "/tulip2-4.jpg",
-        "/tulip2-5.jpg",
-        "/tulip2-6.jpg",
-        "/tulip2-7.jpg",
-        "/tulip2-8.jpg",
-      ],
-    },
-    {
-      id: 3,
-      project: "Binghatti Phantom",
-      statusKey: "listings.phantom.status",
-      badgeKey: null,
-      typeKey: "listings.phantom.type",
-      priceKey: "listings.phantom.price",
-      termsKey: null,
-      contractKey: null,
-      furnishedKey: "listings.phantom.furnished" as string | null,
-      ctaKey: "listings.phantom.cta",
-      ctaHref: "/contact-us",
-      status: "available",
-      images: [
-        "/phantom-3.jpg",
-        "/phantom-1.jpg",
-        "/phantom-2.jpg",
-        "/phantom-4.jpg",
-        "/phantom-5.jpg",
-        "/phantom-6.jpg",
-        "/phantom-7.jpg",
-        "/phantom-8.jpg",
-        "/phantom-9.jpg",
-        "/phantom-10.jpg",
-      ],
-    },
-  ];
 
   return (
     <section id="listings" className="bg-[#FAFAF8] py-20 lg:py-28">
@@ -122,9 +134,9 @@ export default function InvestmentListings() {
           <div className="w-10 h-px bg-[#C5A059] mt-5" />
         </motion.div>
 
-        {/* Cards grid — 3 columns on large screens, centered */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10 max-w-[1200px] mx-auto">
-          {LISTINGS.map((listing, i) => (
+        {/* Cards grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+          {LISTINGS_DATA.map((listing, i) => (
             <PropertyCard key={listing.id} listing={listing} index={i} t={t} />
           ))}
         </div>
@@ -138,36 +150,21 @@ function PropertyCard({
   index,
   t,
 }: {
-  listing: {
-    id: number;
-    project: string;
-    statusKey: string;
-    badgeKey: string | null;
-    typeKey: string;
-    priceKey: string;
-    termsKey: string | null;
-    contractKey: string | null;
-    furnishedKey: string | null;
-    ctaKey: string;
-    ctaHref: string;
-    status: string;
-    images: string[];
-  };
+  listing: typeof LISTINGS_DATA[0];
   index: number;
   t: (key: string) => string;
 }) {
-  const [hovered, setHovered] = useState(false);
   const [currentImg, setCurrentImg] = useState(0);
-
   const hasMultiple = listing.images.length > 1;
 
   const prev = (e: React.MouseEvent) => {
     e.preventDefault();
+    e.stopPropagation();
     setCurrentImg((c) => (c === 0 ? listing.images.length - 1 : c - 1));
   };
-
   const next = (e: React.MouseEvent) => {
     e.preventDefault();
+    e.stopPropagation();
     setCurrentImg((c) => (c === listing.images.length - 1 ? 0 : c + 1));
   };
 
@@ -176,184 +173,135 @@ function PropertyCard({
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{
-        duration: 0.9,
-        ease: [0.22, 1, 0.36, 1],
-        delay: index * 0.15,
-      }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="group flex flex-col bg-white overflow-hidden"
-      style={{
-        borderRadius: "50px",
-        boxShadow: hovered
-          ? "0 20px 60px rgba(197,160,89,0.14), 0 4px 20px rgba(0,0,0,0.07)"
-          : "0 4px 24px rgba(0,0,0,0.06)",
-        transition: "box-shadow 0.4s ease",
-      }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
     >
-      {/* Image with optional arrow navigation */}
-      <div
-        className="relative overflow-hidden"
-        style={{ borderRadius: "50px 50px 0 0", aspectRatio: "4/3" }}
+      <Link
+        href={`/listing/${listing.slug}`}
+        className="group flex flex-col bg-white overflow-hidden rounded-2xl h-full"
+        style={{
+          boxShadow: "0 2px 16px rgba(0,0,0,0.07)",
+          transition: "box-shadow 0.3s ease, transform 0.3s ease",
+        }}
+        onMouseEnter={(e) => {
+          (e.currentTarget as HTMLElement).style.boxShadow = "0 12px 40px rgba(197,160,89,0.15), 0 4px 16px rgba(0,0,0,0.08)";
+          (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)";
+        }}
+        onMouseLeave={(e) => {
+          (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 16px rgba(0,0,0,0.07)";
+          (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+        }}
       >
-        <img
-          src={listing.images[currentImg]}
-          alt={`${listing.project} – ${currentImg + 1}`}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-        />
+        {/* Image */}
+        <div className="relative overflow-hidden rounded-t-2xl" style={{ aspectRatio: "4/3" }}>
+          <img
+            src={listing.images[currentImg]}
+            alt={listing.project}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+          />
 
-        {/* Arrow buttons — only shown when multiple images */}
-        {hasMultiple && (
-          <>
-            <button
-              onClick={prev}
-              aria-label="Previous image"
-              className="absolute left-3 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 text-white transition-all duration-200 backdrop-blur-sm"
-            >
-              <ChevronLeft size={18} />
-            </button>
-            <button
-              onClick={next}
-              aria-label="Next image"
-              className="absolute right-3 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 text-white transition-all duration-200 backdrop-blur-sm"
-            >
-              <ChevronRight size={18} />
-            </button>
-
-            {/* Dot indicators */}
-            <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
-              {listing.images.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={(e) => { e.preventDefault(); setCurrentImg(idx); }}
-                  aria-label={`Go to image ${idx + 1}`}
-                  className="w-1.5 h-1.5 rounded-full transition-all duration-200"
-                  style={{
-                    background: idx === currentImg ? "#C5A059" : "rgba(255,255,255,0.6)",
-                    transform: idx === currentImg ? "scale(1.3)" : "scale(1)",
-                  }}
-                />
-              ))}
-            </div>
-          </>
-        )}
-
-        {/* Status pill + Investment badge */}
-        <div className="absolute top-5 left-5 right-5 flex flex-wrap gap-2">
-          <span
-            className="font-body text-[11px] tracking-[0.16em] uppercase px-4 py-1.5 rounded-full"
-            style={{
-              background:
-                listing.status === "available"
-                  ? "rgba(255,255,255,0.92)"
-                  : "rgba(30,30,30,0.75)",
-              color: listing.status === "available" ? "#C5A059" : "#F5E9CB",
-              backdropFilter: "blur(6px)",
-              border:
-                listing.status === "available"
-                  ? "1px solid rgba(197,160,89,0.4)"
-                  : "1px solid rgba(245,233,203,0.3)",
-            }}
-          >
-            {t(listing.statusKey)}
+          {/* Category badge — top left */}
+          <span className="absolute top-3 left-3 z-10 font-body text-[11px] tracking-[0.14em] uppercase px-3 py-1 rounded-md bg-white text-[#1A1A1A] font-medium shadow-sm">
+            {listing.category}
           </span>
 
-          {listing.badgeKey && (
-            <span
-              className="font-body text-[11px] tracking-[0.16em] uppercase px-4 py-1.5 rounded-full"
-              style={{
-                background: "rgba(197,160,89,0.92)",
-                color: "#fff",
-                backdropFilter: "blur(6px)",
-              }}
-            >
-              {t(listing.badgeKey)}
-            </span>
+          {/* Arrow nav */}
+          {hasMultiple && (
+            <>
+              <button onClick={prev} aria-label="Previous image"
+                className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-black/40 hover:bg-black/65 text-white flex items-center justify-center backdrop-blur-sm transition-all">
+                <ChevronLeft size={14} />
+              </button>
+              <button onClick={next} aria-label="Next image"
+                className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-black/40 hover:bg-black/65 text-white flex items-center justify-center backdrop-blur-sm transition-all">
+                <ChevronRight size={14} />
+              </button>
+              <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1 z-10">
+                {listing.images.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); setCurrentImg(idx); }}
+                    className="w-1.5 h-1.5 rounded-full transition-all duration-200"
+                    style={{ background: idx === currentImg ? "#C5A059" : "rgba(255,255,255,0.65)" }}
+                  />
+                ))}
+              </div>
+            </>
           )}
         </div>
-      </div>
 
-      {/* Content */}
-      <div className="flex flex-col gap-4 p-7 lg:p-8 flex-1">
-        {/* Project name & type */}
-        <div>
-          <h3 className="font-display text-[22px] md:text-[24px] text-[#1A1A1A] leading-tight group-hover:text-[#C5A059] transition-colors duration-300">
+        {/* Body */}
+        <div className="flex flex-col flex-1 p-4">
+          {/* Title */}
+          <h3 className="font-display text-[17px] text-[#1A1A1A] leading-snug group-hover:text-[#C5A059] transition-colors duration-300 mb-1">
             {listing.project}
           </h3>
-          <p className="font-body text-[#8A8A8A] text-[13px] tracking-[0.12em] uppercase mt-1">
-            {t(listing.typeKey)}
-          </p>
-        </div>
 
-        {/* Divider */}
-        <div className="w-8 h-px bg-[#C5A059]" />
-
-        {/* Price */}
-        <div>
-          <p className="font-body text-[11px] text-[#9A9A9A] tracking-[0.18em] uppercase mb-1">
-            {t("listings.annual_rent")}
-          </p>
-          <p className="font-display text-[26px] md:text-[28px] text-[#1A1A1A] leading-none">
-            {t(listing.priceKey)}
-          </p>
-        </div>
-
-        {/* Details */}
-        {(listing.termsKey || listing.contractKey || listing.furnishedKey) && (
-          <div className="flex flex-col gap-2 pt-1">
-            {listing.termsKey && (
-              <div className="flex items-center gap-3">
-                <span className="w-3 h-px bg-[#C5A059] flex-shrink-0" />
-                <span className="font-body text-[13px] text-[#5A5A5A]">
-                  <span className="font-medium text-[#1A1A1A]">{t("listings.payment")}:</span>{" "}
-                  {t(listing.termsKey)}
-                </span>
-              </div>
-            )}
-            {listing.contractKey && (
-              <div className="flex items-center gap-3">
-                <span className="w-3 h-px bg-[#C5A059] flex-shrink-0" />
-                <span className="font-body text-[13px] text-[#5A5A5A]">
-                  <span className="font-medium text-[#1A1A1A]">{t("listings.contract")}:</span>{" "}
-                  {t(listing.contractKey)}
-                </span>
-              </div>
-            )}
-            {listing.furnishedKey && (
-              <div className="flex items-center gap-3">
-                <span className="w-3 h-px bg-[#C5A059] flex-shrink-0" />
-                <span className="font-body text-[13px] text-[#5A5A5A] font-medium text-[#1A1A1A]">
-                  {t(listing.furnishedKey)}
-                </span>
-              </div>
-            )}
+          {/* Location */}
+          <div className="flex items-center gap-1.5 mb-3">
+            <MapPin size={12} className="text-[#C5A059] flex-shrink-0" />
+            <span className="font-body text-[12px] text-[#7A7A7A]">{listing.location}</span>
           </div>
-        )}
 
-        {/* CTA */}
-        <div className="pt-2 mt-auto">
-          <Link
-            href={listing.ctaHref}
-            className="inline-block w-full text-center font-body text-[13px] tracking-[0.18em] uppercase py-4 transition-all duration-300"
-            style={{
-              borderRadius: "50px",
-              border: "1px solid #C5A059",
-              color: "#C5A059",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.background = "#C5A059";
-              (e.currentTarget as HTMLAnchorElement).style.color = "#fff";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.background = "transparent";
-              (e.currentTarget as HTMLAnchorElement).style.color = "#C5A059";
-            }}
-          >
-            {t(listing.ctaKey)}
-          </Link>
+          {/* Stats row */}
+          <div className="flex items-center gap-3 mb-4 pb-4 border-b border-[#F0EBE1]">
+            <div className="flex items-center gap-1.5">
+              <Bed size={13} className="text-[#C5A059]" />
+              <span className="font-body text-[12px] text-[#5A5A5A]">
+                {listing.beds === 0 ? "Studio" : `${listing.beds} Bed`}
+              </span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <Bath size={13} className="text-[#C5A059]" />
+              <span className="font-body text-[12px] text-[#5A5A5A]">{listing.baths} Bath</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <Maximize2 size={13} className="text-[#C5A059]" />
+              <span className="font-body text-[12px] text-[#5A5A5A]">{listing.sqft} Sq.Ft</span>
+            </div>
+          </div>
+
+          {/* Price box */}
+          <div className="bg-[#FAFAF8] border border-[#EDE6D8] rounded-xl px-4 py-3 mb-4">
+            <p className="font-body text-[10px] text-[#9A9A9A] tracking-[0.16em] uppercase mb-0.5">Price</p>
+            <p className="font-display text-[20px] text-[#1A1A1A] leading-none">
+              {t(listing.priceKey)}
+            </p>
+          </div>
+
+          {/* Agent footer */}
+          <div className="flex items-center gap-3 mt-auto pt-1">
+            <img
+              src="/dulce-portrait.png"
+              alt="Dulce Escobar"
+              className="w-9 h-9 rounded-full object-cover flex-shrink-0 border-2 border-[#EDE6D8]"
+            />
+            <div className="flex-1 min-w-0">
+              <p className="font-body text-[10px] text-[#9A9A9A] leading-none mb-0.5">Listed By</p>
+              <p className="font-body text-[12px] text-[#1A1A1A] font-medium truncate">Dulce Escobar</p>
+            </div>
+            <div className="flex items-center gap-2 flex-shrink-0">
+              <a
+                href="tel:+971509092424"
+                onClick={(e) => e.stopPropagation()}
+                aria-label="Call agent"
+                className="w-8 h-8 rounded-full border border-[#EDE6D8] flex items-center justify-center text-[#C5A059] hover:bg-[#C5A059] hover:text-white hover:border-[#C5A059] transition-all duration-200"
+              >
+                <Phone size={13} />
+              </a>
+              <a
+                href="https://wa.me/971509092424"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                aria-label="WhatsApp agent"
+                className="w-8 h-8 rounded-full border border-[#EDE6D8] flex items-center justify-center text-[#C5A059] hover:bg-[#C5A059] hover:text-white hover:border-[#C5A059] transition-all duration-200"
+              >
+                <MessageCircle size={13} />
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
+      </Link>
     </motion.div>
   );
 }
