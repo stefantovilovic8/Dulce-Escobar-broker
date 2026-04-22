@@ -3,16 +3,20 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Bed, Bath, Maximize2, MapPin, Phone, MessageCircle } from "lucide-react";
 
 const SALE_LISTINGS = [
   {
     id: 1,
+    slug: "binghatti-azure-sale",
     project: "Binghatti Azure",
-    status: "For Sale",
-    type: "Studio Apartment",
-    priceLabel: "Sale Price",
+    category: "Studio",
+    location: "Business Bay, Dubai",
+    beds: 0,
+    baths: 1,
+    sqft: 430,
     price: "720,000 AED",
+    pricePeriod: "Sale Price",
     contract: "Rented until 28.8.2028",
     images: [
       "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/007aea4c-54d1-406e-bf6e-b272ac2f0e58-1773006354631.JPG?width=1600&height=1600&resize=contain",
@@ -20,11 +24,15 @@ const SALE_LISTINGS = [
   },
   {
     id: 2,
+    slug: "binghatti-aurora-sale",
     project: "Binghatti Aurora",
-    status: "For Sale",
-    type: "Studio Apartment",
-    priceLabel: "Sale Price",
+    category: "Studio",
+    location: "Business Bay, Dubai",
+    beds: 0,
+    baths: 1,
+    sqft: 452,
     price: "750,000 AED",
+    pricePeriod: "Sale Price",
     contract: "Rented until 30.11.2028",
     images: [
       "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/1017953b-88db-4b32-a0de-2aa467c6e8ef-1773006353346.JPG?width=1600&height=1600&resize=contain",
@@ -52,7 +60,7 @@ export default function SaleListings() {
           <div className="w-10 h-px bg-[#C5A059] mt-5" />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 max-w-[860px] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-[700px] mx-auto">
           {SALE_LISTINGS.map((listing, i) => (
             <SaleCard key={listing.id} listing={listing} index={i} />
           ))}
@@ -69,16 +77,17 @@ function SaleCard({
   listing: (typeof SALE_LISTINGS)[number];
   index: number;
 }) {
-  const [hovered, setHovered] = useState(false);
   const [currentImg, setCurrentImg] = useState(0);
   const hasMultiple = listing.images.length > 1;
 
   const prev = (e: React.MouseEvent) => {
     e.preventDefault();
+    e.stopPropagation();
     setCurrentImg((c) => (c === 0 ? listing.images.length - 1 : c - 1));
   };
   const next = (e: React.MouseEvent) => {
     e.preventDefault();
+    e.stopPropagation();
     setCurrentImg((c) => (c === listing.images.length - 1 ? 0 : c + 1));
   };
 
@@ -87,105 +96,130 @@ function SaleCard({
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: index * 0.15 }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="group flex flex-col bg-white overflow-hidden"
-      style={{
-        borderRadius: "50px",
-        boxShadow: hovered
-          ? "0 20px 60px rgba(197,160,89,0.14), 0 4px 20px rgba(0,0,0,0.07)"
-          : "0 4px 24px rgba(0,0,0,0.06)",
-        transition: "box-shadow 0.4s ease",
-      }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
     >
-      {/* Image */}
-      <div className="relative overflow-hidden" style={{ borderRadius: "50px 50px 0 0", aspectRatio: "4/3" }}>
-        <img
-          src={listing.images[currentImg]}
-          alt={`${listing.project} – ${currentImg + 1}`}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-        />
+      <Link
+        href="/contact-us"
+        className="group flex flex-col bg-white overflow-hidden rounded-2xl h-full"
+        style={{
+          boxShadow: "0 2px 16px rgba(0,0,0,0.07)",
+          transition: "box-shadow 0.3s ease, transform 0.3s ease",
+        }}
+        onMouseEnter={(e) => {
+          (e.currentTarget as HTMLElement).style.boxShadow = "0 12px 40px rgba(197,160,89,0.15), 0 4px 16px rgba(0,0,0,0.08)";
+          (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)";
+        }}
+        onMouseLeave={(e) => {
+          (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 16px rgba(0,0,0,0.07)";
+          (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+        }}
+      >
+        {/* Image */}
+        <div className="relative overflow-hidden rounded-t-2xl" style={{ aspectRatio: "4/3" }}>
+          <img
+            src={listing.images[currentImg]}
+            alt={listing.project}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+          />
 
-        {hasMultiple && (
-          <>
-            <button onClick={prev} aria-label="Previous image"
-              className="absolute left-3 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 text-white transition-all duration-200 backdrop-blur-sm">
-              <ChevronLeft size={18} />
-            </button>
-            <button onClick={next} aria-label="Next image"
-              className="absolute right-3 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 text-white transition-all duration-200 backdrop-blur-sm">
-              <ChevronRight size={18} />
-            </button>
-          </>
-        )}
-
-        {/* FOR SALE badge */}
-        <div className="absolute top-5 left-5">
-          <span
-            className="font-body text-[11px] tracking-[0.16em] uppercase px-4 py-1.5 rounded-full"
-            style={{
-              background: "rgba(197,160,89,0.92)",
-              color: "#fff",
-              backdropFilter: "blur(6px)",
-              border: "1px solid rgba(197,160,89,0.6)",
-            }}
-          >
-            {listing.status}
+          {/* Category badge */}
+          <span className="absolute top-3 left-3 z-10 font-body text-[11px] tracking-[0.14em] uppercase px-3 py-1 rounded-md bg-white text-[#1A1A1A] font-medium shadow-sm">
+            {listing.category}
           </span>
-        </div>
-      </div>
 
-      {/* Content */}
-      <div className="flex flex-col gap-4 p-7 lg:p-8 flex-1">
-        <div>
-          <h3 className="font-display text-[22px] md:text-[24px] text-[#1A1A1A] leading-tight group-hover:text-[#C5A059] transition-colors duration-300">
+          {/* For Sale badge */}
+          <span className="absolute top-3 right-3 z-10 font-body text-[11px] tracking-[0.14em] uppercase px-3 py-1 rounded-md bg-[#C5A059] text-white font-medium shadow-sm">
+            For Sale
+          </span>
+
+          {hasMultiple && (
+            <>
+              <button onClick={prev} aria-label="Previous image"
+                className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-black/40 hover:bg-black/65 text-white flex items-center justify-center backdrop-blur-sm transition-all">
+                <ChevronLeft size={14} />
+              </button>
+              <button onClick={next} aria-label="Next image"
+                className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-black/40 hover:bg-black/65 text-white flex items-center justify-center backdrop-blur-sm transition-all">
+                <ChevronRight size={14} />
+              </button>
+            </>
+          )}
+        </div>
+
+        {/* Body */}
+        <div className="flex flex-col flex-1 p-4">
+          {/* Title */}
+          <h3 className="font-display text-[17px] text-[#1A1A1A] leading-snug group-hover:text-[#C5A059] transition-colors duration-300 mb-1">
             {listing.project}
           </h3>
-          <p className="font-body text-[#8A8A8A] text-[13px] tracking-[0.12em] uppercase mt-1">
-            {listing.type}
-          </p>
-        </div>
 
-        <div className="w-8 h-px bg-[#C5A059]" />
+          {/* Location */}
+          <div className="flex items-center gap-1.5 mb-3">
+            <MapPin size={12} className="text-[#C5A059] flex-shrink-0" />
+            <span className="font-body text-[12px] text-[#7A7A7A]">{listing.location}</span>
+          </div>
 
-        <div>
-          <p className="font-body text-[11px] text-[#9A9A9A] tracking-[0.18em] uppercase mb-1">
-            {listing.priceLabel}
-          </p>
-          <p className="font-display text-[26px] md:text-[28px] text-[#1A1A1A] leading-none">
-            {listing.price}
-          </p>
-        </div>
+          {/* Stats row */}
+          <div className="flex items-center gap-3 mb-4 pb-4 border-b border-[#F0EBE1]">
+            <div className="flex items-center gap-1.5">
+              <Bed size={13} className="text-[#C5A059]" />
+              <span className="font-body text-[12px] text-[#5A5A5A]">
+                {listing.beds === 0 ? "Studio" : `${listing.beds} Bed`}
+              </span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <Bath size={13} className="text-[#C5A059]" />
+              <span className="font-body text-[12px] text-[#5A5A5A]">{listing.baths} Bath</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <Maximize2 size={13} className="text-[#C5A059]" />
+              <span className="font-body text-[12px] text-[#5A5A5A]">{listing.sqft} Sq.Ft</span>
+            </div>
+          </div>
 
-        <div className="flex flex-col gap-2 pt-1">
-          <div className="flex items-center gap-3">
-            <span className="w-3 h-px bg-[#C5A059] flex-shrink-0" />
-            <span className="font-body text-[13px] text-[#5A5A5A]">
-              <span className="font-medium text-[#1A1A1A]">Contract signed:</span>{" "}
-              {listing.contract}
-            </span>
+          {/* Price box */}
+          <div className="bg-[#FAFAF8] border border-[#EDE6D8] rounded-xl px-4 py-3 mb-4">
+            <p className="font-body text-[10px] text-[#9A9A9A] tracking-[0.16em] uppercase mb-0.5">{listing.pricePeriod}</p>
+            <p className="font-display text-[20px] text-[#1A1A1A] leading-none">{listing.price}</p>
+            {listing.contract && (
+              <p className="font-body text-[11px] text-[#9A9A9A] mt-1">{listing.contract}</p>
+            )}
+          </div>
+
+          {/* Agent footer */}
+          <div className="flex items-center gap-3 mt-auto pt-1">
+            <img
+              src="/dulce-portrait.png"
+              alt="Dulce Escobar"
+              className="w-9 h-9 rounded-full object-cover flex-shrink-0 border-2 border-[#EDE6D8]"
+            />
+            <div className="flex-1 min-w-0">
+              <p className="font-body text-[10px] text-[#9A9A9A] leading-none mb-0.5">Listed By</p>
+              <p className="font-body text-[12px] text-[#1A1A1A] font-medium truncate">Dulce Escobar</p>
+            </div>
+            <div className="flex items-center gap-2 flex-shrink-0">
+              <a
+                href="tel:+971509092424"
+                onClick={(e) => e.stopPropagation()}
+                aria-label="Call agent"
+                className="w-8 h-8 rounded-full border border-[#EDE6D8] flex items-center justify-center text-[#C5A059] hover:bg-[#C5A059] hover:text-white hover:border-[#C5A059] transition-all duration-200"
+              >
+                <Phone size={13} />
+              </a>
+              <a
+                href="https://wa.me/971509092424"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                aria-label="WhatsApp agent"
+                className="w-8 h-8 rounded-full border border-[#EDE6D8] flex items-center justify-center text-[#C5A059] hover:bg-[#C5A059] hover:text-white hover:border-[#C5A059] transition-all duration-200"
+              >
+                <MessageCircle size={13} />
+              </a>
+            </div>
           </div>
         </div>
-
-        <div className="pt-2 mt-auto">
-          <Link
-            href="/contact-us"
-            className="inline-block w-full text-center font-body text-[13px] tracking-[0.18em] uppercase py-4 transition-all duration-300"
-            style={{ borderRadius: "50px", border: "1px solid #C5A059", color: "#C5A059" }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.background = "#C5A059";
-              (e.currentTarget as HTMLAnchorElement).style.color = "#fff";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.background = "transparent";
-              (e.currentTarget as HTMLAnchorElement).style.color = "#C5A059";
-            }}
-          >
-            Request Details
-          </Link>
-        </div>
-      </div>
+      </Link>
     </motion.div>
   );
 }
