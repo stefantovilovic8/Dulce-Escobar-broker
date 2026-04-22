@@ -345,7 +345,7 @@ export const translations: Record<Language, Record<string, string>> = {
       "city.item3.text": "Curated recommendations for high-end dining, wellness centers, and culture in Dubai.",
 
       "listings.eyebrow": "Featured Listings",
-      "listings.headline": "Available Properties",
+      "listings.headline": "Properties for Rent in Dubai",
       "listings.annual_rent": "Annual Rent",
       "listings.payment": "Payment",
       "listings.contract": "Contract",
