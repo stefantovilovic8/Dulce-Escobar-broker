@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Header from "@/components/sections/header";
-import RentHero from "@/components/sections/rent-hero";
 import InvestmentListings from "@/components/sections/investment-listings";
 import { PartnerCarousel } from "@/components/sections/who-we-are";
 import { FriendsAndPartnersTitle } from "@/components/sections/services-we-offer";
@@ -27,7 +26,6 @@ export default function ServicesPage() {
     <div className="min-h-screen" style={{ backgroundColor: pageBg }}>
       <Header bgColor={pageBg} />
       <main>
-        <RentHero />
 <InvestmentListings />
         <FriendsAndPartnersTitle />
         <PartnerCarousel />
