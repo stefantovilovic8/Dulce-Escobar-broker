@@ -12,11 +12,16 @@ import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 
 const IMAGES = [
-  "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1600&q=90&fit=crop",
-  "https://images.unsplash.com/photo-1600607688066-890987f18a86?w=1600&q=90&fit=crop",
-  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1600&q=90&fit=crop",
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=90&fit=crop",
-  "https://images.unsplash.com/photo-1600573472550-8090733a21e0?w=1600&q=90&fit=crop",
+  "/pearl-1.jpg",
+  "/pearl-2.jpg",
+  "/pearl-3.jpg",
+  "/pearl-4.jpg",
+  "/pearl-5.jpg",
+  "/pearl-6.jpg",
+  "/pearl-7.jpg",
+  "/pearl-8.jpg",
+  "/pearl-9.jpg",
+  "/pearl-10.jpg",
 ];
 
 const AMENITIES = [
