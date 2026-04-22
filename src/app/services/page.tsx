@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Header from "@/components/sections/header";
 import RentHero from "@/components/sections/rent-hero";
-import RentIntro from "@/components/sections/rent-intro";
 import InvestmentListings from "@/components/sections/investment-listings";
 import { PartnerCarousel } from "@/components/sections/who-we-are";
 import { FriendsAndPartnersTitle } from "@/components/sections/services-we-offer";
@@ -29,8 +28,7 @@ export default function ServicesPage() {
       <Header bgColor={pageBg} />
       <main>
         <RentHero />
-        <RentIntro />
-        <InvestmentListings />
+<InvestmentListings />
         <FriendsAndPartnersTitle />
         <PartnerCarousel />
       </main>
