@@ -127,6 +127,54 @@ const EXTENDED_SPECS: Record<string, {
       },
     ],
   },
+  "binghatti-aurora": {
+    floor: "Mid-to-High Floor",
+    view: "City View",
+    parking: "1 Space",
+    status: "Available",
+    paymentTerms: "80,000 AED / Yearly",
+    amenities: [
+      {
+        category: "Interior & Comfort",
+        items: [
+          "Fully Fitted Kitchen",
+          "Kitchen Appliances",
+          "Built-in Wardrobes",
+          "Central A/C",
+          "Balcony",
+        ],
+      },
+      {
+        category: "Wellness & Leisure",
+        items: [
+          "Swimming Pool",
+          "Gymnasium",
+          "Jacuzzi",
+          "Sauna",
+          "Steam Room",
+        ],
+      },
+      {
+        category: "Building & Outdoor",
+        items: [
+          "Covered Parking",
+          "BBQ Area",
+          "Children's Play Area",
+          "Communal Gardens",
+        ],
+      },
+      {
+        category: "Connectivity & Lifestyle",
+        items: [
+          "Broadband Ready",
+          "Public Transport",
+          "Restaurants",
+          "Shops",
+          "24/7 Security",
+        ],
+      },
+    ],
+  },
   "binghatti-azure-sale": {
     floor: "Investment Grade",
     view: "City View",

@@ -24,6 +24,10 @@ export const LISTINGS_DATA = [
     status: "available",
     images: [
       "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/1017953b-88db-4b32-a0de-2aa467c6e8ef-1773006353346.JPG?width=1600&height=1600&resize=contain",
+      "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/007aea4c-54d1-406e-bf6e-b272ac2f0e58-1773006354631.JPG?width=1600&height=1600&resize=contain",
+      "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/1017953b-88db-4b32-a0de-2aa467c6e8ef-1773006353346.JPG?width=800&height=800&resize=contain",
+      "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/007aea4c-54d1-406e-bf6e-b272ac2f0e58-1773006354631.JPG?width=800&height=800&resize=contain",
+      "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/1017953b-88db-4b32-a0de-2aa467c6e8ef-1773006353346.JPG?width=1200&height=1200&resize=contain",
     ],
     description: "Elegant studio apartment in the prestigious Binghatti Aurora tower, located in the heart of Business Bay. This thoughtfully designed unit offers breathtaking views, premium finishes, and access to world-class amenities.",
   },
@@ -97,6 +101,10 @@ export const LISTINGS_DATA = [
     status: "for-sale",
     images: [
       "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/007aea4c-54d1-406e-bf6e-b272ac2f0e58-1773006354631.JPG?width=1600&height=1600&resize=contain",
+      "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/1017953b-88db-4b32-a0de-2aa467c6e8ef-1773006353346.JPG?width=1600&height=1600&resize=contain",
+      "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/007aea4c-54d1-406e-bf6e-b272ac2f0e58-1773006354631.JPG?width=800&height=800&resize=contain",
+      "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/1017953b-88db-4b32-a0de-2aa467c6e8ef-1773006353346.JPG?width=800&height=800&resize=contain",
+      "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/007aea4c-54d1-406e-bf6e-b272ac2f0e58-1773006354631.JPG?width=1200&height=1200&resize=contain",
     ],
     description: "Elegant studio apartment in the prestigious Binghatti Azure tower, perfectly positioned in Business Bay — Dubai's most vibrant mixed-use district. This income-generating unit is currently tenanted until August 2028, making it a prime turnkey investment with immediate rental returns and strong capital appreciation potential.",
     salePrice: "720,000 AED",
@@ -119,6 +127,10 @@ export const LISTINGS_DATA = [
     status: "for-sale",
     images: [
       "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/1017953b-88db-4b32-a0de-2aa467c6e8ef-1773006353346.JPG?width=1600&height=1600&resize=contain",
+      "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/007aea4c-54d1-406e-bf6e-b272ac2f0e58-1773006354631.JPG?width=1600&height=1600&resize=contain",
+      "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/1017953b-88db-4b32-a0de-2aa467c6e8ef-1773006353346.JPG?width=800&height=800&resize=contain",
+      "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/007aea4c-54d1-406e-bf6e-b272ac2f0e58-1773006354631.JPG?width=800&height=800&resize=contain",
+      "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/1017953b-88db-4b32-a0de-2aa467c6e8ef-1773006353346.JPG?width=1200&height=1200&resize=contain",
     ],
     description: "Sophisticated studio apartment in the iconic Binghatti Aurora tower, located in the heart of Business Bay. Currently tenanted until November 2028, this investment-ready unit offers immediate rental income with long-term capital growth prospects in one of Dubai's most sought-after addresses.",
     salePrice: "750,000 AED",
