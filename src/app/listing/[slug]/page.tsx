@@ -412,6 +412,37 @@ function ListingDetail({
                 </div>
               </motion.div>
 
+              {/* QR Code — Tulip 2806 only */}
+              {listing.slug === "binghatti-tulip-2806" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.15 }}
+                  className="mt-16 pt-12 border-t border-[#F0EBE1]"
+                >
+                  <div className="flex flex-col items-center text-center">
+                    <span className="text-[#C5A059] font-body text-xs tracking-[0.28em] uppercase mb-4">
+                      Scan for Details
+                    </span>
+                    <div className="w-8 h-px bg-[#C5A059] mb-8" />
+                    <div
+                      className="p-4 bg-white rounded-2xl border border-[#EDE6D8]"
+                      style={{ boxShadow: "0 4px 24px rgba(197,160,89,0.10)" }}
+                    >
+                      <img
+                        src="/qr-tulip-2806.png"
+                        alt="QR Code – Binghatti Tulip 2806"
+                        className="w-48 h-48 object-contain"
+                      />
+                    </div>
+                    <p className="font-body text-[13px] text-[#7A7A7A] mt-5 max-w-[300px] leading-relaxed font-light">
+                      Scan this code to instantly access the digital brochure and booking details.
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+
               {/* QR Code — Tulip 3007 only */}
               {listing.slug === "binghatti-tulip-3007" && (
                 <motion.div
