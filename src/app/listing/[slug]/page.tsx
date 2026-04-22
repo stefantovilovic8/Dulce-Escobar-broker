@@ -145,7 +145,7 @@ function ListingDetail({
         {/* ── Hero Gallery ── */}
         <div className="relative w-full bg-[#0A0A0A]" style={{ paddingTop: "72px" }}>
           {/* Main image */}
-          <div className="relative overflow-hidden" style={{ aspectRatio: "16/7" }}>
+          <div className="relative overflow-hidden" style={{ aspectRatio: "21/7" }}>
             <img
               src={listing.images[activeImg]}
               alt={`${listing.project} – ${activeImg + 1}`}
@@ -183,9 +183,6 @@ function ListingDetail({
                 </span>
                 <h1 className="font-display text-white text-3xl md:text-5xl leading-tight mb-2">
                   {listing.project}
-                  {extended.unitTitle && (
-                    <span className="text-[#C5A059] ml-3 text-2xl md:text-3xl">— {extended.unitTitle}</span>
-                  )}
                 </h1>
                 <div className="flex items-center gap-2 mt-2">
                   <MapPin size={14} className="text-[#C5A059]" />
@@ -217,14 +214,14 @@ function ListingDetail({
         </div>
 
         {/* ── Specs Bar ── */}
-        <div className="bg-[#1A1A1A] px-6 md:px-14 py-5">
-          <div className="max-w-[1200px] mx-auto flex flex-wrap gap-x-8 gap-y-4 justify-between">
+        <div className="bg-[#1A1A1A] px-6 md:px-14 py-3">
+          <div className="max-w-[1200px] mx-auto flex flex-wrap gap-x-6 gap-y-2 justify-between">
             {specs.map((s) => (
-              <div key={s.label} className="flex items-center gap-2.5">
+              <div key={s.label} className="flex items-center gap-2">
                 <span className="text-[#C5A059]">{s.icon}</span>
                 <div>
-                  <p className="font-body text-[10px] text-white/40 tracking-[0.16em] uppercase leading-none mb-0.5">{s.label}</p>
-                  <p className="font-body text-[13px] text-white font-medium">{s.value}</p>
+                  <p className="font-body text-[9px] text-white/40 tracking-[0.14em] uppercase leading-none mb-0.5">{s.label}</p>
+                  <p className="font-body text-[12px] text-white font-medium">{s.value}</p>
                 </div>
               </div>
             ))}
