@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
 
 const BENEFITS = [
@@ -14,9 +14,6 @@ const BENEFITS = [
 
 export default function OffPlanContent() {
   const { t } = useLanguage();
-  const imgRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: imgRef, offset: ["start end", "end start"] });
-  const parallax = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
 
   return (
     <>
