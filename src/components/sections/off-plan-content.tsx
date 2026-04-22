@@ -20,58 +20,6 @@ export default function OffPlanContent() {
 
   return (
     <>
-      {/* Why Off-Plan */}
-      <section className="bg-[#FAFAF8] py-[100px] lg:py-[120px] overflow-hidden">
-        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-[1400px]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-col gap-6 order-2 lg:order-1"
-            >
-              <span className="text-[#C5A059] font-body text-xs tracking-[0.22em] uppercase">
-                {t("offplanPage.intro.eyebrow")}
-              </span>
-              <h2 className="font-display text-3xl md:text-4xl xl:text-[46px] leading-tight text-[#1A1A1A]">
-                {t("offplanPage.intro.headline")}
-              </h2>
-              <p className="font-body text-[#7A7A7A] text-base md:text-[17px] leading-relaxed italic">
-                {t("offplanPage.intro.italic")}
-              </p>
-              <div className="w-10 h-px bg-[#C5A059]" />
-              <p className="font-body text-[#4A4A4A] text-[15px] md:text-[16px] leading-[1.85] font-light">
-                {t("offplanPage.intro.body")}
-              </p>
-              <Link
-                href="/contact-us"
-                className="self-start inline-flex items-center justify-center rounded-full px-7 py-3 text-sm font-medium border border-[#C5A059] text-[#C5A059] hover:bg-[#C5A059] hover:text-white transition-all duration-300"
-              >
-                {t("offplanPage.intro.cta")}
-              </Link>
-            </motion.div>
-
-            <div
-              ref={imgRef}
-              className="relative overflow-hidden order-1 lg:order-2 aspect-[4/5] lg:aspect-auto lg:h-[620px]"
-            >
-              <motion.div
-                style={{ y: parallax }}
-                className="absolute inset-0 w-full h-[116%] -top-[8%]"
-              >
-                <img
-                  src="/offplan-intro.png"
-                  alt="Dubai off-plan construction"
-                  loading="lazy" className="w-full h-full object-cover"
-                />
-              </motion.div>
-              <div className="absolute top-6 right-6 w-12 h-12 border-t border-r border-[#C5A059]/60 pointer-events-none" />
-              <div className="absolute bottom-6 left-6 w-12 h-12 border-b border-l border-[#C5A059]/60 pointer-events-none" />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Benefits Grid */}
       <section className="bg-[#F5F3EE] py-[100px] lg:py-[120px]">
