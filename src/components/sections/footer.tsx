@@ -111,30 +111,8 @@ export default function Footer({ bgColor }: { bgColor?: string }) {
             </div>
           </div>
 
-          {/* RIGHT: Quick Links + Get In Touch side by side */}
+          {/* RIGHT: Get In Touch */}
           <div className="flex flex-row gap-16">
-            {/* Quick Links */}
-            <div className="space-y-6">
-              <h3 className="text-[#1A1A1A] text-sm font-semibold tracking-wider uppercase">{t("footer.quickLinks")}</h3>
-              <ul className="space-y-3 text-sm text-[#4A4A4A]">
-                <li>
-                  <Link href="/" className="transition-transform duration-300 hover:scale-105 inline-block">{t("nav.home")}</Link>
-                </li>
-                <li>
-                  <Link href="/offplan" className="transition-transform duration-300 hover:scale-105 inline-block">{t("nav.offplan")}</Link>
-                </li>
-                <li>
-                  <Link href="/services" className="transition-transform duration-300 hover:scale-105 inline-block">{t("nav.holidayhomes")}</Link>
-                </li>
-                <li>
-                  <Link href="/concierge" className="transition-transform duration-300 hover:scale-105 inline-block">{t("nav.concierge")}</Link>
-                </li>
-                <li>
-                  <Link href="/contact-us" className="transition-transform duration-300 hover:scale-105 inline-block">{t("nav.contact")}</Link>
-                </li>
-              </ul>
-            </div>
-
             {/* Get In Touch */}
             <div className="space-y-6">
               <h3 className="text-[#1A1A1A] text-sm font-semibold tracking-wider uppercase">{t("footer.getInTouch")}</h3>
