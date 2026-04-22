@@ -18,50 +18,6 @@ export default function OffPlanContent() {
   return (
     <>
 
-      {/* Benefits Grid */}
-      <section className="bg-[#F5F3EE] py-[100px] lg:py-[120px]">
-        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-[1200px]">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col items-center text-center mb-16"
-          >
-            <span className="text-[#C5A059] font-body text-xs tracking-[0.22em] uppercase mb-4">
-              {t("offplanPage.benefits.eyebrow")}
-            </span>
-            <h2 className="font-display text-3xl md:text-4xl xl:text-[46px] leading-tight text-[#1A1A1A]">
-              {t("offplanPage.benefits.headline")}
-            </h2>
-            <div className="w-10 h-px bg-[#C5A059] mt-5" />
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-            {BENEFITS.map((b, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
-                className="bg-white p-8 lg:p-10"
-                style={{ borderRadius: "32px", boxShadow: "0 4px 24px rgba(0,0,0,0.05)" }}
-              >
-                <span className="text-[#C5A059] text-2xl mb-4 block">◈</span>
-                <h3 className="font-display text-[22px] text-[#1A1A1A] mb-3 leading-tight">
-                  {t(b.titleKey)}
-                </h3>
-                <div className="w-8 h-px bg-[#C5A059] mb-4" />
-                <p className="font-body text-[#5A5A5A] text-[15px] leading-[1.8] font-light">
-                  {t(b.bodyKey)}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Featured Off-Plan Projects */}
       <section className="bg-[#FAFAF8] py-[100px] lg:py-[120px]">
         <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-[1200px]">
@@ -129,6 +85,50 @@ export default function OffPlanContent() {
               </div>
             </Link>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Benefits Grid */}
+      <section className="bg-[#F5F3EE] py-[100px] lg:py-[120px]">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-[1200px]">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col items-center text-center mb-16"
+          >
+            <span className="text-[#C5A059] font-body text-xs tracking-[0.22em] uppercase mb-4">
+              {t("offplanPage.benefits.eyebrow")}
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl xl:text-[46px] leading-tight text-[#1A1A1A]">
+              {t("offplanPage.benefits.headline")}
+            </h2>
+            <div className="w-10 h-px bg-[#C5A059] mt-5" />
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+            {BENEFITS.map((b, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
+                className="bg-white p-8 lg:p-10"
+                style={{ borderRadius: "32px", boxShadow: "0 4px 24px rgba(0,0,0,0.05)" }}
+              >
+                <span className="text-[#C5A059] text-2xl mb-4 block">◈</span>
+                <h3 className="font-display text-[22px] text-[#1A1A1A] mb-3 leading-tight">
+                  {t(b.titleKey)}
+                </h3>
+                <div className="w-8 h-px bg-[#C5A059] mb-4" />
+                <p className="font-body text-[#5A5A5A] text-[15px] leading-[1.8] font-light">
+                  {t(b.bodyKey)}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
