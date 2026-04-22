@@ -23,6 +23,55 @@ const EXTENDED_SPECS: Record<string, {
   paymentTerms?: string;
   amenities?: { category: string; items: string[] }[];
 }> = {
+  "binghatti-tulip-2806": {
+    unitTitle: "Unit 2806",
+    floor: "28th Floor (High Floor)",
+    view: "Community View",
+    status: "Vacant",
+    paymentTerms: "AED 75,000 (4 Cheques) · AED 80,000 (6 Cheques)",
+    amenities: [
+      {
+        category: "Interior & Comfort",
+        items: [
+          "Fully Furnished",
+          "Fully Fitted Kitchen",
+          "Kitchen Appliances",
+          "Built-in Wardrobes",
+          "Central A/C",
+          "Balcony",
+        ],
+      },
+      {
+        category: "Exclusive Wellness",
+        items: [
+          "Private Swimming Pool",
+          "Shared Swimming Pool",
+          "Jacuzzi",
+          "Sauna",
+          "Steam Room",
+          "Gymnasium",
+        ],
+      },
+      {
+        category: "Lifestyle & Building",
+        items: [
+          "BBQ Area",
+          "Entertaining Area",
+          "Covered Parking",
+          "Children's Play Area",
+          "Tennis Courts",
+        ],
+      },
+      {
+        category: "Location Benefits",
+        items: [
+          "Pets Allowed",
+          "Public Park nearby",
+          "Dedicated Parking",
+        ],
+      },
+    ],
+  },
   "binghatti-phantom": {
     unitTitle: "Unit 409",
     floor: "4th Floor",
@@ -172,7 +221,7 @@ function ListingDetail({
                   {listing.category} · For Rent
                 </span>
                 <p className="font-display text-white text-[22px] leading-none">
-                  {isPhantom ? "110,000 AED Yearly" : ""}
+                  {isPhantom ? "110,000 AED Yearly" : listing.slug === "binghatti-tulip-2806" ? "From 75,000 AED Yearly" : ""}
                 </p>
               </div>
             </div>
@@ -326,11 +375,24 @@ function ListingDetail({
                 {/* Price card */}
                 <div className="bg-white border border-[#EDE6D8] rounded-2xl p-6"
                   style={{ boxShadow: "0 4px 32px rgba(197,160,89,0.12)" }}>
-                  <p className="font-body text-[11px] text-[#9A9A9A] tracking-[0.18em] uppercase mb-1">Annual Rent</p>
-                  <p className="font-display text-[36px] text-[#1A1A1A] leading-none">
-                    {isPhantom ? "110,000 AED" : listing.priceKey.includes("tulip") ? "7,000 AED / mo" : "80,000 AED"}
-                  </p>
-                  {extended.paymentTerms && (
+                  <p className="font-body text-[11px] text-[#9A9A9A] tracking-[0.18em] uppercase mb-1">Asking Price</p>
+                  {listing.slug === "binghatti-tulip-2806" ? (
+                    <div className="flex flex-col gap-1.5 mt-1">
+                      <div className="flex items-baseline gap-2">
+                        <p className="font-display text-[28px] text-[#1A1A1A] leading-none">75,000 AED</p>
+                        <span className="font-body text-[12px] text-[#9A9A9A]">4 Cheques</span>
+                      </div>
+                      <div className="flex items-baseline gap-2">
+                        <p className="font-display text-[28px] text-[#1A1A1A] leading-none">80,000 AED</p>
+                        <span className="font-body text-[12px] text-[#9A9A9A]">6 Cheques</span>
+                      </div>
+                    </div>
+                  ) : (
+                    <p className="font-display text-[36px] text-[#1A1A1A] leading-none">
+                      {isPhantom ? "110,000 AED" : "80,000 AED"}
+                    </p>
+                  )}
+                  {extended.paymentTerms && listing.slug !== "binghatti-tulip-2806" && (
                     <div className="flex items-center gap-2 mt-3">
                       <CreditCard size={13} className="text-[#C5A059]" />
                       <span className="font-body text-[13px] text-[#5A5A5A]">{extended.paymentTerms}</span>
