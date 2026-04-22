@@ -13,6 +13,12 @@ import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import { LISTINGS_DATA } from "@/components/sections/investment-listings";
 
+// Type extension for sale listing fields
+type ListingWithSale = typeof LISTINGS_DATA[0] & {
+  salePrice?: string;
+  saleContract?: string;
+};
+
 // Extended specs per slug
 const EXTENDED_SPECS: Record<string, {
   unitTitle?: string;
@@ -121,6 +127,100 @@ const EXTENDED_SPECS: Record<string, {
       },
     ],
   },
+  "binghatti-azure-sale": {
+    floor: "Investment Grade",
+    view: "City View",
+    status: "Tenanted",
+    paymentTerms: "Rented until 28.8.2028",
+    amenities: [
+      {
+        category: "Interior & Comfort",
+        items: [
+          "Fully Fitted Kitchen",
+          "Kitchen Appliances",
+          "Built-in Wardrobes",
+          "Central A/C",
+          "Balcony",
+        ],
+      },
+      {
+        category: "Wellness & Leisure",
+        items: [
+          "Swimming Pool",
+          "Gymnasium",
+          "Jacuzzi",
+          "Sauna",
+          "Steam Room",
+        ],
+      },
+      {
+        category: "Building & Outdoor",
+        items: [
+          "Covered Parking",
+          "BBQ Area",
+          "Children's Play Area",
+          "Communal Gardens",
+        ],
+      },
+      {
+        category: "Connectivity & Lifestyle",
+        items: [
+          "Broadband Ready",
+          "Public Transport",
+          "Restaurants",
+          "Shops",
+          "24/7 Security",
+        ],
+      },
+    ],
+  },
+  "binghatti-aurora-sale": {
+    floor: "Investment Grade",
+    view: "City View",
+    status: "Tenanted",
+    paymentTerms: "Rented until 30.11.2028",
+    amenities: [
+      {
+        category: "Interior & Comfort",
+        items: [
+          "Fully Fitted Kitchen",
+          "Kitchen Appliances",
+          "Built-in Wardrobes",
+          "Central A/C",
+          "Balcony",
+        ],
+      },
+      {
+        category: "Wellness & Leisure",
+        items: [
+          "Swimming Pool",
+          "Gymnasium",
+          "Jacuzzi",
+          "Sauna",
+          "Steam Room",
+        ],
+      },
+      {
+        category: "Building & Outdoor",
+        items: [
+          "Covered Parking",
+          "BBQ Area",
+          "Children's Play Area",
+          "Communal Gardens",
+        ],
+      },
+      {
+        category: "Connectivity & Lifestyle",
+        items: [
+          "Broadband Ready",
+          "Public Transport",
+          "Restaurants",
+          "Shops",
+          "24/7 Security",
+        ],
+      },
+    ],
+  },
   "binghatti-phantom": {
     unitTitle: "Unit 409",
     floor: "4th Floor",
@@ -184,7 +284,7 @@ const EXTENDED_SPECS: Record<string, {
 export default function ListingPage() {
   const params = useParams();
   const slug = params?.slug as string;
-  const listing = LISTINGS_DATA.find((l) => l.slug === slug);
+  const listing = LISTINGS_DATA.find((l) => l.slug === slug) as ListingWithSale | undefined;
   if (!listing) return notFound();
   return <ListingDetail listing={listing} extended={EXTENDED_SPECS[slug] ?? {}} />;
 }
@@ -193,7 +293,7 @@ function ListingDetail({
   listing,
   extended,
 }: {
-  listing: typeof LISTINGS_DATA[0];
+  listing: ListingWithSale;
   extended: typeof EXTENDED_SPECS[string];
 }) {
   const [activeImg, setActiveImg] = useState(0);
@@ -203,6 +303,7 @@ function ListingDetail({
   const next = () => setActiveImg((c) => (c === listing.images.length - 1 ? 0 : c + 1));
 
   const isPhantom = listing.slug === "binghatti-phantom";
+  const isSaleListing = listing.status === "for-sale";
 
   // Build specs bar
   const specs = [
@@ -267,10 +368,16 @@ function ListingDetail({
               {/* Price tag bottom-left */}
               <div className="absolute bottom-5 left-5 z-10">
                 <span className="font-body text-[11px] tracking-[0.18em] uppercase text-[#C5A059] block mb-1">
-                  {listing.category} · For Rent
+                  {listing.category} · {isSaleListing ? "For Sale" : "For Rent"}
                 </span>
                 <p className="font-display text-white text-[22px] leading-none">
-                  {isPhantom ? "110,000 AED Yearly" : (listing.slug === "binghatti-tulip-2806" || listing.slug === "binghatti-tulip-3007") ? "From 75,000 AED Yearly" : ""}
+                  {isSaleListing
+                    ? listing.salePrice
+                    : isPhantom
+                      ? "110,000 AED Yearly"
+                      : (listing.slug === "binghatti-tulip-2806" || listing.slug === "binghatti-tulip-3007")
+                        ? "From 75,000 AED Yearly"
+                        : ""}
                 </p>
               </div>
             </div>
@@ -328,7 +435,7 @@ function ListingDetail({
                 </div>
               </div>
               <span className="font-body text-[11px] tracking-[0.2em] uppercase text-[#C5A059] bg-white/5 border border-[#C5A059]/30 px-4 py-2 rounded-full self-start sm:self-auto">
-                Available for Rent
+                {isSaleListing ? "Available for Sale" : "Available for Rent"}
               </span>
             </motion.div>
           </div>
@@ -353,7 +460,7 @@ function ListingDetail({
         <div className="container mx-auto px-5 md:px-10 lg:px-14 max-w-[1200px] py-16">
 
           {/* Back link */}
-          <Link href="/services" className="inline-flex items-center gap-2 text-[#C5A059] font-body text-sm hover:gap-3 transition-all duration-200 mb-12 block">
+          <Link href={isSaleListing ? "/sale" : "/services"} className="inline-flex items-center gap-2 text-[#C5A059] font-body text-sm hover:gap-3 transition-all duration-200 mb-12 block">
             <ArrowLeft size={15} />
             Back to Listings
           </Link>
@@ -486,8 +593,20 @@ function ListingDetail({
                 {/* Price card */}
                 <div className="bg-white border border-[#EDE6D8] rounded-2xl p-6"
                   style={{ boxShadow: "0 4px 32px rgba(197,160,89,0.12)" }}>
-                  <p className="font-body text-[11px] text-[#9A9A9A] tracking-[0.18em] uppercase mb-1">Asking Price</p>
-                  {(listing.slug === "binghatti-tulip-2806" || listing.slug === "binghatti-tulip-3007") ? (
+                  <p className="font-body text-[11px] text-[#9A9A9A] tracking-[0.18em] uppercase mb-1">
+                  {isSaleListing ? "Sale Price" : "Asking Price"}
+                </p>
+                  {isSaleListing ? (
+                    <div>
+                      <p className="font-display text-[36px] text-[#1A1A1A] leading-none">{listing.salePrice}</p>
+                      {listing.saleContract && (
+                        <div className="flex items-center gap-2 mt-3">
+                          <CreditCard size={13} className="text-[#C5A059]" />
+                          <span className="font-body text-[13px] text-[#5A5A5A]">{listing.saleContract}</span>
+                        </div>
+                      )}
+                    </div>
+                  ) : (listing.slug === "binghatti-tulip-2806" || listing.slug === "binghatti-tulip-3007") ? (
                     <div className="flex flex-col gap-1.5 mt-1">
                       <div className="flex items-baseline gap-2">
                         <p className="font-display text-[28px] text-[#1A1A1A] leading-none">75,000 AED</p>
@@ -503,7 +622,7 @@ function ListingDetail({
                       {isPhantom ? "110,000 AED" : "80,000 AED"}
                     </p>
                   )}
-                  {extended.paymentTerms && listing.slug !== "binghatti-tulip-2806" && listing.slug !== "binghatti-tulip-3007" && (
+                  {extended.paymentTerms && !isSaleListing && listing.slug !== "binghatti-tulip-2806" && listing.slug !== "binghatti-tulip-3007" && (
                     <div className="flex items-center gap-2 mt-3">
                       <CreditCard size={13} className="text-[#C5A059]" />
                       <span className="font-body text-[13px] text-[#5A5A5A]">{extended.paymentTerms}</span>
