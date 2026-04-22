@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Header from "@/components/sections/header";
-import OffPlanHero from "@/components/sections/off-plan-hero";
 import OffPlanContent from "@/components/sections/off-plan-content";
 import { PartnerCarousel } from "@/components/sections/who-we-are";
 import { FriendsAndPartnersTitle } from "@/components/sections/services-we-offer";
@@ -27,8 +26,7 @@ export default function OffPlanPropertiesPage() {
     <div className="min-h-screen" style={{ backgroundColor: pageBg }}>
       <Header bgColor={pageBg} />
       <main>
-        <OffPlanHero />
-        <OffPlanContent />
+<OffPlanContent />
         <FriendsAndPartnersTitle />
         <PartnerCarousel />
       </main>
