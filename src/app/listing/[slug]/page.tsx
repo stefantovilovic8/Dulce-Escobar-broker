@@ -143,74 +143,97 @@ function ListingDetail({
 
       <main>
         {/* ── Hero Gallery ── */}
-        <div className="relative w-full bg-[#0A0A0A]" style={{ paddingTop: "72px" }}>
-          {/* Main image */}
-          <div className="relative overflow-hidden" style={{ aspectRatio: "21/7" }}>
-            <img
-              src={listing.images[activeImg]}
-              alt={`${listing.project} – ${activeImg + 1}`}
-              className="w-full h-full object-cover opacity-90 transition-opacity duration-500"
-            />
-            {/* Dark gradient overlay for text legibility */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+        <div className="w-full bg-[#0A0A0A]" style={{ paddingTop: "72px" }}>
+          <div className="flex gap-1 h-[420px] md:h-[520px]">
 
-            {/* Arrow nav */}
-            {listing.images.length > 1 && (
-              <>
-                <button onClick={prev} aria-label="Previous"
-                  className="absolute left-5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-black/40 hover:bg-black/70 text-white flex items-center justify-center backdrop-blur-sm transition-all">
-                  <ChevronLeft size={22} />
-                </button>
-                <button onClick={next} aria-label="Next"
-                  className="absolute right-5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-black/40 hover:bg-black/70 text-white flex items-center justify-center backdrop-blur-sm transition-all">
-                  <ChevronRight size={22} />
-                </button>
-                <span className="absolute top-5 right-5 font-body text-[12px] text-white bg-black/40 backdrop-blur-sm px-3 py-1.5 rounded-full z-10">
-                  {activeImg + 1} / {listing.images.length}
-                </span>
-              </>
-            )}
+            {/* Main large image — left ~62% */}
+            <div className="relative overflow-hidden flex-[62]">
+              <img
+                src={listing.images[activeImg]}
+                alt={listing.project}
+                className="w-full h-full object-cover transition-all duration-500"
+              />
+              {/* gradient for text */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
-            {/* Hero text overlay */}
-            <div className="absolute bottom-0 left-0 right-0 z-10 px-6 md:px-14 pb-10 md:pb-14">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <span className="inline-block font-body text-[11px] tracking-[0.22em] uppercase text-[#C5A059] mb-3">
+              {/* Arrow nav */}
+              <button onClick={prev} aria-label="Previous"
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-black/45 hover:bg-black/70 text-white flex items-center justify-center backdrop-blur-sm transition-all">
+                <ChevronLeft size={18} />
+              </button>
+              <button onClick={next} aria-label="Next"
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-black/45 hover:bg-black/70 text-white flex items-center justify-center backdrop-blur-sm transition-all">
+                <ChevronRight size={18} />
+              </button>
+
+              {/* Price tag bottom-left */}
+              <div className="absolute bottom-5 left-5 z-10">
+                <span className="font-body text-[11px] tracking-[0.18em] uppercase text-[#C5A059] block mb-1">
                   {listing.category} · For Rent
                 </span>
-                <h1 className="font-display text-white text-3xl md:text-5xl leading-tight mb-2">
-                  {listing.project}
-                </h1>
-                <div className="flex items-center gap-2 mt-2">
-                  <MapPin size={14} className="text-[#C5A059]" />
-                  <span className="font-body text-white/80 text-[14px]">{listing.location}</span>
-                </div>
-              </motion.div>
+                <p className="font-display text-white text-[22px] leading-none">
+                  {isPhantom ? "110,000 AED Yearly" : ""}
+                </p>
+              </div>
             </div>
+
+            {/* 2×2 grid — right ~38% */}
+            {listing.images.length > 1 && (
+              <div className="flex-[38] grid grid-cols-2 grid-rows-2 gap-1">
+                {listing.images.slice(1, 5).map((img, idx) => {
+                  const realIdx = idx + 1;
+                  const isLast = idx === 3 && listing.images.length > 5;
+                  return (
+                    <button
+                      key={realIdx}
+                      onClick={() => setActiveImg(realIdx)}
+                      className="relative overflow-hidden w-full h-full"
+                    >
+                      <img
+                        src={img}
+                        alt={`View ${realIdx + 1}`}
+                        className="w-full h-full object-cover hover:scale-[1.04] transition-transform duration-500"
+                        style={{ opacity: activeImg === realIdx ? 1 : 0.85 }}
+                      />
+                      {activeImg === realIdx && (
+                        <div className="absolute inset-0 ring-2 ring-[#C5A059] pointer-events-none" />
+                      )}
+                      {isLast && (
+                        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                          <span className="font-body text-white text-sm tracking-widest">
+                            +{listing.images.length - 5} more
+                          </span>
+                        </div>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
-          {/* Thumbnail strip */}
-          {listing.images.length > 1 && (
-            <div className="flex gap-2 px-6 md:px-14 py-4 overflow-x-auto bg-[#111]">
-              {listing.images.map((img, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setActiveImg(idx)}
-                  className="flex-shrink-0 w-20 h-14 rounded-lg overflow-hidden transition-all duration-200"
-                  style={{
-                    outline: idx === activeImg ? "2px solid #C5A059" : "2px solid transparent",
-                    outlineOffset: "2px",
-                    opacity: idx === activeImg ? 1 : 0.5,
-                  }}
-                >
-                  <img src={img} alt="" className="w-full h-full object-cover" />
-                </button>
-              ))}
-            </div>
-          )}
+          {/* Title bar below gallery */}
+          <div className="px-6 md:px-14 py-5 bg-[#0A0A0A]">
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
+            >
+              <div>
+                <h1 className="font-display text-white text-2xl md:text-3xl leading-tight">
+                  {listing.project}
+                </h1>
+                <div className="flex items-center gap-2 mt-1.5">
+                  <MapPin size={13} className="text-[#C5A059]" />
+                  <span className="font-body text-white/70 text-[13px]">{listing.location}</span>
+                </div>
+              </div>
+              <span className="font-body text-[11px] tracking-[0.2em] uppercase text-[#C5A059] bg-white/5 border border-[#C5A059]/30 px-4 py-2 rounded-full self-start sm:self-auto">
+                Available for Rent
+              </span>
+            </motion.div>
+          </div>
         </div>
 
         {/* ── Specs Bar ── */}
