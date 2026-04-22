@@ -12,9 +12,9 @@ import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 
 const IMAGES = [
-  "/pearl-1.jpg",
-  "/pearl-2.jpg",
   "/pearl-3.jpg",
+  "/pearl-2.jpg",
+  "/pearl-1.jpg",
   "/pearl-4.jpg",
   "/pearl-5.jpg",
   "/pearl-6.jpg",

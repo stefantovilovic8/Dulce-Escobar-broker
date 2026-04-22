@@ -158,7 +158,7 @@ export default function OffPlanContent() {
             >
               <div className="relative overflow-hidden rounded-t-2xl" style={{ aspectRatio: "4/3" }}>
                 <img
-                  src="/pearl-1.jpg"
+                  src="/pearl-3.jpg"
                   alt="Pearl House by Imtiaz"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
                 />
