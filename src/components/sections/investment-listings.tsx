@@ -85,10 +85,10 @@ export const LISTINGS_DATA = [
     slug: "binghatti-phantom",
     project: "Binghatti Phantom",
     category: "Apartment",
-    location: "Business Bay, Dubai",
+    location: "JVC, Jumeirah Village Circle",
     beds: 1,
     baths: 2,
-    sqft: 780,
+    sqft: 794,
     statusKey: "listings.phantom.status",
     typeKey: "listings.phantom.type",
     priceKey: "listings.phantom.price",
@@ -107,7 +107,7 @@ export const LISTINGS_DATA = [
       "/phantom-9.jpg",
       "/phantom-10.jpg",
     ],
-    description: "Exquisite fully furnished 1-bedroom apartment in the iconic Binghatti Phantom. Featuring designer interiors, a spacious open-plan living area, gourmet kitchen, and stunning city views. A rare opportunity in one of Dubai's most sought-after addresses.",
+    description: "Exquisite fully furnished 1-bedroom apartment in the iconic Binghatti Phantom — Unit 409. Featuring upgraded designer interiors, a spacious open-plan living area, fully fitted gourmet kitchen, and serene community views. A rare vacancy in one of Dubai's most sought-after residential addresses.",
   },
 ];
 
