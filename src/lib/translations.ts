@@ -77,7 +77,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "footer.services": "Services",
     "footer.getInTouch": "CONTACT",
     "footer.address": "Al Saqr Business Tower, 5000 Sheikh Zayed Road, Dubai, United Arab Emirates",
-    "footer.copyright": "Copyright © 2026 Vidals Prime. All rights reserved.",
+    "footer.copyright": "Copyright © 2026 Dulce Escobar. All rights reserved.",
     "footer.citizenship": "Second citizenship",
     "footer.business": "Business concierge service",
     "footer.property": "Concierge property management",
