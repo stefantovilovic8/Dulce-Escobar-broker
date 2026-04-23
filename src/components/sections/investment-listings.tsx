@@ -12,7 +12,7 @@ export const LISTINGS_DATA = [
     slug: "binghatti-aurora",
     project: "Binghatti Aurora",
     category: "Studio",
-    location: "Business Bay, Dubai",
+    location: "JVC, Dubai",
     beds: 0,
     baths: 1,
     sqft: 452,
