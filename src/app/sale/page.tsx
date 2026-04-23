@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Header from "@/components/sections/header";
-import SaleHero from "@/components/sections/sale-hero";
 import SaleListings from "@/components/sections/sale-listings";
 import { PartnerCarousel } from "@/components/sections/who-we-are";
 import { FriendsAndPartnersTitle } from "@/components/sections/services-we-offer";
@@ -27,8 +26,7 @@ export default function SalePage() {
     <div className="min-h-screen" style={{ backgroundColor: pageBg }}>
       <Header bgColor={pageBg} />
       <main>
-        <SaleHero />
-        <SaleListings />
+<SaleListings />
         <FriendsAndPartnersTitle />
         <PartnerCarousel />
       </main>
