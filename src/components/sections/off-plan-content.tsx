@@ -37,12 +37,12 @@ export default function OffPlanContent() {
             <div className="w-10 h-px bg-[#C5A059] mt-5" />
           </motion.div>
 
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-[420px] mx-auto"
           >
             <Link
               href="/off-plan/pearl-house-imtiaz"
@@ -85,6 +85,7 @@ export default function OffPlanContent() {
               </div>
             </Link>
           </motion.div>
+          </div>
         </div>
       </section>
 
