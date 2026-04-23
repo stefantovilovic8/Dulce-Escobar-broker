@@ -183,7 +183,7 @@ export default function InvestmentListings() {
 
         {/* Cards grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
-          {LISTINGS_DATA.map((listing, i) => (
+          {LISTINGS_DATA.filter((l) => l.status !== "for-sale").map((listing, i) => (
             <PropertyCard key={listing.id} listing={listing} index={i} t={t} />
           ))}
         </div>
