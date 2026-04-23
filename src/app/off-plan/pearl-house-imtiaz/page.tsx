@@ -334,7 +334,7 @@ export default function PearlHousePage() {
                     Enquire Now
                   </a>
                   <a
-                    href="https://wa.me/971509092424"
+                    href="https://wa.me/971588473125"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center gap-2 mt-3 border border-[#EDE6D8] hover:border-[#C5A059] text-[#1A1A1A] hover:text-[#C5A059] font-body text-[13px] tracking-[0.12em] uppercase py-3.5 rounded-xl transition-all duration-200"
@@ -379,7 +379,7 @@ export default function PearlHousePage() {
       {/* Floating CTA buttons */}
       <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
         <a
-          href="https://wa.me/971509092424"
+          href="https://wa.me/971588473125"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp"

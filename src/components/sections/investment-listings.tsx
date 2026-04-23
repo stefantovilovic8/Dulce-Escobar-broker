@@ -367,7 +367,7 @@ function PropertyCard({
                 <Phone size={13} />
               </a>
               <a
-                href="https://wa.me/971509092424"
+                href="https://wa.me/971588473125"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp agent"

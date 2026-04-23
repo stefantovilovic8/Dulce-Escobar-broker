@@ -708,7 +708,7 @@ function ListingDetail({
 
                   <div className="flex flex-col gap-3">
                     <a
-                      href="https://wa.me/971509092424"
+                      href="https://wa.me/971588473125"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2.5 w-full py-3.5 rounded-full bg-[#C5A059] text-white font-body text-[12px] tracking-[0.16em] uppercase hover:bg-[#b08c45] transition-colors duration-200"
