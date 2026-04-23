@@ -717,7 +717,7 @@ function ListingDetail({
                       WhatsApp
                     </a>
                     <a
-                      href="tel:+971509092424"
+                      href="tel:+971588473125"
                       className="flex items-center justify-center gap-2.5 w-full py-3.5 rounded-full border border-[#C5A059] text-[#C5A059] font-body text-[12px] tracking-[0.16em] uppercase hover:bg-[#C5A059] hover:text-white transition-colors duration-200"
                     >
                       <Phone size={14} />

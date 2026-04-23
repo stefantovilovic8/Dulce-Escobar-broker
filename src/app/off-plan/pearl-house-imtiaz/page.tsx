@@ -327,7 +327,7 @@ export default function PearlHousePage() {
                   </div>
 
                   <a
-                    href="tel:+971509092424"
+                    href="tel:+971588473125"
                     className="w-full flex items-center justify-center gap-2 bg-[#C5A059] hover:bg-[#b8904a] text-white font-body text-[13px] tracking-[0.12em] uppercase py-3.5 rounded-xl transition-colors duration-200"
                   >
                     <Phone size={14} />
@@ -388,7 +388,7 @@ export default function PearlHousePage() {
           <MessageCircle size={20} />
         </a>
         <a
-          href="tel:+971509092424"
+          href="tel:+971588473125"
           aria-label="Call"
           className="w-12 h-12 rounded-full bg-[#C5A059] text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200"
         >

@@ -360,7 +360,7 @@ function PropertyCard({
             </div>
             <div className="flex items-center gap-2 flex-shrink-0">
               <a
-                href="tel:+971509092424"
+                href="tel:+971588473125"
                 aria-label="Call agent"
                 className="relative z-[2] w-8 h-8 rounded-full border border-[#EDE6D8] flex items-center justify-center text-[#C5A059] hover:bg-[#C5A059] hover:text-white hover:border-[#C5A059] transition-all duration-200"
               >
