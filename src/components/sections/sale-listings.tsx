@@ -19,7 +19,16 @@ const SALE_LISTINGS = [
     pricePeriod: "Sale Price",
     contract: "Rented until 28.8.2028",
     images: [
-      "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/007aea4c-54d1-406e-bf6e-b272ac2f0e58-1773006354631.JPG?width=1600&height=1600&resize=contain",
+      "/azure-3.jpg",
+      "/azure-1.jpg",
+      "/azure-2.jpg",
+      "/azure-4.jpg",
+      "/azure-5.jpg",
+      "/azure-6.jpg",
+      "/azure-7.jpg",
+      "/azure-8.jpg",
+      "/azure-9.jpg",
+      "/azure-10.jpg",
     ],
   },
   {
