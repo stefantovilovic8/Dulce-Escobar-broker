@@ -40,7 +40,7 @@ export const LISTINGS_DATA = [
   {
     id: 4,
     slug: "binghatti-tulip-3007",
-    project: "Binghatti Tulip 3007",
+    project: "Binghatti Tulip",
     category: "Apartment",
     location: "JVC, Dubai",
     beds: 1,
@@ -66,7 +66,7 @@ export const LISTINGS_DATA = [
   {
     id: 5,
     slug: "binghatti-tulip-2806",
-    project: "Binghatti Tulip 2806",
+    project: "Binghatti Tulip",
     category: "Apartment",
     location: "JVC, Dubai",
     beds: 1,
