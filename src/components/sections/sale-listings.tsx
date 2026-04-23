@@ -35,10 +35,10 @@ const SALE_LISTINGS = [
     pricePeriod: "Sale Price",
     contract: "Rented until 30.11.2028",
     images: [
-      "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/1017953b-88db-4b32-a0de-2aa467c6e8ef-1773006353346.JPG?width=1600&height=1600&resize=contain",
+      "/aurora-4.jpg",
       "/aurora-2.jpg",
       "/aurora-3.jpg",
-      "/aurora-4.jpg",
+      "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/1017953b-88db-4b32-a0de-2aa467c6e8ef-1773006353346.JPG?width=1600&height=1600&resize=contain",
       "/aurora-5.jpg",
       "/aurora-6.jpg",
       "/aurora-7.jpg",
