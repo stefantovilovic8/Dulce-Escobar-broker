@@ -36,6 +36,16 @@ const SALE_LISTINGS = [
     contract: "Rented until 30.11.2028",
     images: [
       "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/15da0035-1594-4842-aa98-6997df829f1d/1017953b-88db-4b32-a0de-2aa467c6e8ef-1773006353346.JPG?width=1600&height=1600&resize=contain",
+      "/aurora-2.jpg",
+      "/aurora-3.jpg",
+      "/aurora-4.jpg",
+      "/aurora-5.jpg",
+      "/aurora-6.jpg",
+      "/aurora-7.jpg",
+      "/aurora-8.jpg",
+      "/aurora-9.jpg",
+      "/aurora-10.jpg",
+      "/aurora-11.jpg",
     ],
   },
 ];
