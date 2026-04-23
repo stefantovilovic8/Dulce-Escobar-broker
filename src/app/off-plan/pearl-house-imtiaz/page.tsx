@@ -22,6 +22,11 @@ const IMAGES = [
   "/pearl-8.jpg",
   "/pearl-9.jpg",
   "/pearl-10.jpg",
+  "/pearl-11.jpg",
+  "/pearl-12.jpg",
+  "/pearl-13.jpg",
+  "/pearl-14.jpg",
+  "/pearl-15.jpg",
 ];
 
 const AMENITIES = [
