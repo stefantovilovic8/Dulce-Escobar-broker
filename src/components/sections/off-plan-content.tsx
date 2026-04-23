@@ -108,23 +108,22 @@ export default function OffPlanContent() {
             <div className="w-10 h-px bg-[#C5A059] mt-5" />
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
             {BENEFITS.map((b, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
-                className="bg-white p-8 lg:p-10"
-                style={{ borderRadius: "32px", boxShadow: "0 4px 24px rgba(0,0,0,0.05)" }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 }}
+                className="group bg-white border border-[#EDE6D8] rounded-2xl p-6 flex flex-col gap-3 cursor-default transition-all duration-300 hover:border-[#C5A059] hover:shadow-[0_8px_32px_rgba(197,160,89,0.13)] hover:-translate-y-1"
               >
-                <span className="text-[#C5A059] text-2xl mb-4 block">◈</span>
-                <h3 className="font-display text-[22px] text-[#1A1A1A] mb-3 leading-tight">
+                <span className="text-[#C5A059] text-lg leading-none transition-transform duration-300 group-hover:scale-110 origin-left">◈</span>
+                <h3 className="font-display text-[17px] text-[#1A1A1A] leading-snug group-hover:text-[#C5A059] transition-colors duration-300">
                   {t(b.titleKey)}
                 </h3>
-                <div className="w-8 h-px bg-[#C5A059] mb-4" />
-                <p className="font-body text-[#5A5A5A] text-[15px] leading-[1.8] font-light">
+                <div className="w-6 h-px bg-[#C5A059]/50 group-hover:bg-[#C5A059] group-hover:w-10 transition-all duration-300" />
+                <p className="font-body text-[#6A6A6A] text-[13px] leading-[1.75] font-light">
                   {t(b.bodyKey)}
                 </p>
               </motion.div>
