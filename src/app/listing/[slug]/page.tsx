@@ -31,7 +31,6 @@ const EXTENDED_SPECS: Record<string, {
 }> = {
   "binghatti-tulip-3007": {
     unitTitle: "Unit 3007",
-    floor: "30th Floor (High Floor)",
     view: "Marina View",
     status: "Vacant",
     paymentTerms: "AED 75,000 (4 Cheques) · AED 80,000 (6 Cheques)",
