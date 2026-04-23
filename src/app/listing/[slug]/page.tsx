@@ -131,7 +131,7 @@ const EXTENDED_SPECS: Record<string, {
     view: "City View",
     parking: "1 Space",
     status: "Available",
-    paymentTerms: "80,000 AED / Yearly",
+    paymentTerms: "6,000 AED / Month",
     amenities: [
       {
         category: "Interior & Comfort",
@@ -666,7 +666,7 @@ function ListingDetail({
                     </div>
                   ) : (
                     <p className="font-display text-[36px] text-[#1A1A1A] leading-none">
-                      {isPhantom ? "110,000 AED" : "80,000 AED"}
+                      {isPhantom ? "110,000 AED" : listing.slug === "binghatti-aurora" ? "6,000 AED" : "80,000 AED"}
                     </p>
                   )}
                   {extended.paymentTerms && !isSaleListing && listing.slug !== "binghatti-tulip-2806" && listing.slug !== "binghatti-tulip-3007" && (
