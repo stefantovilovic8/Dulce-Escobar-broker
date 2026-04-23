@@ -362,7 +362,7 @@ export const translations: Record<Language, Record<string, string>> = {
       "listings.azure.saleprice": "720,000 AED",
       "listings.aurora.price": "80,000 AED / year",
       "listings.aurora.saleprice": "750,000 AED",
-      "listings.phoenix.price": "65,000 AED / year",
+      "listings.phoenix.price": "6,000 AED / month",
       "listings.phantom.status": "Available for Rent",
       "listings.phantom.type": "Fully Furnished Apartment",
       "listings.phantom.price": "110,000 AED / year",
