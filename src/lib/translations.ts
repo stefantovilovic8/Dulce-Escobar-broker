@@ -373,6 +373,10 @@ export const translations: Record<Language, Record<string, string>> = {
       "listings.tulip.price": "7,000 AED / month",
       "listings.tulip.furnished": "Fully furnished (without bills)",
       "listings.tulip.cta": "Book a Viewing",
+      "listings.neva.status": "Available for Rent",
+      "listings.neva.type": "1 B/R Apartment",
+      "listings.neva.price": "80,000 AED / Year",
+      "listings.neva.furnished": "Fully furnished",
 
       "about.eyebrow": "About Me",
       "servicesHero.eyebrow": "Sale & Rent",
@@ -777,6 +781,10 @@ export const translations: Record<Language, Record<string, string>> = {
           "listings.tulip.price": "٧٬٠٠٠ درهم / شهرياً",
           "listings.tulip.furnished": "مفروشة بالكامل (بدون فواتير)",
           "listings.tulip.cta": "حجز معاينة",
+          "listings.neva.status": "متاح للإيجار",
+          "listings.neva.type": "شقة غرفة نوم",
+          "listings.neva.price": "٨٠٬٠٠٠ درهم / سنوياً",
+          "listings.neva.furnished": "مفروشة بالكامل",
 
           "about.eyebrow": "نبذة عني",
         "servicesHero.eyebrow": "بيع وإيجار",

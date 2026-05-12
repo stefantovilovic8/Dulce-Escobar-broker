@@ -126,12 +126,11 @@ const EXTENDED_SPECS: Record<string, {
       },
     ],
   },
-  "bt-2806-rental": {
-    unitTitle: "Unit 2806",
-    floor: "28th Floor (High Floor)",
+  "neva-residences-1br": {
+    unitTitle: "Unit 1 B/R",
     view: "Community View",
     status: "Vacant",
-    paymentTerms: "AED 75,000 (4 Cheques) · AED 80,000 (6 Cheques)",
+    paymentTerms: "80,000 AED / Year",
     amenities: [
       {
         category: "Interior & Comfort",
@@ -670,8 +669,8 @@ function ListingDetail({
                 </motion.div>
               )}
 
-              {/* QR Code — BT-2806-RENTAL only */}
-              {listing.slug === "bt-2806-rental" && (
+              {/* QR Code — NEVA Residences 1BR only */}
+              {listing.slug === "neva-residences-1br" && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -690,7 +689,7 @@ function ListingDetail({
                     >
                       <img
                         src="/qr-bt2806.png"
-                        alt="QR Code – Binghatti Tulip Unit 2806"
+                        alt="QR Code – NEVA Residences Unit 1 B/R"
                         className="w-48 h-48 object-contain"
                       />
                     </div>
