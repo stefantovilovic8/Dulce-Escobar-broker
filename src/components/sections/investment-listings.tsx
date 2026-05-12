@@ -97,7 +97,7 @@ export const LISTINGS_DATA = [
     category: "Apartment",
     location: "JVC, Dubai",
     beds: 1,
-    baths: 1,
+    baths: 2,
     sqft: 838,
     statusKey: "listings.neva.status",
     typeKey: "listings.neva.type",
