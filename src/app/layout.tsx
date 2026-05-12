@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     default: "Dulce Escobar | Dubai Real Estate Agent – Luxury Properties, Off-Plan & Rentals",
     template: "%s",
   },
-  description: "Dulce Escobar is a top Dubai real estate broker with 30+ years experience. Luxury property sales, off-plan investments, short-term & long-term rentals in Dubai.",
+  description: "Dulce Escobar is a trusted Dubai real estate broker specialising in luxury property sales, off-plan investments, short-term & long-term rentals in Dubai.",
   metadataBase: new URL("https://dulcescobar.ae"),
   icons: {
     icon: "/favicon.png",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Dulce Escobar | Dubai Real Estate Agent",
-    description: "30+ years experience in Dubai real estate. Luxury sales, off-plan investments & premium rentals.",
+    description: "Trusted Dubai real estate expert. Luxury sales, off-plan investments & premium rentals.",
     images: [
       {
         url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/VIDALS-logic-1768335205150.png?width=1200&height=630&resize=cover",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Dulce Escobar | Dubai Real Estate Agent",
-    description: "30+ years experience in Dubai real estate. Luxury sales, off-plan investments & premium rentals.",
+    description: "Trusted Dubai real estate expert. Luxury sales, off-plan investments & premium rentals.",
     images: ["https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/VIDALS-logic-1768335205150.png?width=1200&height=630&resize=cover"],
   },
 };
@@ -49,7 +49,7 @@ const jsonLd = {
   name: "Dulce Escobar Real Estate",
   url: "https://dulcescobar.ae",
   logo: "https://dulcescobar.ae/favicon.png",
-  description: "Dubai real estate broker specialising in luxury property sales, off-plan investments, and rentals. 30+ years experience.",
+  description: "Dubai real estate broker specialising in luxury property sales, off-plan investments, and premium rentals.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Dubai",
