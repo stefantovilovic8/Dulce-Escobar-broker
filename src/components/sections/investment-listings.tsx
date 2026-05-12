@@ -61,7 +61,7 @@ export const LISTINGS_DATA = [
       "/tulip-6.jpg",
       "/tulip-7.jpg",
     ],
-    description: "Stunning fully furnished 1-bedroom apartment on the 30th floor of Binghatti Tulip. Enjoy breathtaking marina views, premium modern interiors, a fully fitted kitchen, and resort-style building amenities. A high-floor gem in one of JVC's most iconic towers.",
+    description: "Stunning fully furnished 1-bedroom apartment in Binghatti Tulip. Enjoy breathtaking marina views, premium modern interiors, a fully fitted kitchen, and resort-style building amenities. A high-floor gem in one of JVC's most iconic towers.",
   },
   {
     id: 5,
