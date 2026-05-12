@@ -206,7 +206,7 @@ export const LISTINGS_DATA = [
       "/phantom-9.jpg",
       "/phantom-10.jpg",
     ],
-    description: "Exquisite fully furnished 1-bedroom apartment in the iconic Binghatti Phantom — Unit 409. Featuring upgraded designer interiors, a spacious open-plan living area, fully fitted gourmet kitchen, and serene community views. A rare vacancy in one of Dubai's most sought-after residential addresses.",
+    description: "Exquisite fully furnished 1-bedroom apartment in the iconic Binghatti Phantom. Featuring upgraded designer interiors, a spacious open-plan living area, fully fitted gourmet kitchen, and serene community views. A rare vacancy in one of Dubai's most sought-after residential addresses.",
   },
 ];
 
