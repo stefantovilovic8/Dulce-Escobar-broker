@@ -88,7 +88,7 @@ export const LISTINGS_DATA = [
       "/tulip2-7.jpg",
       "/tulip2-8.jpg",
     ],
-    description: "Beautifully furnished 1-bedroom apartment on the 28th floor of Binghatti Tulip. Featuring premium finishes, a fully fitted kitchen with appliances, built-in wardrobes, and a private balcony with stunning community views. High-floor living at its finest in the heart of JVC.",
+    description: "Beautifully furnished 1-bedroom apartment in Binghatti Tulip. Featuring premium finishes, a fully fitted kitchen with appliances, built-in wardrobes, and a private balcony with stunning community views. A refined residence in the heart of JVC.",
   },
   {
     id: 10,

@@ -79,7 +79,6 @@ const EXTENDED_SPECS: Record<string, {
   },
   "binghatti-tulip-2806": {
     unitTitle: "Unit 2806",
-    floor: "28th Floor (High Floor)",
     view: "Community View",
     status: "Vacant",
     paymentTerms: "AED 75,000 (4 Cheques) · AED 80,000 (6 Cheques)",
