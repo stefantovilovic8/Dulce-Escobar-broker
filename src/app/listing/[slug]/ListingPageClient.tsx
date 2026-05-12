@@ -167,8 +167,6 @@ const EXTENDED_SPECS: Record<string, {
     ],
   },
   "binghatti-aurora": {
-    floor: "Mid-to-High Floor",
-    view: "City View",
     parking: "1 Space",
     status: "Available",
     paymentTerms: "6,000 AED / Month",
