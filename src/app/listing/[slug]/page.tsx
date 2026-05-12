@@ -311,9 +311,7 @@ const EXTENDED_SPECS: Record<string, {
   },
   "binghatti-phantom": {
     unitTitle: "Unit 409",
-    floor: "4th Floor",
     view: "Community View",
-    parking: "P4-29",
     status: "Vacant",
     paymentTerms: "4–6 Cheques",
     amenities: [
