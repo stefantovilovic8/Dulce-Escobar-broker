@@ -104,7 +104,7 @@ export default function SaleListings() {
           <div className="w-10 h-px bg-[#C5A059] mt-5" />
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-[700px] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
           {SALE_LISTINGS.map((listing, i) => (
             <SaleCard key={listing.id} listing={listing} index={i} />
           ))}
