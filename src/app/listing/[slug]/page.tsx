@@ -51,6 +51,12 @@ const LISTING_META: Record<string, { title: string; description: string; image?:
       "1-bedroom apartment for sale in Binghatti Orchid, Al Barsha South Fourth, Dubai. 69.54 Sqm, premium finishes, pool and gym. 1,100,000 AED. High ROI potential. Contact Dulce Escobar.",
     image: "/orchid-1.jpg",
   },
+  "binghatti-lavender": {
+    title: "Binghatti Lavender – Studio for Rent | JVC Dubai | Dulce Escobar",
+    description:
+      "Modern studio for rent in Binghatti Lavender, JVC Dubai. 35.55 Sqm, premium finishes, rooftop pool and gym. 60,000 AED/year. Ready to move in. Contact Dulce Escobar.",
+    image: "/lavender-1.jpg",
+  },
 };
 
 export async function generateMetadata({

@@ -398,6 +398,41 @@ const EXTENDED_SPECS: Record<string, {
       },
     ],
   },
+  "binghatti-lavender": {
+    status: "Vacant",
+    paymentTerms: "60,000 AED / Year",
+    amenities: [
+      {
+        category: "Interior & Comfort",
+        items: [
+          "Fully Fitted Kitchen",
+          "Kitchen Appliances",
+          "Built-in Wardrobes",
+          "Central A/C",
+          "Balcony",
+        ],
+      },
+      {
+        category: "Wellness & Leisure",
+        items: [
+          "Rooftop Swimming Pool",
+          "Modern Gymnasium",
+          "Jacuzzi",
+          "Sauna",
+        ],
+      },
+      {
+        category: "Building & Security",
+        items: [
+          "Covered Parking",
+          "24/7 Security",
+          "CCTV Surveillance",
+          "Children's Play Area",
+          "BBQ Area",
+        ],
+      },
+    ],
+  },
 };
 
 export default function ListingPageClient() {
@@ -721,6 +756,37 @@ function ListingDetail({
                       <img
                         src="/qr-bt2806.png"
                         alt="QR Code – NEVA Residences Unit 1 B/R"
+                        className="w-48 h-48 object-contain"
+                      />
+                    </div>
+                    <p className="font-body text-[13px] text-[#7A7A7A] mt-5 max-w-[300px] leading-relaxed font-light">
+                      Scan this code to instantly access the digital brochure and booking details.
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* QR Code — Lavender only */}
+              {listing.slug === "binghatti-lavender" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.15 }}
+                  className="mt-16 pt-12 border-t border-[#F0EBE1]"
+                >
+                  <div className="flex flex-col items-center text-center">
+                    <span className="text-[#C5A059] font-body text-xs tracking-[0.28em] uppercase mb-4">
+                      Scan for Details
+                    </span>
+                    <div className="w-8 h-px bg-[#C5A059] mb-8" />
+                    <div
+                      className="p-4 bg-white rounded-2xl border border-[#EDE6D8]"
+                      style={{ boxShadow: "0 4px 24px rgba(197,160,89,0.10)" }}
+                    >
+                      <img
+                        src="/qr-lavender.png"
+                        alt="QR Code – Binghatti Lavender"
                         className="w-48 h-48 object-contain"
                       />
                     </div>

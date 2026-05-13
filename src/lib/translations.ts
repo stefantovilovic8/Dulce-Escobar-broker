@@ -377,6 +377,9 @@ export const translations: Record<Language, Record<string, string>> = {
       "listings.neva.type": "1 B/R Apartment",
       "listings.neva.price": "80,000 AED / Year",
       "listings.neva.furnished": "Fully furnished",
+      "listings.lavender.status": "Available for Rent",
+      "listings.lavender.type": "Studio Apartment",
+      "listings.lavender.price": "60,000 AED / Year",
 
       "about.eyebrow": "About Me",
       "servicesHero.eyebrow": "Sale & Rent",
@@ -785,6 +788,9 @@ export const translations: Record<Language, Record<string, string>> = {
           "listings.neva.type": "شقة غرفة نوم",
           "listings.neva.price": "٨٠٬٠٠٠ درهم / سنوياً",
           "listings.neva.furnished": "مفروشة بالكامل",
+          "listings.lavender.status": "متاح للإيجار",
+          "listings.lavender.type": "شقة استوديو",
+          "listings.lavender.price": "٦٠٬٠٠٠ درهم / سنوياً",
 
           "about.eyebrow": "نبذة عني",
         "servicesHero.eyebrow": "بيع وإيجار",
