@@ -363,6 +363,7 @@ const EXTENDED_SPECS: Record<string, {
     ],
   },
   "binghatti-orchid": {
+    floor: "Low Floor",
     view: "Community View",
     status: "Ready to Move",
     paymentTerms: "1,100,000 AED",
@@ -370,30 +371,32 @@ const EXTENDED_SPECS: Record<string, {
       {
         category: "Interior & Comfort",
         items: [
+          "Fully Furnished",
           "Fully Fitted Kitchen",
           "Kitchen Appliances",
           "Built-in Wardrobes",
           "Central A/C",
-          "Balcony",
         ],
       },
       {
         category: "Wellness & Leisure",
         items: [
-          "Swimming Pool",
-          "Modern Gymnasium",
-          "Jacuzzi",
-          "Sauna",
+          "Shared Swimming Pool",
+          "Gymnasium",
         ],
       },
       {
-        category: "Building & Security",
+        category: "Building & Lifestyle",
         items: [
-          "Dedicated Parking",
-          "24/7 Security",
-          "CCTV Surveillance",
-          "Children's Play Area",
-          "BBQ Area",
+          "Parking",
+          "Entertaining Area",
+        ],
+      },
+      {
+        category: "Surroundings",
+        items: [
+          "Public Park (nearby)",
+          "Shopping Mall (nearby)",
         ],
       },
     ],
