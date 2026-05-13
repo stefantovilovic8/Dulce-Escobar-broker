@@ -20,7 +20,7 @@ export default function OffPlanContent() {
 
       {/* Featured Off-Plan Projects */}
       <section className="bg-[#FAFAF8] py-[100px] lg:py-[120px]">
-        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-[1200px]">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-[1300px]">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -91,7 +91,7 @@ export default function OffPlanContent() {
 
       {/* Benefits Grid */}
       <section className="bg-[#F5F3EE] py-[100px] lg:py-[120px]">
-        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-[1200px]">
+        <div className="container mx-auto px-5 md:px-10 lg:px-16 max-w-[1300px]">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
