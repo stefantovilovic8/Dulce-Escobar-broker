@@ -57,6 +57,31 @@ const SALE_LISTINGS = [
       "/aurora-11.jpg",
     ],
   },
+  {
+    id: 3,
+    slug: "binghatti-orchid",
+    project: "Binghatti Orchid",
+    category: "Apartment",
+    location: "Al Barsha South Fourth, Dubai",
+    beds: 1,
+    baths: 1,
+    sqft: 748,
+    price: "1,100,000 AED",
+    pricePeriod: "Sale Price",
+    contract: "Ready to Move",
+    images: [
+      "/orchid-1.jpg",
+      "/orchid-2.jpg",
+      "/orchid-3.jpg",
+      "/orchid-4.jpg",
+      "/orchid-5.jpg",
+      "/orchid-6.jpg",
+      "/orchid-7.jpg",
+      "/orchid-8.jpg",
+      "/orchid-9.jpg",
+      "/orchid-10.jpg",
+    ],
+  },
 ];
 
 export default function SaleListings() {

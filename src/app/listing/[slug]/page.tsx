@@ -45,6 +45,12 @@ const LISTING_META: Record<string, { title: string; description: string; image?:
       "Spacious 1-bedroom apartment for rent in NEVA Residences, JVC Dubai. 77.84 Sqm, 2 bathrooms, fully furnished with luxury finishes. 80,000 AED/year. Contact Dulce Escobar.",
     image: "/bt2806-1.jpg",
   },
+  "binghatti-orchid": {
+    title: "Binghatti Orchid – 1 Bed Apartment For Sale | Al Barsha South Fourth Dubai | Dulce Escobar",
+    description:
+      "1-bedroom apartment for sale in Binghatti Orchid, Al Barsha South Fourth, Dubai. 69.54 Sqm, premium finishes, pool and gym. 1,100,000 AED. High ROI potential. Contact Dulce Escobar.",
+    image: "/orchid-1.jpg",
+  },
 };
 
 export async function generateMetadata({
