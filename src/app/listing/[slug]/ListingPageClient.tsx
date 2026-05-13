@@ -893,9 +893,20 @@ function ListingDetail({
                         <span className="font-body text-[12px] text-[#9A9A9A]">6 Cheques</span>
                       </div>
                     </div>
+                  ) : listing.slug === "binghatti-lavender" ? (
+                    <div className="flex flex-col gap-1.5 mt-1">
+                      <div className="flex items-baseline gap-2">
+                        <p className="font-display text-[28px] text-[#1A1A1A] leading-none">5,000 AED</p>
+                        <span className="font-body text-[12px] text-[#9A9A9A]">Monthly · 12 Cheques</span>
+                      </div>
+                      <div className="flex items-baseline gap-2">
+                        <p className="font-display text-[28px] text-[#1A1A1A] leading-none">60,000 AED</p>
+                        <span className="font-body text-[12px] text-[#9A9A9A]">Yearly</span>
+                      </div>
+                    </div>
                   ) : (
                     <p className="font-display text-[36px] text-[#1A1A1A] leading-none">
-                      {isPhantom ? "110,000 AED" : listing.slug === "binghatti-aurora" ? "6,000 AED" : listing.slug === "binghatti-lavender" ? "60,000 AED" : "80,000 AED"}
+                      {isPhantom ? "110,000 AED" : listing.slug === "binghatti-aurora" ? "6,000 AED" : "80,000 AED"}
                     </p>
                   )}
                   {extended.paymentTerms && !isSaleListing && listing.slug !== "binghatti-tulip-2806" && listing.slug !== "binghatti-tulip-3007" && (
