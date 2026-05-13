@@ -415,16 +415,23 @@ const EXTENDED_SPECS: Record<string, {
       {
         category: "Wellness & Leisure",
         items: [
-          "Swimming Pool",
-          "Modern Gymnasium",
+          "Private Swimming Pool",
+          "Gymnasium",
         ],
       },
       {
-        category: "Building & Security",
+        category: "Building & Parking",
         items: [
+          "Covered Parking",
+          "Public Parking",
           "24/7 Security",
-          "CCTV Surveillance",
           "BBQ Area",
+        ],
+      },
+      {
+        category: "Surroundings",
+        items: [
+          "Public Park",
         ],
       },
     ],
