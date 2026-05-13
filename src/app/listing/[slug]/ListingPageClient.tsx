@@ -415,19 +415,15 @@ const EXTENDED_SPECS: Record<string, {
       {
         category: "Wellness & Leisure",
         items: [
-          "Rooftop Swimming Pool",
+          "Swimming Pool",
           "Modern Gymnasium",
-          "Jacuzzi",
-          "Sauna",
         ],
       },
       {
         category: "Building & Security",
         items: [
-          "Covered Parking",
           "24/7 Security",
           "CCTV Surveillance",
-          "Children's Play Area",
           "BBQ Area",
         ],
       },
@@ -531,7 +527,9 @@ function ListingDetail({
                       ? "110,000 AED Yearly"
                       : (listing.slug === "binghatti-tulip-2806" || listing.slug === "binghatti-tulip-3007")
                         ? "From 75,000 AED Yearly"
-                        : ""}
+                        : listing.slug === "binghatti-lavender"
+                          ? "60,000 AED / Year"
+                          : ""}
                 </p>
               </div>
             </div>
@@ -897,7 +895,7 @@ function ListingDetail({
                     </div>
                   ) : (
                     <p className="font-display text-[36px] text-[#1A1A1A] leading-none">
-                      {isPhantom ? "110,000 AED" : listing.slug === "binghatti-aurora" ? "6,000 AED" : "80,000 AED"}
+                      {isPhantom ? "110,000 AED" : listing.slug === "binghatti-aurora" ? "6,000 AED" : listing.slug === "binghatti-lavender" ? "60,000 AED" : "80,000 AED"}
                     </p>
                   )}
                   {extended.paymentTerms && !isSaleListing && listing.slug !== "binghatti-tulip-2806" && listing.slug !== "binghatti-tulip-3007" && (
