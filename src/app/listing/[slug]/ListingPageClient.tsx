@@ -365,7 +365,6 @@ const EXTENDED_SPECS: Record<string, {
   "binghatti-orchid": {
     floor: "Low Floor",
     view: "Community View",
-    status: "Ready to Move",
     paymentTerms: "1,100,000 AED",
     amenities: [
       {
