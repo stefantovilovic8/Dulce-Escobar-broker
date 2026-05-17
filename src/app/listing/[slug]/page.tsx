@@ -69,6 +69,12 @@ const LISTING_META: Record<string, { title: string; description: string; image?:
       "Exclusive studio for rent in Binghatti Tulip, JVC Dubai. 33.38 Sqm, premium finishes, fitted kitchen, pool & gym. 55,000 AED/year. An exceptional lifestyle opportunity in JVC. Contact Dulce Escobar.",
     image: "/tulip-exclusive-1.jpg",
   },
+  "reef-residence-2206": {
+    title: "Reef Residence – 1 Bed Apartment for Rent | Al Barsha South Fourth Dubai | Dulce Escobar",
+    description:
+      "High-floor 1-bedroom apartment for rent on the 22nd floor of Reef Residence, Al Barsha South Fourth, Dubai. 502.57 Sq. Ft., dedicated parking, open views. 45,000 AED/year — 2 cheques. Contact Dulce Escobar.",
+    image: "/reef-2206-1.jpg",
+  },
 };
 
 export async function generateMetadata({

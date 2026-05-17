@@ -400,6 +400,39 @@ const EXTENDED_SPECS: Record<string, {
       },
     ],
   },
+  "reef-residence-2206": {
+    unitTitle: "Unit 2206",
+    floor: "22nd Floor",
+    parking: "Bay B2-26",
+    status: "Vacant",
+    paymentTerms: "45,000 AED / 2 Cheques",
+    amenities: [
+      {
+        category: "Interior & Comfort",
+        items: [
+          "Fully Fitted Kitchen",
+          "Kitchen Appliances",
+          "Built-in Wardrobes",
+          "Central A/C",
+          "Balcony",
+        ],
+      },
+      {
+        category: "Wellness & Leisure",
+        items: [
+          "Swimming Pool",
+          "Gymnasium",
+        ],
+      },
+      {
+        category: "Building & Security",
+        items: [
+          "Covered Parking",
+          "24/7 Security",
+        ],
+      },
+    ],
+  },
   "rent-tulip-exclusive": {
     status: "Vacant",
     paymentTerms: "55,000 AED / Year",
@@ -1024,6 +1057,13 @@ function ListingDetail({
                         <span className="font-body text-[12px] text-[#9A9A9A]">6 Cheques</span>
                       </div>
                     </div>
+                  ) : listing.slug === "reef-residence-2206" ? (
+                    <div className="flex flex-col gap-1.5 mt-1">
+                      <div className="flex items-baseline gap-2">
+                        <p className="font-display text-[28px] text-[#1A1A1A] leading-none">45,000 AED</p>
+                        <span className="font-body text-[12px] text-[#9A9A9A]">2 Cheques</span>
+                      </div>
+                    </div>
                   ) : listing.slug === "rent-tulip-exclusive" ? (
                     <div className="flex flex-col gap-1.5 mt-1">
                       <div className="flex items-baseline gap-2">
@@ -1054,7 +1094,7 @@ function ListingDetail({
                       {isPhantom ? "110,000 AED" : listing.slug === "binghatti-aurora" ? "6,000 AED" : "80,000 AED"}
                     </p>
                   )}
-                  {extended.paymentTerms && !isSaleListing && listing.slug !== "binghatti-tulip-2806" && listing.slug !== "binghatti-tulip-3007" && listing.slug !== "rent-tulip-studio" && listing.slug !== "rent-tulip-exclusive" && (
+                  {extended.paymentTerms && !isSaleListing && listing.slug !== "binghatti-tulip-2806" && listing.slug !== "binghatti-tulip-3007" && listing.slug !== "rent-tulip-studio" && listing.slug !== "rent-tulip-exclusive" && listing.slug !== "reef-residence-2206" && (
                     <div className="flex items-center gap-2 mt-3">
                       <CreditCard size={13} className="text-[#C5A059]" />
                       <span className="font-body text-[13px] text-[#5A5A5A]">{extended.paymentTerms}</span>

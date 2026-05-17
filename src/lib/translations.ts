@@ -386,6 +386,9 @@ export const translations: Record<Language, Record<string, string>> = {
       "listings.tulipexclusive.status": "Available for Rent",
       "listings.tulipexclusive.type": "Studio Apartment",
       "listings.tulipexclusive.price": "55,000 AED / Year",
+      "listings.reefresidence2206.status": "Available for Rent",
+      "listings.reefresidence2206.type": "1 Bedroom Apartment",
+      "listings.reefresidence2206.price": "45,000 AED / Year",
 
       "about.eyebrow": "About Me",
       "servicesHero.eyebrow": "Sale & Rent",
