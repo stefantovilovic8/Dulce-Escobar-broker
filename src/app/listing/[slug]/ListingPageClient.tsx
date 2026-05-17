@@ -400,6 +400,36 @@ const EXTENDED_SPECS: Record<string, {
       },
     ],
   },
+  "rent-tulip-studio": {
+    status: "Vacant",
+    paymentTerms: "60,000 AED / 6 Cheques",
+    amenities: [
+      {
+        category: "Interior & Comfort",
+        items: [
+          "Fully Fitted Kitchen",
+          "Kitchen Appliances",
+          "Built-in Wardrobes",
+          "Central A/C",
+          "Balcony",
+        ],
+      },
+      {
+        category: "Wellness & Leisure",
+        items: [
+          "Swimming Pool",
+          "Gymnasium",
+        ],
+      },
+      {
+        category: "Building & Security",
+        items: [
+          "Covered Parking",
+          "24/7 Security",
+        ],
+      },
+    ],
+  },
   "binghatti-lavender": {
     status: "Vacant",
     paymentTerms: "60,000 AED / Year",
@@ -835,6 +865,37 @@ function ListingDetail({
                 </motion.div>
               )}
 
+              {/* QR Code — Tulip Studio only */}
+              {listing.slug === "rent-tulip-studio" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.15 }}
+                  className="mt-16 pt-12 border-t border-[#F0EBE1]"
+                >
+                  <div className="flex flex-col items-center text-center">
+                    <span className="text-[#C5A059] font-body text-xs tracking-[0.28em] uppercase mb-4">
+                      Scan for Details
+                    </span>
+                    <div className="w-8 h-px bg-[#C5A059] mb-8" />
+                    <div
+                      className="p-4 bg-white rounded-2xl border border-[#EDE6D8]"
+                      style={{ boxShadow: "0 4px 24px rgba(197,160,89,0.10)" }}
+                    >
+                      <img
+                        src="/qr-tulip-studio.png"
+                        alt="QR Code – Binghatti Tulip Studio"
+                        className="w-48 h-48 object-contain"
+                      />
+                    </div>
+                    <p className="font-body text-[13px] text-[#7A7A7A] mt-5 max-w-[300px] leading-relaxed font-light">
+                      Scan this code to instantly access the digital brochure and booking details.
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+
               {/* QR Code — Phantom only */}
               {listing.slug === "binghatti-phantom" && (
                 <motion.div
@@ -902,6 +963,13 @@ function ListingDetail({
                         <span className="font-body text-[12px] text-[#9A9A9A]">6 Cheques</span>
                       </div>
                     </div>
+                  ) : listing.slug === "rent-tulip-studio" ? (
+                    <div className="flex flex-col gap-1.5 mt-1">
+                      <div className="flex items-baseline gap-2">
+                        <p className="font-display text-[28px] text-[#1A1A1A] leading-none">60,000 AED</p>
+                        <span className="font-body text-[12px] text-[#9A9A9A]">6 Cheques</span>
+                      </div>
+                    </div>
                   ) : listing.slug === "binghatti-lavender" ? (
                     <div className="flex flex-col gap-1.5 mt-1">
                       <div className="flex items-baseline gap-2">
@@ -918,7 +986,7 @@ function ListingDetail({
                       {isPhantom ? "110,000 AED" : listing.slug === "binghatti-aurora" ? "6,000 AED" : "80,000 AED"}
                     </p>
                   )}
-                  {extended.paymentTerms && !isSaleListing && listing.slug !== "binghatti-tulip-2806" && listing.slug !== "binghatti-tulip-3007" && (
+                  {extended.paymentTerms && !isSaleListing && listing.slug !== "binghatti-tulip-2806" && listing.slug !== "binghatti-tulip-3007" && listing.slug !== "rent-tulip-studio" && (
                     <div className="flex items-center gap-2 mt-3">
                       <CreditCard size={13} className="text-[#C5A059]" />
                       <span className="font-body text-[13px] text-[#5A5A5A]">{extended.paymentTerms}</span>

@@ -57,6 +57,12 @@ const LISTING_META: Record<string, { title: string; description: string; image?:
       "Modern studio for rent in Binghatti Lavender, JVC Dubai. 35.55 Sqm, premium finishes, rooftop pool and gym. 60,000 AED/year. Ready to move in. Contact Dulce Escobar.",
     image: "/lavender-1.jpg",
   },
+  "rent-tulip-studio": {
+    title: "Binghatti Tulip – Studio for Rent | JVC Dubai | Dulce Escobar",
+    description:
+      "Elegant studio for rent in Binghatti Tulip, JVC Dubai. 33.43 Sqm, modern finishes, fully fitted kitchen, pool & gym. 60,000 AED/year — payable in 6 cheques. Contact Dulce Escobar.",
+    image: "/tulip-studio-1.jpg",
+  },
 };
 
 export async function generateMetadata({

@@ -380,6 +380,9 @@ export const translations: Record<Language, Record<string, string>> = {
       "listings.lavender.status": "Available for Rent",
       "listings.lavender.type": "Studio Apartment",
       "listings.lavender.price": "60,000 AED / Year",
+      "listings.tulipstudio.status": "Available for Rent",
+      "listings.tulipstudio.type": "Studio Apartment",
+      "listings.tulipstudio.price": "60,000 AED / Year",
 
       "about.eyebrow": "About Me",
       "servicesHero.eyebrow": "Sale & Rent",
