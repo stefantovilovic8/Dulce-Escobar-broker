@@ -402,8 +402,6 @@ const EXTENDED_SPECS: Record<string, {
   },
   "reef-residence-2206": {
     unitTitle: "Unit 2206",
-    floor: "22nd Floor",
-    parking: "Bay B2-26",
     status: "Vacant",
     paymentTerms: "45,000 AED / 2 Cheques",
     amenities: [
