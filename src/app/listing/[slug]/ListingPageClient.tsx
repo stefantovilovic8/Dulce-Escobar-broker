@@ -1028,6 +1028,10 @@ function ListingDetail({
                     <div className="flex flex-col gap-1.5 mt-1">
                       <div className="flex items-baseline gap-2">
                         <p className="font-display text-[28px] text-[#1A1A1A] leading-none">55,000 AED</p>
+                        <span className="font-body text-[12px] text-[#9A9A9A]">4 Cheques</span>
+                      </div>
+                      <div className="flex items-baseline gap-2">
+                        <p className="font-display text-[28px] text-[#1A1A1A] leading-none">55,000 AED</p>
                         <span className="font-body text-[12px] text-[#9A9A9A]">Yearly</span>
                       </div>
                     </div>
