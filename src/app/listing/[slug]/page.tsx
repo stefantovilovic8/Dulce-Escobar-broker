@@ -75,6 +75,12 @@ const LISTING_META: Record<string, { title: string; description: string; image?:
       "High-floor 1-bedroom apartment for rent on the 22nd floor of Reef Residence, Al Barsha South Fourth, Dubai. 502.57 Sq. Ft., dedicated parking, open views. 45,000 AED/year — 2 cheques. Contact Dulce Escobar.",
     image: "/reef-2206-1.jpg",
   },
+  "binghatti-emerald-1br": {
+    title: "Binghatti Emerald – Luxury 1 Bed Apartment for Rent | JVC Dubai | Dulce Escobar",
+    description:
+      "Luxury 1-bedroom apartment for rent in Binghatti Emerald, JVC Dubai. 59.99 Sqm, premium finishes, pool & gym. Flexible payment: 62,000 AED (2 cheques) or 65,000 AED (4 cheques). Contact Dulce Escobar.",
+    image: "/emerald-1br-1.jpg",
+  },
 };
 
 export async function generateMetadata({

@@ -389,6 +389,9 @@ export const translations: Record<Language, Record<string, string>> = {
       "listings.reefresidence2206.status": "Available for Rent",
       "listings.reefresidence2206.type": "1 Bedroom Apartment",
       "listings.reefresidence2206.price": "45,000 AED / Year",
+      "listings.emerald1br.status": "Available for Rent",
+      "listings.emerald1br.type": "1 Bedroom Apartment",
+      "listings.emerald1br.price": "From 62,000 AED / Year",
 
       "about.eyebrow": "About Me",
       "servicesHero.eyebrow": "Sale & Rent",
