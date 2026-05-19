@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: "Trusted Dubai real estate expert. Luxury sales, off-plan investments & premium rentals.",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://dulcescobar.ae/og-image.png",
         width: 1200,
         height: 630,
         alt: "Dulce Escobar - Dubai Real Estate Broker",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dulce Escobar | Dubai Real Estate Agent",
     description: "Trusted Dubai real estate expert. Luxury sales, off-plan investments & premium rentals.",
-    images: ["/og-image.png"],
+    images: ["https://dulcescobar.ae/og-image.png"],
   },
 };
 
