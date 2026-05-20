@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: "Trusted Dubai real estate expert. Luxury sales, off-plan investments & premium rentals.",
     url: "https://dulcescobar.ae/",
     siteName: "Dulce Escobar Real Estate",
-    images: [{ url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/VIDALS-logic-1768335205150.png?width=1200&height=630&resize=cover", width: 1200, height: 630, alt: "Dulce Escobar - Dubai Real Estate" }],
+    images: [{ url: "https://dulcescobar.ae/og-image.png", width: 1200, height: 630, alt: "Dulce Escobar - Dubai Real Estate" }],
     locale: "en_AE",
     type: "website",
   },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dulce Escobar | Dubai Real Estate Agent",
     description: "Trusted Dubai real estate expert. Luxury sales, off-plan investments & premium rentals.",
-    images: ["https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/VIDALS-logic-1768335205150.png?width=1200&height=630&resize=cover"],
+    images: ["https://dulcescobar.ae/og-image.png"],
   },
 };
 
