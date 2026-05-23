@@ -1146,7 +1146,7 @@ function ListingDetail({
                 >
                   <div className="flex flex-col items-center text-center">
                     <span className="text-[#C5A059] font-body text-xs tracking-[0.28em] uppercase mb-4">
-                      Instant Enquiry
+                      Scan for Details
                     </span>
                     <div className="w-8 h-px bg-[#C5A059] mb-8" />
                     <div
