@@ -432,7 +432,7 @@ const EXTENDED_SPECS: Record<string, {
     ],
   },
   "damac-courestia-villa-152": {
-    status: "Ready & Vacant",
+    status: "Available",
     paymentTerms: "155,000 AED / Yearly",
     amenities: [
       {
