@@ -431,6 +431,60 @@ const EXTENDED_SPECS: Record<string, {
       },
     ],
   },
+  "damac-courestia-villa-152": {
+    status: "Ready & Vacant",
+    paymentTerms: "155,000 AED / Yearly",
+    amenities: [
+      {
+        category: "Property Layout & Comfort",
+        items: [
+          "5 Bedrooms + Maid's Room",
+          "6 Bathrooms",
+          "Balcony",
+          "Central A/C",
+          "Marble Floors",
+          "Built-in Wardrobes",
+        ],
+      },
+      {
+        category: "Furnishing & Kitchen",
+        items: [
+          "Part Furnished",
+          "Fully Fitted Kitchen",
+          "Premium Kitchen Appliances",
+        ],
+      },
+      {
+        category: "Private Outdoor & Parking",
+        items: [
+          "Private Garden",
+          "Private Garage",
+          "Covered Parking",
+          "BBQ Area",
+        ],
+      },
+      {
+        category: "Leisure & Lifestyle",
+        items: [
+          "Gymnasium",
+          "Private Swimming Pool",
+          "Entertaining Area",
+          "Pets Allowed",
+        ],
+      },
+      {
+        category: "Community Amenities (DAMAC Hills 2)",
+        items: [
+          "Shared Swimming Pool",
+          "Children's Play Area",
+          "Communal Gardens",
+          "Public Park",
+          "Public Parking",
+          "Shopping Mall & Retail Shops",
+        ],
+      },
+    ],
+  },
   "reef-residence-2206": {
     unitTitle: "Unit 2206",
     status: "Vacant",
@@ -589,7 +643,7 @@ function ListingDetail({
   // Build specs bar
   const specs = [
     { icon: <Building2 size={16} />, label: "Type", value: listing.category },
-    { icon: <Bed size={16} />, label: "Bedrooms", value: listing.beds === 0 ? "Studio" : `${listing.beds}` },
+    { icon: <Bed size={16} />, label: "Bedrooms", value: listing.beds === 0 ? "Studio" : listing.slug === "damac-courestia-villa-152" ? "5 + Maid" : `${listing.beds}` },
     { icon: <Bath size={16} />, label: "Bathrooms", value: `${listing.baths}` },
     { icon: <Maximize2 size={16} />, label: "Size", value: `${listing.sqft} Sq.Ft` },
     ...(extended.floor ? [{ icon: <Layers size={16} />, label: "Floor", value: extended.floor }] : []),
@@ -1081,6 +1135,37 @@ function ListingDetail({
                 </motion.div>
               )}
 
+              {/* QR Code — Courestia Villa 152 only */}
+              {listing.slug === "damac-courestia-villa-152" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.15 }}
+                  className="mt-16 pt-12 border-t border-[#F0EBE1]"
+                >
+                  <div className="flex flex-col items-center text-center">
+                    <span className="text-[#C5A059] font-body text-xs tracking-[0.28em] uppercase mb-4">
+                      Instant Enquiry
+                    </span>
+                    <div className="w-8 h-px bg-[#C5A059] mb-8" />
+                    <div
+                      className="p-4 bg-white rounded-2xl border border-[#EDE6D8]"
+                      style={{ boxShadow: "0 4px 24px rgba(197,160,89,0.10)" }}
+                    >
+                      <img
+                        src="/qr-courestia-villa.png"
+                        alt="QR Code – DAMAC Courestia Villa 152"
+                        className="w-48 h-48 object-contain"
+                      />
+                    </div>
+                    <p className="font-body text-[13px] text-[#7A7A7A] mt-5 max-w-[300px] leading-relaxed font-light">
+                      Scan this code to instantly access the digital brochure and booking details.
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+
               {/* QR Code — Phantom only */}
               {listing.slug === "binghatti-phantom" && (
                 <motion.div
@@ -1180,6 +1265,13 @@ function ListingDetail({
                         <span className="font-body text-[12px] text-[#9A9A9A]">6 Cheques</span>
                       </div>
                     </div>
+                  ) : listing.slug === "damac-courestia-villa-152" ? (
+                    <div className="flex flex-col gap-1.5 mt-1">
+                      <div className="flex items-baseline gap-2">
+                        <p className="font-display text-[28px] text-[#1A1A1A] leading-none">155,000 AED</p>
+                        <span className="font-body text-[12px] text-[#9A9A9A]">Yearly</span>
+                      </div>
+                    </div>
                   ) : listing.slug === "binghatti-lavender" ? (
                     <div className="flex flex-col gap-1.5 mt-1">
                       <div className="flex items-baseline gap-2">
@@ -1196,7 +1288,7 @@ function ListingDetail({
                       {isPhantom ? "110,000 AED" : listing.slug === "binghatti-aurora" ? "6,000 AED" : "80,000 AED"}
                     </p>
                   )}
-                  {extended.paymentTerms && !isSaleListing && listing.slug !== "binghatti-tulip-2806" && listing.slug !== "binghatti-tulip-3007" && listing.slug !== "rent-tulip-studio" && listing.slug !== "rent-tulip-exclusive" && listing.slug !== "reef-residence-2206" && listing.slug !== "binghatti-emerald-1br" && (
+                  {extended.paymentTerms && !isSaleListing && listing.slug !== "binghatti-tulip-2806" && listing.slug !== "binghatti-tulip-3007" && listing.slug !== "rent-tulip-studio" && listing.slug !== "rent-tulip-exclusive" && listing.slug !== "reef-residence-2206" && listing.slug !== "binghatti-emerald-1br" && listing.slug !== "damac-courestia-villa-152" && (
                     <div className="flex items-center gap-2 mt-3">
                       <CreditCard size={13} className="text-[#C5A059]" />
                       <span className="font-body text-[13px] text-[#5A5A5A]">{extended.paymentTerms}</span>

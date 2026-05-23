@@ -392,6 +392,9 @@ export const translations: Record<Language, Record<string, string>> = {
       "listings.emerald1br.status": "Available for Rent",
       "listings.emerald1br.type": "1 Bedroom Apartment",
       "listings.emerald1br.price": "From 62,000 AED / Year",
+      "listings.courestia.status": "Ready & Vacant",
+      "listings.courestia.type": "5 Bedroom Villa",
+      "listings.courestia.price": "155,000 AED / Year",
 
       "about.eyebrow": "About Me",
       "servicesHero.eyebrow": "Sale & Rent",

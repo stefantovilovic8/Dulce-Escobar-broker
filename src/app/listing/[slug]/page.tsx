@@ -81,6 +81,12 @@ const LISTING_META: Record<string, { title: string; description: string; image?:
       "Luxury 1-bedroom apartment for rent in Binghatti Emerald, JVC Dubai. 59.99 Sqm, premium finishes, pool & gym. Flexible payment: 62,000 AED (2 cheques) or 65,000 AED (4 cheques). Contact Dulce Escobar.",
     image: "/emerald-1br-1.jpg",
   },
+  "damac-courestia-villa-152": {
+    title: "Premium 5-Bedroom Villa for Rent – Courestia Cluster, DAMAC Hills 2 | Dulce Escobar",
+    description:
+      "Stunning 5-bedroom + maid's room villa for rent in Courestia Cluster, DAMAC Hills 2 Dubai. 1,881.53 Sq. Ft., private pool, private garden, private garage, marble floors, premium kitchen. 155,000 AED/year. Keys available. Contact Dulce Escobar.",
+    image: "/courestia-villa-4.jpg",
+  },
 };
 
 export async function generateMetadata({
