@@ -58,10 +58,10 @@ export default function Testimonials() {
           className="flex flex-col items-center text-center mb-14"
         >
           <span className="text-[#C5A059] font-body text-xs tracking-[0.22em] uppercase mb-4">
-            Client Stories
+            {t("testimonials.eyebrow")}
           </span>
           <h2 className="font-display text-3xl md:text-4xl xl:text-[48px] text-[#1A1A1A] leading-tight">
-            What Clients Say
+            {t("testimonials.headline")}
           </h2>
           <div className="w-10 h-px bg-[#C5A059] mt-5" />
         </motion.div>

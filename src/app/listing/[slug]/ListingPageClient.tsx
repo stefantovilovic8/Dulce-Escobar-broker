@@ -12,6 +12,7 @@ import {
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import { LISTINGS_DATA } from "@/components/sections/investment-listings";
+import { useLanguage } from "@/lib/language-context";
 
 // Type extension for sale listing fields
 type ListingWithSale = typeof LISTINGS_DATA[0] & {
@@ -217,53 +218,6 @@ const EXTENDED_SPECS: Record<string, {
     view: "City View",
     status: "Tenanted",
     paymentTerms: "Rented until 28.8.2028",
-    amenities: [
-      {
-        category: "Interior & Comfort",
-        items: [
-          "Fully Fitted Kitchen",
-          "Kitchen Appliances",
-          "Built-in Wardrobes",
-          "Central A/C",
-          "Balcony",
-        ],
-      },
-      {
-        category: "Wellness & Leisure",
-        items: [
-          "Swimming Pool",
-          "Gymnasium",
-          "Jacuzzi",
-          "Sauna",
-          "Steam Room",
-        ],
-      },
-      {
-        category: "Building & Outdoor",
-        items: [
-          "Covered Parking",
-          "BBQ Area",
-          "Children's Play Area",
-          "Communal Gardens",
-        ],
-      },
-      {
-        category: "Connectivity & Lifestyle",
-        items: [
-          "Broadband Ready",
-          "Public Transport",
-          "Restaurants",
-          "Shops",
-          "24/7 Security",
-        ],
-      },
-    ],
-  },
-  "binghatti-aurora": {
-    floor: "Investment Grade",
-    view: "City View",
-    status: "Tenanted",
-    paymentTerms: "Rented until 30.11.2028",
     amenities: [
       {
         category: "Interior & Comfort",
@@ -633,6 +587,7 @@ function ListingDetail({
 }) {
   const [activeImg, setActiveImg] = useState(0);
   const pageBg = "#FFFFFF";
+  const { t } = useLanguage();
 
   const prev = () => setActiveImg((c) => (c === 0 ? listing.images.length - 1 : c - 1));
   const next = () => setActiveImg((c) => (c === listing.images.length - 1 ? 0 : c + 1));
@@ -642,14 +597,14 @@ function ListingDetail({
 
   // Build specs bar
   const specs = [
-    { icon: <Building2 size={16} />, label: "Type", value: listing.category },
-    { icon: <Bed size={16} />, label: "Bedrooms", value: listing.beds === 0 ? "Studio" : listing.slug === "damac-courestia-villa" ? "5 + Maid" : `${listing.beds}` },
-    { icon: <Bath size={16} />, label: "Bathrooms", value: `${listing.baths}` },
-    { icon: <Maximize2 size={16} />, label: "Size", value: `${listing.sqft} Sq.Ft` },
+    { icon: <Building2 size={16} />, label: t("listing.details"), value: listing.category },
+    { icon: <Bed size={16} />, label: t("card.bed") + "s", value: listing.beds === 0 ? t("card.studio") : listing.slug === "damac-courestia-villa" ? "5 + Maid" : `${listing.beds}` },
+    { icon: <Bath size={16} />, label: t("card.bath") + "s", value: `${listing.baths}` },
+    { icon: <Maximize2 size={16} />, label: t("card.sqft"), value: `${listing.sqft}` },
     ...(extended.floor ? [{ icon: <Layers size={16} />, label: "Floor", value: extended.floor }] : []),
     ...(extended.view ? [{ icon: <Eye size={16} />, label: "View", value: extended.view }] : []),
     ...(extended.parking ? [{ icon: <Car size={16} />, label: "Parking", value: extended.parking }] : []),
-    ...(extended.status ? [{ icon: <CircleDot size={16} />, label: "Status", value: extended.status }] : []),
+    ...(extended.status ? [{ icon: <CircleDot size={16} />, label: t("listing.status_prefix"), value: extended.status }] : []),
   ];
 
   // Default amenities for non-phantom listings
@@ -799,7 +754,7 @@ function ListingDetail({
           {/* Back link */}
           <Link href={isSaleListing ? "/sale" : "/rent"} className="inline-flex items-center gap-2 text-[#C5A059] font-body text-sm hover:gap-3 transition-all duration-200 mb-12 block">
             <ArrowLeft size={15} />
-            Back to Listings
+            {t("listing.back")}
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-12 lg:gap-16">
@@ -814,8 +769,8 @@ function ListingDetail({
                 transition={{ duration: 0.8 }}
                 className="mb-14"
               >
-                <span className="text-[#C5A059] font-body text-xs tracking-[0.22em] uppercase mb-3 block">Overview</span>
-                <h2 className="font-display text-2xl md:text-3xl text-[#1A1A1A] mb-6">About This Property</h2>
+                <span className="text-[#C5A059] font-body text-xs tracking-[0.22em] uppercase mb-3 block">{t("listing.overview")}</span>
+                <h2 className="font-display text-2xl md:text-3xl text-[#1A1A1A] mb-6">{t("listing.about_property")}</h2>
                 <div className="w-10 h-px bg-[#C5A059] mb-6" />
                 <p className="font-body text-[#5A5A5A] text-[15px] md:text-[16px] leading-[1.9] font-light">
                   {listing.description}
@@ -829,8 +784,8 @@ function ListingDetail({
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.1 }}
               >
-                <span className="text-[#C5A059] font-body text-xs tracking-[0.22em] uppercase mb-3 block">Details</span>
-                <h2 className="font-display text-2xl md:text-3xl text-[#1A1A1A] mb-6">Property Features</h2>
+                <span className="text-[#C5A059] font-body text-xs tracking-[0.22em] uppercase mb-3 block">{t("listing.details")}</span>
+                <h2 className="font-display text-2xl md:text-3xl text-[#1A1A1A] mb-6">{t("listing.property_features")}</h2>
                 <div className="w-10 h-px bg-[#C5A059] mb-10" />
 
                 <div className="flex flex-col gap-10">
@@ -867,7 +822,7 @@ function ListingDetail({
                 >
                   <div className="flex flex-col items-center text-center">
                     <span className="text-[#C5A059] font-body text-xs tracking-[0.28em] uppercase mb-4">
-                      Scan for Details
+                      {t("listing.scan_for_details")}
                     </span>
                     <div className="w-8 h-px bg-[#C5A059] mb-8" />
                     <div
@@ -881,7 +836,7 @@ function ListingDetail({
                       />
                     </div>
                     <p className="font-body text-[13px] text-[#7A7A7A] mt-5 max-w-[300px] leading-relaxed font-light">
-                      Scan this code to instantly access the digital brochure and booking details.
+                      {t("listing.scan_description")}
                     </p>
                   </div>
                 </motion.div>
@@ -898,7 +853,7 @@ function ListingDetail({
                 >
                   <div className="flex flex-col items-center text-center">
                     <span className="text-[#C5A059] font-body text-xs tracking-[0.28em] uppercase mb-4">
-                      Scan for Details
+                      {t("listing.scan_for_details")}
                     </span>
                     <div className="w-8 h-px bg-[#C5A059] mb-8" />
                     <div
@@ -912,7 +867,7 @@ function ListingDetail({
                       />
                     </div>
                     <p className="font-body text-[13px] text-[#7A7A7A] mt-5 max-w-[300px] leading-relaxed font-light">
-                      Scan this code to instantly access the digital brochure and booking details.
+                      {t("listing.scan_description")}
                     </p>
                   </div>
                 </motion.div>
@@ -929,7 +884,7 @@ function ListingDetail({
                 >
                   <div className="flex flex-col items-center text-center">
                     <span className="text-[#C5A059] font-body text-xs tracking-[0.28em] uppercase mb-4">
-                      Scan for Details
+                      {t("listing.scan_for_details")}
                     </span>
                     <div className="w-8 h-px bg-[#C5A059] mb-8" />
                     <div
@@ -943,7 +898,7 @@ function ListingDetail({
                       />
                     </div>
                     <p className="font-body text-[13px] text-[#7A7A7A] mt-5 max-w-[300px] leading-relaxed font-light">
-                      Scan this code to instantly access the digital brochure and booking details.
+                      {t("listing.scan_description")}
                     </p>
                   </div>
                 </motion.div>
@@ -960,7 +915,7 @@ function ListingDetail({
                 >
                   <div className="flex flex-col items-center text-center">
                     <span className="text-[#C5A059] font-body text-xs tracking-[0.28em] uppercase mb-4">
-                      Scan for Details
+                      {t("listing.scan_for_details")}
                     </span>
                     <div className="w-8 h-px bg-[#C5A059] mb-8" />
                     <div
@@ -974,7 +929,7 @@ function ListingDetail({
                       />
                     </div>
                     <p className="font-body text-[13px] text-[#7A7A7A] mt-5 max-w-[300px] leading-relaxed font-light">
-                      Scan this code to instantly access the digital brochure and booking details.
+                      {t("listing.scan_description")}
                     </p>
                   </div>
                 </motion.div>
@@ -991,7 +946,7 @@ function ListingDetail({
                 >
                   <div className="flex flex-col items-center text-center">
                     <span className="text-[#C5A059] font-body text-xs tracking-[0.28em] uppercase mb-4">
-                      Scan for Details
+                      {t("listing.scan_for_details")}
                     </span>
                     <div className="w-8 h-px bg-[#C5A059] mb-8" />
                     <div
@@ -1005,7 +960,7 @@ function ListingDetail({
                       />
                     </div>
                     <p className="font-body text-[13px] text-[#7A7A7A] mt-5 max-w-[300px] leading-relaxed font-light">
-                      Scan this code to instantly access the digital brochure and booking details.
+                      {t("listing.scan_description")}
                     </p>
                   </div>
                 </motion.div>
@@ -1022,7 +977,7 @@ function ListingDetail({
                 >
                   <div className="flex flex-col items-center text-center">
                     <span className="text-[#C5A059] font-body text-xs tracking-[0.28em] uppercase mb-4">
-                      Scan for Details
+                      {t("listing.scan_for_details")}
                     </span>
                     <div className="w-8 h-px bg-[#C5A059] mb-8" />
                     <div
@@ -1036,7 +991,7 @@ function ListingDetail({
                       />
                     </div>
                     <p className="font-body text-[13px] text-[#7A7A7A] mt-5 max-w-[300px] leading-relaxed font-light">
-                      Scan this code to instantly access the digital brochure and booking details.
+                      {t("listing.scan_description")}
                     </p>
                   </div>
                 </motion.div>
@@ -1053,7 +1008,7 @@ function ListingDetail({
                 >
                   <div className="flex flex-col items-center text-center">
                     <span className="text-[#C5A059] font-body text-xs tracking-[0.28em] uppercase mb-4">
-                      Scan for Details
+                      {t("listing.scan_for_details")}
                     </span>
                     <div className="w-8 h-px bg-[#C5A059] mb-8" />
                     <div
@@ -1067,7 +1022,7 @@ function ListingDetail({
                       />
                     </div>
                     <p className="font-body text-[13px] text-[#7A7A7A] mt-5 max-w-[300px] leading-relaxed font-light">
-                      Scan this code to instantly access the digital brochure and booking details.
+                      {t("listing.scan_description")}
                     </p>
                   </div>
                 </motion.div>
@@ -1084,7 +1039,7 @@ function ListingDetail({
                 >
                   <div className="flex flex-col items-center text-center">
                     <span className="text-[#C5A059] font-body text-xs tracking-[0.28em] uppercase mb-4">
-                      Scan for Details
+                      {t("listing.scan_for_details")}
                     </span>
                     <div className="w-8 h-px bg-[#C5A059] mb-8" />
                     <div
@@ -1098,7 +1053,7 @@ function ListingDetail({
                       />
                     </div>
                     <p className="font-body text-[13px] text-[#7A7A7A] mt-5 max-w-[300px] leading-relaxed font-light">
-                      Scan this code to instantly access the digital brochure and booking details.
+                      {t("listing.scan_description")}
                     </p>
                   </div>
                 </motion.div>
@@ -1115,7 +1070,7 @@ function ListingDetail({
                 >
                   <div className="flex flex-col items-center text-center">
                     <span className="text-[#C5A059] font-body text-xs tracking-[0.28em] uppercase mb-4">
-                      Scan for Details
+                      {t("listing.scan_for_details")}
                     </span>
                     <div className="w-8 h-px bg-[#C5A059] mb-8" />
                     <div
@@ -1129,7 +1084,7 @@ function ListingDetail({
                       />
                     </div>
                     <p className="font-body text-[13px] text-[#7A7A7A] mt-5 max-w-[300px] leading-relaxed font-light">
-                      Scan this code to instantly access the digital brochure and booking details.
+                      {t("listing.scan_description")}
                     </p>
                   </div>
                 </motion.div>
@@ -1146,7 +1101,7 @@ function ListingDetail({
                 >
                   <div className="flex flex-col items-center text-center">
                     <span className="text-[#C5A059] font-body text-xs tracking-[0.28em] uppercase mb-4">
-                      Scan for Details
+                      {t("listing.scan_for_details")}
                     </span>
                     <div className="w-8 h-px bg-[#C5A059] mb-8" />
                     <div
@@ -1160,7 +1115,7 @@ function ListingDetail({
                       />
                     </div>
                     <p className="font-body text-[13px] text-[#7A7A7A] mt-5 max-w-[300px] leading-relaxed font-light">
-                      Scan this code to instantly access the digital brochure and booking details.
+                      {t("listing.scan_description")}
                     </p>
                   </div>
                 </motion.div>
@@ -1177,7 +1132,7 @@ function ListingDetail({
                 >
                   <div className="flex flex-col items-center text-center">
                     <span className="text-[#C5A059] font-body text-xs tracking-[0.28em] uppercase mb-4">
-                      Scan for Details
+                      {t("listing.scan_for_details")}
                     </span>
                     <div className="w-8 h-px bg-[#C5A059] mb-8" />
                     <div
@@ -1191,7 +1146,7 @@ function ListingDetail({
                       />
                     </div>
                     <p className="font-body text-[13px] text-[#7A7A7A] mt-5 max-w-[300px] leading-relaxed font-light">
-                      Scan this code to instantly access the digital brochure and booking details.
+                      {t("listing.scan_description")}
                     </p>
                   </div>
                 </motion.div>
@@ -1210,7 +1165,7 @@ function ListingDetail({
                 <div className="bg-white border border-[#EDE6D8] rounded-2xl p-6"
                   style={{ boxShadow: "0 4px 32px rgba(197,160,89,0.12)" }}>
                   <p className="font-body text-[11px] text-[#9A9A9A] tracking-[0.18em] uppercase mb-1">
-                  {isSaleListing ? "Sale Price" : "Asking Price"}
+                  {isSaleListing ? t("listing.sale_price") : t("listing.asking_price")}
                 </p>
                   {isSaleListing ? (
                     <div>
@@ -1302,7 +1257,7 @@ function ListingDetail({
                       listing.category,
                       listing.location,
                       ...(extended.status ? [`Status: ${extended.status}`] : []),
-                      ...(listing.furnishedKey ? ["Fully Furnished"] : []),
+                      ...(listing.furnishedKey ? [t("listing.fully_furnished")] : []),
                     ].map((item) => (
                       <div key={item} className="flex items-center gap-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059] flex-shrink-0" />
@@ -1319,9 +1274,9 @@ function ListingDetail({
                     <img src="/dulce-portrait.png" alt="Dulce Escobar"
                       className="w-14 h-14 rounded-full object-cover border-2 border-[#EDE6D8]" />
                     <div>
-                      <p className="font-body text-[10px] text-[#9A9A9A] tracking-[0.12em] uppercase mb-0.5">Listed By</p>
+                      <p className="font-body text-[10px] text-[#9A9A9A] tracking-[0.12em] uppercase mb-0.5">{t("listing.listed_by")}</p>
                       <p className="font-display text-[19px] text-[#1A1A1A] leading-tight">Dulce Escobar</p>
-                      <p className="font-body text-[12px] text-[#7A7A7A]">Luxury Real Estate</p>
+                      <p className="font-body text-[12px] text-[#7A7A7A]">{t("listing.luxury_re")}</p>
                     </div>
                   </div>
 
@@ -1333,20 +1288,20 @@ function ListingDetail({
                       className="flex items-center justify-center gap-2.5 w-full py-3.5 rounded-full bg-[#C5A059] text-white font-body text-[12px] tracking-[0.16em] uppercase hover:bg-[#b08c45] transition-colors duration-200"
                     >
                       <MessageCircle size={14} />
-                      WhatsApp
+                      {t("listing.whatsapp")}
                     </a>
                     <a
                       href="tel:+971588473125"
                       className="flex items-center justify-center gap-2.5 w-full py-3.5 rounded-full border border-[#C5A059] text-[#C5A059] font-body text-[12px] tracking-[0.16em] uppercase hover:bg-[#C5A059] hover:text-white transition-colors duration-200"
                     >
                       <Phone size={14} />
-                      Call Now
+                      {t("listing.call_now")}
                     </a>
                     <Link
                       href="/contact-us"
                       className="flex items-center justify-center w-full py-3.5 rounded-full border border-[#EDE6D8] text-[#7A7A7A] font-body text-[12px] tracking-[0.16em] uppercase hover:border-[#C5A059] hover:text-[#C5A059] transition-colors duration-200"
                     >
-                      Book a Viewing
+                      {t("listing.book_viewing")}
                     </Link>
                   </div>
                 </div>

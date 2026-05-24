@@ -29,10 +29,10 @@ export default function OffPlanContent() {
             className="flex flex-col items-center text-center mb-14"
           >
             <span className="text-[#C5A059] font-body text-xs tracking-[0.22em] uppercase mb-4">
-              Featured Projects
+              {t("offplan.featured_eyebrow")}
             </span>
             <h2 className="font-display text-3xl md:text-4xl xl:text-[46px] leading-tight text-[#1A1A1A]">
-              Off-Plan Opportunities
+              {t("offplan.featured_headline")}
             </h2>
             <div className="w-10 h-px bg-[#C5A059] mt-5" />
           </motion.div>
@@ -64,10 +64,10 @@ export default function OffPlanContent() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
                 />
                 <span className="absolute top-3 left-3 z-10 font-body text-[11px] tracking-[0.14em] uppercase px-3 py-1 rounded-md bg-white text-[#1A1A1A] font-medium shadow-sm">
-                  Studio / 1-Bed
+                  {t("offplan.badge_studio")}
                 </span>
                 <span className="absolute top-3 right-3 z-10 font-body text-[11px] tracking-[0.14em] uppercase px-3 py-1 rounded-md bg-[#C5A059] text-white font-medium shadow-sm">
-                  Off-Plan
+                  {t("offplan.badge_offplan")}
                 </span>
               </div>
               <div className="p-5">
@@ -79,7 +79,7 @@ export default function OffPlanContent() {
                   <span className="font-body text-[12px] text-[#7A7A7A]">JVC, Jumeirah Village Circle</span>
                 </div>
                 <div className="bg-[#FAFAF8] border border-[#EDE6D8] rounded-xl px-4 py-3">
-                  <p className="font-body text-[10px] text-[#9A9A9A] tracking-[0.16em] uppercase mb-0.5">Status</p>
+                  <p className="font-body text-[10px] text-[#9A9A9A] tracking-[0.16em] uppercase mb-0.5">{t("offplan.status_label")}</p>
                   <p className="font-display text-[16px] text-[#1A1A1A] leading-none">Ready</p>
                 </div>
               </div>
