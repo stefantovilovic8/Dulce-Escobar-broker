@@ -80,7 +80,7 @@ export default function OffPlanContent() {
                 </div>
                 <div className="bg-[#FAFAF8] border border-[#EDE6D8] rounded-xl px-4 py-3">
                   <p className="font-body text-[10px] text-[#9A9A9A] tracking-[0.16em] uppercase mb-0.5">Status</p>
-                  <p className="font-display text-[16px] text-[#1A1A1A] leading-none">Off-Plan · Completion Q4 2025</p>
+                  <p className="font-display text-[16px] text-[#1A1A1A] leading-none">Ready</p>
                 </div>
               </div>
             </Link>
