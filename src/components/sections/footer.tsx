@@ -32,6 +32,12 @@ const flags = {
       <path fill="red" d="M0 0h150v300H0z"/>
     </svg>
   ),
+  es: (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500" width="20" height="13">
+      <rect width="750" height="500" fill="#c60b1e"/>
+      <rect y="125" width="750" height="250" fill="#ffc400"/>
+    </svg>
+  ),
 };
 
 export default function Footer({ bgColor }: { bgColor?: string }) {
@@ -40,6 +46,7 @@ export default function Footer({ bgColor }: { bgColor?: string }) {
   const languageNames = {
     en: t("common.english"),
     ar: t("common.arabic"),
+    es: "Español",
   };
 
   return (
