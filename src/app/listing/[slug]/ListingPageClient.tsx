@@ -260,6 +260,99 @@ const EXTENDED_SPECS: Record<string, {
       },
     ],
   },
+  "binghatti-azure-sale": {
+    floor: "Investment Grade",
+    view: "City View",
+    status: "Tenanted",
+    paymentTerms: "Rented until 28.8.2028",
+    amenities: [
+      {
+        category: "Interior & Comfort",
+        items: [
+          "Fully Fitted Kitchen",
+          "Kitchen Appliances",
+          "Built-in Wardrobes",
+          "Central A/C",
+          "Balcony",
+        ],
+      },
+      {
+        category: "Wellness & Leisure",
+        items: [
+          "Swimming Pool",
+          "Gymnasium",
+          "Jacuzzi",
+          "Sauna",
+          "Steam Room",
+        ],
+      },
+      {
+        category: "Building & Outdoor",
+        items: [
+          "Covered Parking",
+          "BBQ Area",
+          "Children's Play Area",
+          "Communal Gardens",
+        ],
+      },
+      {
+        category: "Connectivity & Lifestyle",
+        items: [
+          "Broadband Ready",
+          "Public Transport",
+          "Restaurants",
+          "Shops",
+          "24/7 Security",
+        ],
+      },
+    ],
+  },
+  "binghatti-aurora-sale": {
+    parking: "1 Space",
+    status: "Tenanted",
+    paymentTerms: "Rented until 30.11.2028",
+    amenities: [
+      {
+        category: "Interior & Comfort",
+        items: [
+          "Fully Fitted Kitchen",
+          "Kitchen Appliances",
+          "Built-in Wardrobes",
+          "Central A/C",
+          "Balcony",
+        ],
+      },
+      {
+        category: "Wellness & Leisure",
+        items: [
+          "Swimming Pool",
+          "Gymnasium",
+          "Jacuzzi",
+          "Sauna",
+          "Steam Room",
+        ],
+      },
+      {
+        category: "Building & Outdoor",
+        items: [
+          "Covered Parking",
+          "BBQ Area",
+          "Children's Play Area",
+          "Communal Gardens",
+        ],
+      },
+      {
+        category: "Connectivity & Lifestyle",
+        items: [
+          "Broadband Ready",
+          "Public Transport",
+          "Restaurants",
+          "Shops",
+          "24/7 Security",
+        ],
+      },
+    ],
+  },
   "binghatti-phantom": {
     unitTitle: "Unit 409",
     view: "Community View",

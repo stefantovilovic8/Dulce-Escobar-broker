@@ -118,7 +118,7 @@ export const LISTINGS_DATA = [
   },
   {
     id: 6,
-    slug: "binghatti-azure",
+    slug: "binghatti-azure-sale",
     project: "Binghatti Azure",
     category: "Studio",
     location: "JVC, Dubai",
@@ -149,7 +149,7 @@ export const LISTINGS_DATA = [
   },
   {
     id: 7,
-    slug: "binghatti-aurora",
+    slug: "binghatti-aurora-sale",
     project: "Binghatti Aurora",
     category: "Studio",
     location: "JVC, Dubai",

@@ -28,8 +28,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/rent/damac-courestia-villa`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
 
     // Sale listings
-    { url: `${base}/sale/binghatti-azure`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${base}/sale/binghatti-aurora`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/sale/binghatti-azure-sale`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/sale/binghatti-aurora-sale`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/sale/binghatti-orchid`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
   ];
 }
