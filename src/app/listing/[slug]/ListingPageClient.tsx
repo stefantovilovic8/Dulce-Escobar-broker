@@ -694,9 +694,9 @@ function ListingDetail({
     { icon: <Bed size={16} />, label: t("card.bed") + "s", value: listing.beds === 0 ? t("card.studio") : listing.slug === "damac-courestia-villa" ? "5 + Maid" : `${listing.beds}` },
     { icon: <Bath size={16} />, label: t("card.bath") + "s", value: `${listing.baths}` },
     { icon: <Maximize2 size={16} />, label: t("card.sqft"), value: `${listing.sqft}` },
-    ...(extended.floor ? [{ icon: <Layers size={16} />, label: "Floor", value: extended.floor }] : []),
-    ...(extended.view ? [{ icon: <Eye size={16} />, label: "View", value: extended.view }] : []),
-    ...(extended.parking ? [{ icon: <Car size={16} />, label: "Parking", value: extended.parking }] : []),
+    ...(extended.floor ? [{ icon: <Layers size={16} />, label: t("listing.floor"), value: extended.floor }] : []),
+    ...(extended.view ? [{ icon: <Eye size={16} />, label: t("listing.view"), value: extended.view }] : []),
+    ...(extended.parking ? [{ icon: <Car size={16} />, label: t("listing.parking"), value: extended.parking }] : []),
     ...(extended.status ? [{ icon: <CircleDot size={16} />, label: t("listing.status_prefix"), value: extended.status }] : []),
   ];
 
@@ -751,7 +751,7 @@ function ListingDetail({
               {/* Price tag bottom-left */}
               <div className="absolute bottom-5 left-5 z-10">
                 <span className="font-body text-[11px] tracking-[0.18em] uppercase text-[#C5A059] block mb-1">
-                  {listing.category} · {isSaleListing ? "For Sale" : "For Rent"}
+                  {listing.category === "Studio" ? t("listing.category_studio") : listing.category === "Villa" ? t("listing.category_villa") : t("listing.category_apartment")} · {isSaleListing ? t("listing.for_sale") : t("listing.for_rent")}
                 </span>
                 <p className="font-display text-white text-[22px] leading-none">
                   {isSaleListing
@@ -820,7 +820,7 @@ function ListingDetail({
                 </div>
               </div>
               <span className="font-body text-[11px] tracking-[0.2em] uppercase text-[#C5A059] bg-white/5 border border-[#C5A059]/30 px-4 py-2 rounded-full self-start sm:self-auto">
-                {isSaleListing ? "Available for Sale" : "Available for Rent"}
+                {isSaleListing ? t("listing.available_for_sale") : t("listing.available_for_rent")}
               </span>
             </motion.div>
           </div>
@@ -1347,9 +1347,9 @@ function ListingDetail({
 
                   <div className="flex flex-col gap-2.5">
                     {[
-                      listing.category,
+                      listing.category === "Studio" ? t("listing.category_studio") : listing.category === "Villa" ? t("listing.category_villa") : t("listing.category_apartment"),
                       listing.location,
-                      ...(extended.status ? [`Status: ${extended.status}`] : []),
+                      ...(extended.status ? [`${t("listing.status_label")}: ${extended.status}`] : []),
                       ...(listing.furnishedKey ? [t("listing.fully_furnished")] : []),
                     ].map((item) => (
                       <div key={item} className="flex items-center gap-2">
