@@ -5,37 +5,37 @@ import { useLanguage } from "@/lib/language-context";
 
 const TESTIMONIALS = [
   {
-    name: "Marco Pellegrini",
+    name: "Marco P.",
     location: "Milan → Dubai",
     avatar: "https://i.pravatar.cc/96?img=11",
     text: "Dulce made our relocation to Dubai completely seamless. Within days she had shortlisted apartments that matched our lifestyle perfectly — something we had struggled to find on our own for months. Her attention to detail and honest advice set her apart from every other agent we dealt with.",
   },
   {
-    name: "Valentina Cruz",
+    name: "Valentina C.",
     location: "Bogotá → Dubai",
     avatar: "https://i.pravatar.cc/96?img=47",
     text: "Desde el primer mensaje, Dulce entendió exactamente lo que buscaba. Como hispanohablante en Dubai, fue un alivio enorme poder comunicarme con fluidez y sentir que alguien realmente entendía mis prioridades. Encontró mi apartamento ideal en menos de una semana. La recomiendo sin dudarlo.",
   },
   {
-    name: "James O'Brien",
+    name: "James O.",
     location: "London → Dubai",
     avatar: "https://i.pravatar.cc/96?img=53",
     text: "I've worked with several brokers in Dubai and Dulce is genuinely different. She doesn't push listings — she listens. Her knowledge of the JVC and Al Barsha markets is exceptional, and her negotiation on my behalf saved me considerably on the final price. A true professional.",
   },
   {
-    name: "Isabella Vargas",
+    name: "Isabella V.",
     location: "Madrid → Dubai",
     avatar: "https://i.pravatar.cc/96?img=45",
     text: "Llevaba meses buscando un piso en Dubái sin éxito hasta que contacté con Dulce. Su ojo para el diseño y su conocimiento del mercado son una combinación única. Me presentó opciones que ningún otro agente había considerado, y el proceso de firma fue impecable. ¡Totalmente recomendada!",
   },
   {
-    name: "Luca Fontana",
+    name: "Luca F.",
     location: "Zurich → Dubai",
     avatar: "https://i.pravatar.cc/96?img=15",
     text: "Dulce handled the sale of my investment apartment with complete discretion and efficiency. She priced it correctly from day one, found a qualified buyer within two weeks, and managed every detail of the process. The result exceeded my expectations. I will not use anyone else for my Dubai portfolio.",
   },
   {
-    name: "Sophie Andreou",
+    name: "Sophie A.",
     location: "Athens → Dubai",
     avatar: "https://i.pravatar.cc/96?img=32",
     text: "What impressed me most was how Dulce balanced professionalism with genuine warmth. She guided me through my first property purchase in Dubai with patience, clarity, and zero pressure. Every question I had was answered promptly and honestly. I felt like I had a trusted friend in the industry.",
