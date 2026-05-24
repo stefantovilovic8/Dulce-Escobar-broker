@@ -6,6 +6,7 @@ import VideoCTA from "@/components/sections/video-cta";
 import CityLifestyleGuide from "@/components/sections/city-lifestyle-guide";
 import WhyChooseDulce from "@/components/sections/why-choose-dulce";
 import CtaContact from "@/components/sections/cta-contact";
+import Testimonials from "@/components/sections/testimonials";
 import Footer from "@/components/sections/footer";
 
 export const metadata: Metadata = {
@@ -40,6 +41,7 @@ export default function Home() {
         <WhyChooseDulce />
         <CityLifestyleGuide />
         <VideoCTA />
+        <Testimonials />
         <PartnerCarousel />
         <CtaContact />
       </main>

@@ -8,6 +8,7 @@ import TheValues from "@/components/sections/the-values";
 import ExpertInsight from "@/components/sections/expert-insight";
 import Footer from "@/components/sections/footer";
 import AboutMoreLinks from "./AboutMoreLinks";
+import Testimonials from "@/components/sections/testimonials";
 
 export const metadata: Metadata = {
   title: "About Dulce Escobar | Luxury Real Estate Broker in Dubai",
@@ -34,6 +35,7 @@ export default function AboutPage() {
         <HumanSignature />
         <TheValues />
         <ExpertInsight />
+        <Testimonials />
         <AboutMoreLinks pageBg={pageBg} />
         <FriendsAndPartnersTitle />
         <PartnerCarousel />
