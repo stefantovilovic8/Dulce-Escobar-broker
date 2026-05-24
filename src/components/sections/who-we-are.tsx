@@ -72,9 +72,9 @@ const WhoWeAre = () => {
 export function PartnerCarousel() {
   const { t } = useLanguage();
     return (
-    <section className="bg-[#FFFFFF] py-28 overflow-hidden border-y border-[#ECECEC]">
+    <section className="bg-[#FFFFFF] py-14 overflow-hidden border-y border-[#ECECEC]">
 
-          <div className="relative px-8 md:px-14" dir="ltr">
+          <div className="relative px-6 md:px-10" dir="ltr">
           <div className="group flex overflow-hidden">
             <div className="flex animate-scroll group-hover:[animation-play-state:paused]">
 
@@ -95,15 +95,15 @@ export function PartnerCarousel() {
                     ].map((logo, num) => (
                       <div
                         key={`${setIndex}-${num}`}
-                        className="flex items-center justify-center mx-12 md:mx-16"
+                        className="flex items-center justify-center mx-7 md:mx-10"
                       >
-                        <div className="flex items-center justify-center w-[190px] md:w-[240px] h-[96px] md:h-[112px] rounded-2xl bg-[#FFFFFF] px-7 py-5 shadow-[0_8px_24px_rgba(0,0,0,0.05)] ring-1 ring-[#EDEDED]">
+                        <div className="flex items-center justify-center w-[130px] md:w-[160px] h-[64px] md:h-[72px] rounded-xl bg-[#FFFFFF] px-4 py-3 shadow-[0_4px_16px_rgba(0,0,0,0.04)] ring-1 ring-[#EDEDED]">
                         <Image
                           src={logo}
                           alt={t("who.alt_partner")}
-                          width={180}
-                          height={64}
-                          className="object-contain max-h-full w-auto brightness-0 contrast-125 opacity-95 hover:opacity-100 transition-opacity duration-300"
+                          width={130}
+                          height={48}
+                          className="object-contain max-h-full w-auto brightness-0 contrast-125 opacity-75 hover:opacity-100 transition-opacity duration-300"
                         />
                       </div>
                     </div>

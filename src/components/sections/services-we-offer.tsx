@@ -133,8 +133,8 @@ export default function ServicesWeOffer() {
 export function FriendsAndPartnersTitle() {
   const { t } = useLanguage();
   return (
-      <div className="flex justify-center mb-8 pt-12">
-        <h2 className="text-[2.25rem] md:text-[2.8rem] lg:text-[3.15rem] font-display text-[#1A1A1A] leading-[1.1] text-center">
+      <div className="flex justify-center mb-6 pt-8">
+        <h2 className="text-[1.5rem] md:text-[1.75rem] lg:text-[2rem] font-display text-[#1A1A1A] leading-[1.1] text-center tracking-wide">
           {t("services.friends")}
         </h2>
       </div>
