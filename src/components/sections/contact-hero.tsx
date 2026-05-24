@@ -28,7 +28,7 @@ const ContactHero = () => {
           {/* Social Icons Row */}
             <div className="flex items-center justify-center gap-[15px] mb-[20px]">
               <a
-              href="https://www.instagram.com/dulcescob?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              href="https://www.instagram.com/dulcescobar.ae/"
               target="_blank"
               rel="noopener noreferrer"
               className="social-circle w-[40px] h-[40px] flex items-center justify-center rounded-full border border-[#C5A059]/20 bg-white/50 text-[#C5A059] transition-all duration-300 hover:bg-[#C5A059]/5 hover:border-[#C5A059] hover:text-[#C5A059]"

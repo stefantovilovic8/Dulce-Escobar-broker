@@ -84,7 +84,7 @@ export default function Footer({ bgColor }: { bgColor?: string }) {
             {/* Social Icons */}
             <div className="flex items-center gap-3">
               <a
-                href="https://www.instagram.com/vidalsprimerealestate/"
+                href="https://www.instagram.com/dulcescobar.ae/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-[#C5A059] bg-white flex items-center justify-center text-[#C5A059] hover:bg-[#C5A059] hover:text-white transition-all duration-300"
