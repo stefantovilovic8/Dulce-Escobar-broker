@@ -430,8 +430,8 @@ export const translations: Record<Language, Record<string, string>> = {
 
       "expertInsight.eyebrow": "About Me",
       "expertInsight.headline": "Expert Insight.\nPersonal Commitment.",
-      "expertInsight.para1": "With a background rooted in Business, Design, and Customer Relations, I entered the real estate world to bridge a vital gap: the need for a fresh, consultative service that pairs high-level market intelligence with a truly personalized experience.\n\nAs a younger agent in the fast-paced Dubai market, I bring a modern perspective to an industry that often feels impersonal. My approach is defined by agility, deep research, and clear communication. Because I am multilingual, I navigate our diverse global landscape with ease, ensuring that language is never a barrier to achieving your goals.",
-      "expertInsight.para2": "I don't just facilitate transactions; I act as a strategic advisor. My design-focused eye allows me to identify hidden potential in properties that others often overlook, while my business background ensures that every negotiation is backed by sound financial rationale.\n\nWhether I am scouting a high-fashion pied-à-terre for a short-term stay or securing a significant legacy estate, my focus remains on the details that create long-term value. To me, you are not a transaction but a long-term partner."
+      "expertInsight.para1": "With a background in Business, Design, and Client Relations, I bridge the gap between high-level market intelligence and a bespoke, personal experience.",
+      "expertInsight.para2": "As a multilingual advisor in the fast-paced Dubai market, I don't just facilitate transactions—I curate them. By combining a design-focused eye with sound financial rationale, I identify the potential others overlook. For me, you aren't just a client; you're a long-term partner."
     },
   ar: {
     "nav.home": "الرئيسية",
