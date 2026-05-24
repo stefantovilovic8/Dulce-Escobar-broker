@@ -139,7 +139,7 @@ export default function Footer({ bgColor }: { bgColor?: string }) {
             Licensed Real Estate Broker · Dubai Land Department
           </p>
           <p className="text-xs text-[#9A9A9A]">
-            BRN: <span className="text-[#C5A059] font-medium">41611</span> · River Front Real Estate L.L.C
+            BRN: <span className="text-[#C5A059] font-medium">41611</span> · Broker Card: <span className="text-[#C5A059] font-medium">88972</span> · River Front Real Estate L.L.C
           </p>
         </div>
 
