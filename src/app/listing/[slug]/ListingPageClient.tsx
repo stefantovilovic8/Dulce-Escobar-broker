@@ -18,6 +18,8 @@ import { useLanguage } from "@/lib/language-context";
 type ListingWithSale = typeof LISTINGS_DATA[0] & {
   salePrice?: string;
   saleContract?: string;
+  descriptionEs?: string;
+  descriptionAr?: string;
 };
 
 // Extended specs per slug
@@ -680,7 +682,12 @@ function ListingDetail({
 }) {
   const [activeImg, setActiveImg] = useState(0);
   const pageBg = "#FFFFFF";
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const localizedDescription = language === "es" && listing.descriptionEs
+    ? listing.descriptionEs
+    : language === "ar" && listing.descriptionAr
+      ? listing.descriptionAr
+      : listing.description;
 
   const prev = () => setActiveImg((c) => (c === 0 ? listing.images.length - 1 : c - 1));
   const next = () => setActiveImg((c) => (c === listing.images.length - 1 ? 0 : c + 1));
@@ -956,7 +963,7 @@ function ListingDetail({
                 <h2 className="font-display text-2xl md:text-3xl text-[#1A1A1A] mb-6">{t("listing.about_property")}</h2>
                 <div className="w-10 h-px bg-[#C5A059] mb-6" />
                 <p className="font-body text-[#5A5A5A] text-[15px] md:text-[16px] leading-[1.9] font-light">
-                  {listing.description}
+                  {localizedDescription}
                 </p>
               </motion.div>
 

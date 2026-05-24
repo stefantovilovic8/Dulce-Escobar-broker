@@ -36,6 +36,8 @@ export const LISTINGS_DATA = [
       "/aurora-11.jpg",
     ],
     description: "Elegant studio apartment in the prestigious Binghatti Aurora tower, located in the heart of Business Bay. This thoughtfully designed unit offers breathtaking views, premium finishes, and access to world-class amenities.",
+    descriptionEs: "Elegante estudio en la prestigiosa torre Binghatti Aurora, situada en el corazón de Business Bay. Esta unidad cuidadosamente diseñada ofrece impresionantes vistas, acabados premium y acceso a comodidades de clase mundial.",
+    descriptionAr: "شقة استوديو أنيقة في برج بينغاتي أورورا المرموق، في قلب بيزنس باي. توفر هذه الوحدة المصممة بعناية إطلالات خلابة وتشطيبات فاخرة وإمكانية الوصول إلى مرافق عالمية المستوى.",
   },
   {
     id: 4,
@@ -62,6 +64,8 @@ export const LISTINGS_DATA = [
       "/tulip-7.jpg",
     ],
     description: "Stunning fully furnished 1-bedroom apartment in Binghatti Tulip. Enjoy breathtaking marina views, premium modern interiors, a fully fitted kitchen, and resort-style building amenities. A high-floor gem in one of JVC's most iconic towers.",
+    descriptionEs: "Impresionante apartamento de 1 dormitorio totalmente amueblado en Binghatti Tulip. Disfrute de impresionantes vistas al puerto deportivo, interiores modernos premium, cocina totalmente equipada y comodidades de estilo resort. Una joya en planta alta en una de las torres más icónicas de JVC.",
+    descriptionAr: "شقة مذهلة مفروشة بالكامل بغرفة نوم واحدة في بينغاتي تيوليب. استمتع بإطلالات خلابة على المرسى وتصميمات داخلية حديثة فاخرة ومطبخ مجهز بالكامل ومرافق البناء بأسلوب المنتجع. جوهرة في طابق مرتفع في إحدى أكثر الأبراج المميزة في JVC.",
   },
   {
     id: 5,
@@ -89,6 +93,8 @@ export const LISTINGS_DATA = [
       "/tulip2-8.jpg",
     ],
     description: "Beautifully furnished 1-bedroom apartment in Binghatti Tulip. Featuring premium finishes, a fully fitted kitchen with appliances, built-in wardrobes, and a private balcony with stunning community views. A refined residence in the heart of JVC.",
+    descriptionEs: "Hermoso apartamento de 1 dormitorio amueblado en Binghatti Tulip. Con acabados premium, cocina totalmente equipada con electrodomésticos, armarios empotrados y balcón privado con impresionantes vistas a la comunidad. Una residencia refinada en el corazón de JVC.",
+    descriptionAr: "شقة مفروشة بجمال بغرفة نوم واحدة في بينغاتي تيوليب. تتميز بتشطيبات فاخرة ومطبخ مجهز بالكامل مع الأجهزة وخزائن مدمجة وشرفة خاصة مع إطلالات رائعة على المجتمع. مسكن راقٍ في قلب JVC.",
   },
   {
     id: 10,
@@ -115,6 +121,8 @@ export const LISTINGS_DATA = [
       "/bt2806-7.jpg",
     ],
     description: "A refined 1-bedroom residence in NEVA Residences, JVC — offering 77.84 Sqm of thoughtfully designed living space with premium modern finishes. This elegant unit features an open-plan layout, fully fitted kitchen with appliances, built-in wardrobes, central A/C, and a private balcony overlooking the vibrant community. Nestled in the heart of Jumeirah Village Circle, NEVA Residences combines contemporary architecture with resort-style amenities — an exceptional opportunity for discerning residents and investors alike.",
+    descriptionEs: "Una refinada residencia de 1 dormitorio en NEVA Residences, JVC — con 77,84 m² de espacio vital cuidadosamente diseñado con acabados modernos premium. Esta elegante unidad cuenta con distribución abierta, cocina totalmente equipada, armarios empotrados, A/C central y balcón privado con vistas a la vibrante comunidad. Situada en el corazón de Jumeirah Village Circle, NEVA Residences combina arquitectura contemporánea con comodidades de estilo resort — una oportunidad excepcional para residentes e inversores exigentes.",
+    descriptionAr: "مسكن راقٍ بغرفة نوم واحدة في NEVA Residences، JVC — يوفر 77.84 م² من مساحة المعيشة المصممة بعناية بتشطيبات حديثة فاخرة. تتميز هذه الوحدة الأنيقة بتصميم مفتوح ومطبخ مجهز بالكامل وخزائن مدمجة وتكييف مركزي وشرفة خاصة تطل على المجتمع النابض بالحياة. تجمع NEVA Residences في قلب JVC بين العمارة المعاصرة ومرافق المنتجع — فرصة استثنائية للسكان والمستثمرين المميزين.",
   },
   {
     id: 6,
@@ -144,6 +152,8 @@ export const LISTINGS_DATA = [
       "/azure-10.jpg",
     ],
     description: "Elegant studio apartment in the prestigious Binghatti Azure tower, perfectly positioned in Business Bay — Dubai's most vibrant mixed-use district. This income-generating unit is currently tenanted until August 2028, making it a prime turnkey investment with immediate rental returns and strong capital appreciation potential.",
+    descriptionEs: "Elegante estudio en la prestigiosa torre Binghatti Azure, perfectamente ubicada en Business Bay — el distrito de uso mixto más vibrante de Dubái. Esta unidad generadora de ingresos está actualmente alquilada hasta agosto de 2028, lo que la convierte en una inversión llave en mano de primera calidad con rendimientos inmediatos y un fuerte potencial de revalorización del capital.",
+    descriptionAr: "شقة استوديو أنيقة في برج بينغاتي أزور المرموق، الواقع في قلب بيزنس باي — أكثر أحياء دبي المتعددة الاستخدامات حيوية. هذه الوحدة المدرة للدخل مؤجرة حالياً حتى أغسطس 2028، مما يجعلها استثماراً جاهزاً من الدرجة الأولى مع عوائد إيجارية فورية وإمكانية تقدير رأس المال القوي.",
     salePrice: "720,000 AED",
     saleContract: "Rented until 28.8.2028",
   },
@@ -176,6 +186,8 @@ export const LISTINGS_DATA = [
       "/aurora-11.jpg",
     ],
     description: "Sophisticated studio apartment in the iconic Binghatti Aurora tower, located in the heart of Business Bay. Currently tenanted until November 2028, this investment-ready unit offers immediate rental income with long-term capital growth prospects in one of Dubai's most sought-after addresses.",
+    descriptionEs: "Sofisticado estudio en la icónica torre Binghatti Aurora, en el corazón de Business Bay. Actualmente alquilado hasta noviembre de 2028, esta unidad lista para invertir ofrece ingresos de alquiler inmediatos con perspectivas de crecimiento del capital a largo plazo en una de las direcciones más buscadas de Dubái.",
+    descriptionAr: "شقة استوديو راقية في برج بينغاتي أورورا الأيقوني، في قلب بيزنس باي. مؤجرة حالياً حتى نوفمبر 2028، توفر هذه الوحدة الجاهزة للاستثمار دخلاً إيجارياً فورياً مع آفاق نمو رأس المال على المدى الطويل في أحد أكثر العناوين المرغوبة في دبي.",
     salePrice: "750,000 AED",
     saleContract: "Rented until 30.11.2028",
   },
@@ -207,6 +219,8 @@ export const LISTINGS_DATA = [
       "/phantom-10.jpg",
     ],
     description: "Exquisite fully furnished 1-bedroom apartment in the iconic Binghatti Phantom. Featuring upgraded designer interiors, a spacious open-plan living area, fully fitted gourmet kitchen, and serene community views. A rare vacancy in one of Dubai's most sought-after residential addresses.",
+    descriptionEs: "Exquisito apartamento de 1 dormitorio totalmente amueblado en el icónico Binghatti Phantom. Con interiores de diseño renovados, amplia sala de estar de planta abierta, cocina gourmet totalmente equipada y serenas vistas a la comunidad. Una vacante excepcional en una de las direcciones residenciales más buscadas de Dubái.",
+    descriptionAr: "شقة رائعة مفروشة بالكامل بغرفة نوم واحدة في بينغاتي فانتوم الأيقوني. تتميز بتصميمات داخلية مطورة من تصميم المصمم ومنطقة معيشة مفتوحة المخطط ومطبخ ذواق مجهز بالكامل وإطلالات هادئة على المجتمع. شاغر نادر في أحد أكثر العناوين السكنية المرغوبة في دبي.",
   },
   {
     id: 11,
@@ -236,6 +250,8 @@ export const LISTINGS_DATA = [
       "/orchid-10.jpg",
     ],
     description: "A rare opportunity to own a signature 1-bedroom residence in Binghatti Orchid, Al Barsha South Fourth — one of Dubai's most strategically positioned communities. Spanning a generous 69.54 Sqm, this thoughtfully designed apartment features Binghatti's hallmark architectural elegance, premium-quality finishes, an open-plan living and dining area, a fully fitted kitchen, and a private balcony. With strong rental demand and excellent connectivity to Sheikh Zayed Road, Mall of the Emirates, and key business districts, Binghatti Orchid offers exceptional ROI potential. A refined lifestyle asset in a high-growth Dubai location.",
+    descriptionEs: "Una oportunidad excepcional para adquirir una residencia de firma de 1 dormitorio en Binghatti Orchid, Al Barsha South Fourth — una de las comunidades mejor ubicadas de Dubái. Con 69,54 m², este apartamento presenta la elegancia arquitectónica característica de Binghatti, acabados de primera calidad, zona de estar y comedor de planta abierta, cocina totalmente equipada y balcón privado. Con sólida demanda de alquiler y excelente conectividad con Sheikh Zayed Road, Mall of the Emirates y los principales distritos de negocios, Binghatti Orchid ofrece un potencial de rentabilidad excepcional.",
+    descriptionAr: "فرصة نادرة لامتلاك مسكن راقٍ بغرفة نوم واحدة في بينغاتي أوركيد، الجزء الرابع من البرشاء الجنوبية — أحد أكثر المجتمعات موقعاً استراتيجياً في دبي. بمساحة 69.54 م²، يتميز هذا الشقة بالأناقة المعمارية المميزة لبينغاتي وتشطيبات عالية الجودة ومنطقة معيشة وطعام مفتوحة ومطبخ مجهز بالكامل وشرفة خاصة. مع طلب إيجاري قوي واتصال ممتاز بشيخ زايد رود وموال الإمارات والمناطق التجارية الرئيسية، يوفر بينغاتي أوركيد إمكانات عائد استثماري استثنائية.",
   },
   {
     id: 12,
@@ -264,6 +280,8 @@ export const LISTINGS_DATA = [
       "/lavender-9.jpg",
     ],
     description: "A chic and intelligently designed studio for rent in the iconic Binghatti Lavender, JVC. Spanning 35.55 Sqm, this modern studio showcases Binghatti's signature architectural flair with premium-quality finishes, an open-plan living space, a fully fitted kitchen, and ample built-in storage. Ready for immediate move-in, the unit is nestled in the heart of Jumeirah Village Circle — a vibrant, well-connected community offering seamless access to major Dubai highways, retail, and leisure destinations. An exceptional rental opportunity combining style, comfort, and prime location.",
+    descriptionEs: "Un elegante estudio inteligentemente diseñado en alquiler en el icónico Binghatti Lavender, JVC. Con 35,55 m², este estudio moderno muestra el estilo arquitectónico de Binghatti con acabados de primera calidad, espacio de estar de planta abierta, cocina totalmente equipada y amplio almacenamiento empotrado. Listo para mudarse de inmediato en el corazón de Jumeirah Village Circle — una comunidad vibrante con acceso fluido a las principales autopistas de Dubái, comercios y destinos de ocio.",
+    descriptionAr: "استوديو أنيق ومصمم بذكاء للإيجار في بينغاتي لافندر الأيقوني، JVC. بمساحة 35.55 م²، يُظهر هذا الاستوديو الحديث أسلوب بينغاتي المعماري المميز بتشطيبات عالية الجودة ومساحة معيشة مفتوحة ومطبخ مجهز بالكامل وتخزين مدمج واسع. جاهز للانتقال الفوري في قلب JVC — مجتمع نابض بالحياة يوفر وصولاً سلساً إلى الطرق السريعة الرئيسية في دبي.",
   },
   {
     id: 14,
@@ -292,6 +310,8 @@ export const LISTINGS_DATA = [
       "/tulip-exclusive-9.jpg",
     ],
     description: "A premium and meticulously crafted studio available for rent in the iconic Binghatti Tulip, nestled within the vibrant community of Jumeirah Village Circle. Spanning a highly functional 33.38 Sqm, this exclusive studio showcases Binghatti's signature contemporary architecture alongside refined modern finishes throughout. The intelligently designed open-plan layout maximises every square metre, delivering a sophisticated yet comfortable living experience at an exceptional price point. Residents enjoy access to world-class building facilities including a pool, gymnasium, covered parking, and round-the-clock security — making this an outstanding lifestyle opportunity in one of Dubai's most well-connected neighbourhoods.",
+    descriptionEs: "Un estudio premium y meticulosamente elaborado disponible para alquiler en el icónico Binghatti Tulip, en la vibrante comunidad de JVC. Con 33,38 m² altamente funcionales, este estudio exclusivo presenta la arquitectura contemporánea de Binghatti con acabados modernos refinados. La distribución de planta abierta maximiza cada metro cuadrado. Los residentes disfrutan de instalaciones de clase mundial: piscina, gimnasio, aparcamiento cubierto y seguridad las 24 horas.",
+    descriptionAr: "استوديو فاخر ومصنوع بعناية متاح للإيجار في بينغاتي تيوليب الأيقوني، في مجتمع JVC النابض بالحياة. بمساحة 33.38 م² عالية الوظيفية، يُبرز هذا الاستوديو الحصري العمارة المعاصرة المميزة لبينغاتي مع تشطيبات حديثة راقية. يستمتع السكان بمرافق عالمية تشمل مسبح وصالة رياضية وموقف مسقوف وأمن على مدار الساعة.",
   },
   {
     id: 13,
@@ -320,6 +340,8 @@ export const LISTINGS_DATA = [
       "/tulip-studio-9.jpg",
     ],
     description: "An elegant and efficiently designed studio for rent in the iconic Binghatti Tulip, JVC. Spanning a smart 33.43 Sqm, this modern studio features Binghatti's signature contemporary architecture, premium-quality finishes, an open-plan living area with a fully fitted kitchen, and ample built-in storage. Conveniently payable in 6 cheques, this is an ideal opportunity for professionals and savvy renters seeking a stylish, low-maintenance lifestyle in the heart of Jumeirah Village Circle. Enjoy world-class building amenities including a pool, gymnasium, and 24/7 security in one of JVC's most sought-after towers.",
+    descriptionEs: "Un elegante estudio eficientemente diseñado en alquiler en el icónico Binghatti Tulip, JVC. Con 33,43 m², este estudio moderno presenta la arquitectura contemporánea de Binghatti, acabados premium y zona de estar de planta abierta con cocina totalmente equipada. Pagadero cómodamente en 6 cheques — ideal para profesionales que buscan un estilo de vida elegante en el corazón de JVC. Disfrute de piscina, gimnasio y seguridad las 24 horas.",
+    descriptionAr: "استوديو أنيق ومصمم بكفاءة للإيجار في بينغاتي تيوليب الأيقوني، JVC. بمساحة 33.43 م²، يتميز هذا الاستوديو الحديث بالعمارة المعاصرة لبينغاتي وتشطيبات فاخرة ومنطقة معيشة مفتوحة مع مطبخ مجهز بالكامل. يُدفع بسهولة في 6 شيكات — فرصة مثالية للمحترفين الباحثين عن أسلوب حياة أنيق في قلب JVC.",
   },
   {
     id: 15,
@@ -348,6 +370,8 @@ export const LISTINGS_DATA = [
       "/reef-2206-9.jpg",
     ],
     description: "An exceptional high-floor residence on the 22nd floor of Reef Residence, Al Barsha South Fourth, Dubai. Spanning 502.57 Sq. Ft. (46.69 Sqm), this well-proportioned 1-bedroom apartment commands open elevated views and benefits from a smart, efficient layout that maximises natural light and space. The unit features quality finishes throughout and comes with 1 dedicated basement parking space (Bay B2-26), offering convenience and security. Rent is conveniently payable in just 2 cheques at 45,000 AED per year, making this an attractive and accessible opportunity for professionals seeking a premium lifestyle address in one of Dubai's well-connected residential communities.",
+    descriptionEs: "Una residencia excepcional en planta alta en el piso 22 de Reef Residence, Al Barsha South Fourth, Dubái. Con 502,57 pies² (46,69 m²), este apartamento de 1 dormitorio bien proporcionado ofrece vistas elevadas abiertas y una distribución inteligente que maximiza la luz natural. La unidad incluye 1 plaza de aparcamiento en sótano dedicada (Bay B2-26). El alquiler se paga cómodamente en solo 2 cheques a 45.000 AED por año.",
+    descriptionAr: "مسكن استثنائي في طابق مرتفع في الطابق 22 من Reef Residence، الجزء الرابع من البرشاء الجنوبية، دبي. بمساحة 46.69 م²، يوفر هذا الشقة ذات الغرفة الواحدة المتناسبة إطلالات مرتفعة مفتوحة ومخطط ذكي يزيد من الضوء الطبيعي. تشمل الوحدة موقف سيارات في الطابق السفلي. يُدفع الإيجار بسهولة في شيكين فقط بـ 45,000 درهم سنوياً.",
   },
   {
     id: 16,
@@ -376,6 +400,8 @@ export const LISTINGS_DATA = [
       "/emerald-1br-9.jpg",
     ],
     description: "A distinguished 1-bedroom apartment for rent in the iconic Binghatti Emerald, nestled within the vibrant community of Jumeirah Village Circle. Spanning a generous 59.99 Sqm, this residence exemplifies Binghatti's signature avant-garde architecture paired with high-end interior finishes and a thoughtfully optimised layout that maximises natural light and living comfort. The open-plan design creates a seamless flow between spaces, delivering a refined lifestyle experience for discerning tenants. Flexible payment options are available: 62,000 AED payable in 2 cheques, or 65,000 AED payable in 4 cheques — offering genuine convenience for modern professionals. Residents enjoy access to a grand entrance lobby, resort-style swimming pool, state-of-the-art gymnasium, covered parking, and 24/7 security.",
+    descriptionEs: "Un distinguido apartamento de 1 dormitorio en alquiler en el icónico Binghatti Emerald, JVC. Con 59,99 m², esta residencia ejemplifica la arquitectura vanguardista de Binghatti con acabados interiores de alta gama y distribución optimizada. Opciones de pago flexibles: 62.000 AED en 2 cheques o 65.000 AED en 4 cheques. Los residentes disfrutan de gran recibidor, piscina de estilo resort, gimnasio de última generación, aparcamiento cubierto y seguridad las 24 horas.",
+    descriptionAr: "شقة متميزة بغرفة نوم واحدة للإيجار في بينغاتي إيميرالد الأيقوني، JVC. بمساحة 59.99 م²، تجسد هذه الشقة العمارة الطليعية المميزة لبينغاتي مع تشطيبات داخلية فاخرة. خيارات دفع مرنة: 62,000 درهم في شيكين أو 65,000 درهم في 4 شيكات. يستمتع السكان بلوبي فاخر ومسبح ومركز لياقة متطور وأمن على مدار الساعة.",
   },
   {
     id: 17,
@@ -414,6 +440,8 @@ export const LISTINGS_DATA = [
       "/courestia-villa-19.jpg",
     ],
     description: "An exceptional premium 5-bedroom villa nestled within the prestigious Courestia Cluster in DAMAC Hills 2 — one of Dubai's most vibrant and sought-after family communities. Spanning a generous 1,881.53 Sq. Ft., this residence offers an unparalleled blend of indoor luxury and extraordinary outdoor living designed for the most discerning families. The villa features elegant marble floors, a fully fitted premium kitchen equipped with top-tier appliances, built-in wardrobes, and central A/C throughout — complemented by a maid's room and six beautifully appointed bathrooms. Step outside to a private garden, private swimming pool, covered private garage, and a dedicated BBQ area perfect for entertaining. Pets are welcome, and the villa is part-furnished, ready for personalisation. Within the vibrant DAMAC Hills 2 community, residents enjoy access to a shared swimming pool, children's play area, communal gardens, public parks, shopping mall, retail shops, public parking, and a state-of-the-art gymnasium. Ready and vacant with keys immediately available — this is the ultimate family lifestyle opportunity in one of Dubai's most dynamic residential destinations.",
+    descriptionEs: "Una excepcional villa premium de 5 dormitorios en el prestigioso Courestia Cluster de DAMAC Hills 2 — una de las comunidades familiares más buscadas de Dubái. Con 1.881,53 pies², esta residencia ofrece una combinación incomparable de lujo interior y vida al aire libre extraordinaria. La villa cuenta con suelos de mármol, cocina premium totalmente equipada, armarios empotrados y A/C central — complementados con habitación de servicio y seis baños. Al exterior: jardín privado, piscina privada, garaje privado cubierto y zona de barbacoa. Se admiten mascotas. Lista y libre con llaves disponibles de inmediato.",
+    descriptionAr: "فيلا فاخرة استثنائية بـ 5 غرف نوم في كتلة Courestia المرموقة في DAMAC Hills 2 — أحد أكثر المجتمعات العائلية النابضة بالحياة في دبي. بمساحة 1,881.53 قدم²، تقدم هذه الشقة مزيجاً لا مثيل له من الفخامة الداخلية والحياة الخارجية الاستثنائية. تتميز الفيلا بأرضيات رخامية أنيقة ومطبخ فاخر مجهز بالكامل وخزائن مدمجة. في الخارج: حديقة خاصة ومسبح خاص وكراج خاص مسقوف. جاهزة وشاغرة مع المفاتيح متوفرة فوراً.",
   },
 ];
 
