@@ -688,16 +688,106 @@ function ListingDetail({
   const isPhantom = listing.slug === "binghatti-phantom";
   const isSaleListing = listing.status === "for-sale";
 
+  // Lookup map: English amenity string → translation key
+  const AMENITY_KEYS: Record<string, string> = {
+    "Interior & Comfort": "amenity.cat.interior_comfort",
+    "Interior": "amenity.cat.interior",
+    "Exclusive Wellness": "amenity.cat.exclusive_wellness",
+    "Lifestyle & Building": "amenity.cat.lifestyle_building",
+    "Location Benefits": "amenity.cat.location_benefits",
+    "Wellness & Leisure": "amenity.cat.wellness_leisure",
+    "Leisure & Wellness": "amenity.cat.leisure_wellness",
+    "Leisure & Lifestyle": "amenity.cat.leisure_lifestyle",
+    "Building & Outdoor": "amenity.cat.building_outdoor",
+    "Connectivity & Lifestyle": "amenity.cat.connectivity_lifestyle",
+    "Building & Security": "amenity.cat.building_security",
+    "Building & Parking": "amenity.cat.building_parking",
+    "Building & Lifestyle": "amenity.cat.building_lifestyle",
+    "Surroundings": "amenity.cat.surroundings",
+    "Features": "amenity.cat.features",
+    "Furnishing & Kitchen": "amenity.cat.furnishing_kitchen",
+    "Property Layout & Comfort": "amenity.cat.property_layout",
+    "Private Outdoor & Parking": "amenity.cat.private_outdoor",
+    "Community Amenities": "amenity.cat.community_amenities",
+    "Fully Furnished": "amenity.fully_furnished",
+    "Part Furnished": "amenity.part_furnished",
+    "Unfurnished": "amenity.unfurnished",
+    "Fully Fitted Kitchen": "amenity.fully_fitted_kitchen",
+    "Kitchen Appliances": "amenity.kitchen_appliances",
+    "Premium Kitchen Appliances": "amenity.premium_kitchen_appliances",
+    "Built-in Wardrobes": "amenity.built_in_wardrobes",
+    "Central A/C": "amenity.central_ac",
+    "Central A/C & Heating": "amenity.central_ac_heating",
+    "Air Conditioning": "amenity.air_conditioning",
+    "Balcony": "amenity.balcony",
+    "Study": "amenity.study",
+    "Carpets": "amenity.carpets",
+    "Marble Floors": "amenity.marble_floors",
+    "Upgraded Interior": "amenity.upgraded_interior",
+    "Floor-to-Ceiling Windows": "amenity.floor_to_ceiling_windows",
+    "Smart Home Features": "amenity.smart_home",
+    "Private Pool on Balcony": "amenity.private_pool_balcony",
+    "Maids Room": "amenity.maids_room",
+    "Laundry Room": "amenity.laundry_room",
+    "Panoramic Views": "amenity.panoramic_views",
+    "Private Swimming Pool": "amenity.private_swimming_pool",
+    "Shared Swimming Pool": "amenity.shared_swimming_pool",
+    "Swimming Pool": "amenity.swimming_pool",
+    "Jacuzzi": "amenity.jacuzzi",
+    "Sauna": "amenity.sauna",
+    "Steam Room": "amenity.steam_room",
+    "Gymnasium": "amenity.gymnasium",
+    "Gym": "amenity.gym",
+    "State-of-the-art Gymnasium": "amenity.state_of_art_gymnasium",
+    "Tennis Courts": "amenity.tennis_courts",
+    "BBQ Area": "amenity.bbq_area",
+    "Entertaining Area": "amenity.entertaining_area",
+    "Covered Parking": "amenity.covered_parking",
+    "Public Parking": "amenity.public_parking",
+    "Dedicated Parking": "amenity.dedicated_parking",
+    "Private Garage": "amenity.private_garage",
+    "Children's Play Area": "amenity.childrens_play_area",
+    "Children's Nursery": "amenity.childrens_nursery",
+    "Communal Gardens": "amenity.communal_gardens",
+    "Private Garden": "amenity.private_garden",
+    "Grand Entrance Lobby": "amenity.grand_entrance_lobby",
+    "Pets Allowed": "amenity.pets_allowed",
+    "Marina View": "amenity.marina_view",
+    "Community View": "amenity.community_view",
+    "City View": "amenity.city_view",
+    "Broadband Ready": "amenity.broadband_ready",
+    "Public Transport": "amenity.public_transport",
+    "Restaurants": "amenity.restaurants",
+    "Shops": "amenity.shops",
+    "Shopping Mall & Retail Shops": "amenity.shopping_mall",
+    "Shopping Mall (nearby)": "amenity.shopping_mall_nearby",
+    "24/7 Security": "amenity.24_7_security",
+    "High-speed Internet": "amenity.high_speed_internet",
+    "Concierge Service": "amenity.concierge_service",
+    "Public Park": "amenity.public_park",
+    "Public Park (nearby)": "amenity.public_park_nearby",
+    "Public Park nearby": "amenity.public_park_nearby",
+    "Community Amenities (DAMAC Hills 2)": "amenity.community_amenities_damac",
+  };
+  const STATUS_KEYS: Record<string, string> = {
+    "Vacant": "status.vacant",
+    "Available": "status.available",
+    "Tenanted": "status.tenanted",
+    "Investment Grade": "status.investment_grade",
+  };
+  const ta = (s: string) => { const k = AMENITY_KEYS[s]; return k ? t(k) : s; };
+  const ts = (s: string) => { const k = STATUS_KEYS[s]; return k ? t(k) : s; };
+
   // Build specs bar
   const specs = [
-    { icon: <Building2 size={16} />, label: t("listing.details"), value: listing.category },
+    { icon: <Building2 size={16} />, label: t("listing.details"), value: listing.category === "Studio" ? t("listing.category_studio") : listing.category === "Villa" ? t("listing.category_villa") : t("listing.category_apartment") },
     { icon: <Bed size={16} />, label: t("card.bed") + "s", value: listing.beds === 0 ? t("card.studio") : listing.slug === "damac-courestia-villa" ? "5 + Maid" : `${listing.beds}` },
     { icon: <Bath size={16} />, label: t("card.bath") + "s", value: `${listing.baths}` },
     { icon: <Maximize2 size={16} />, label: t("card.sqft"), value: `${listing.sqft}` },
     ...(extended.floor ? [{ icon: <Layers size={16} />, label: t("listing.floor"), value: extended.floor }] : []),
     ...(extended.view ? [{ icon: <Eye size={16} />, label: t("listing.view"), value: extended.view }] : []),
     ...(extended.parking ? [{ icon: <Car size={16} />, label: t("listing.parking"), value: extended.parking }] : []),
-    ...(extended.status ? [{ icon: <CircleDot size={16} />, label: t("listing.status_prefix"), value: extended.status }] : []),
+    ...(extended.status ? [{ icon: <CircleDot size={16} />, label: t("listing.status_prefix"), value: ts(extended.status) }] : []),
   ];
 
   // Default amenities for non-phantom listings
@@ -885,7 +975,7 @@ function ListingDetail({
                   {amenities.map((group) => (
                     <div key={group.category}>
                       <h3 className="font-body text-[11px] tracking-[0.22em] uppercase text-[#C5A059] mb-4">
-                        {group.category}
+                        {ta(group.category)}
                       </h3>
                       <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-3">
                         {group.items.map((item) => (
@@ -895,7 +985,7 @@ function ListingDetail({
                                 <path d="M1 3l2 2 4-4" stroke="#C5A059" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                               </svg>
                             </span>
-                            <span className="font-body text-[13px] text-[#4A4A4A]">{item}</span>
+                            <span className="font-body text-[13px] text-[#4A4A4A]">{ta(item)}</span>
                           </div>
                         ))}
                       </div>
@@ -1349,7 +1439,7 @@ function ListingDetail({
                     {[
                       listing.category === "Studio" ? t("listing.category_studio") : listing.category === "Villa" ? t("listing.category_villa") : t("listing.category_apartment"),
                       listing.location,
-                      ...(extended.status ? [`${t("listing.status_label")}: ${extended.status}`] : []),
+                      ...(extended.status ? [`${t("listing.status_label")}: ${ts(extended.status)}`] : []),
                       ...(listing.furnishedKey ? [t("listing.fully_furnished")] : []),
                     ].map((item) => (
                       <div key={item} className="flex items-center gap-2">
