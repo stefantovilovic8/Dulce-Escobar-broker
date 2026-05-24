@@ -11,9 +11,9 @@ export default function Header({ bgColor }: { bgColor?: string }) {
     const NAV_LINKS = [
       { label: t("nav.home"), href: "/" },
       { label: t("nav.offplan"), href: "/about" },
-      { label: t("nav.offplan_properties"), href: "/off-plan-properties" },
+      { label: t("nav.offplan_properties"), href: "/off-plan" },
       { label: t("nav.sale"), href: "/sale" },
-      { label: t("nav.holidayhomes"), href: "/services" },
+      { label: t("nav.holidayhomes"), href: "/rent" },
       { label: t("nav.contact"), href: "/contact-us" },
     ];
 

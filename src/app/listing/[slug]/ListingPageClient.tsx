@@ -797,7 +797,7 @@ function ListingDetail({
         <div className="container mx-auto px-5 md:px-10 lg:px-14 max-w-[1200px] py-16">
 
           {/* Back link */}
-          <Link href={isSaleListing ? "/sale" : "/services"} className="inline-flex items-center gap-2 text-[#C5A059] font-body text-sm hover:gap-3 transition-all duration-200 mb-12 block">
+          <Link href={isSaleListing ? "/sale" : "/rent"} className="inline-flex items-center gap-2 text-[#C5A059] font-body text-sm hover:gap-3 transition-all duration-200 mb-12 block">
             <ArrowLeft size={15} />
             Back to Listings
           </Link>
