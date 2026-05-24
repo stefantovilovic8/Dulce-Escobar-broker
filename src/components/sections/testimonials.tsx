@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 
 const TESTIMONIALS = [
@@ -34,6 +33,12 @@ const TESTIMONIALS = [
     location: "Zurich → Dubai",
     avatar: "https://i.pravatar.cc/96?img=15",
     text: "Dulce handled the sale of my investment apartment with complete discretion and efficiency. She priced it correctly from day one, found a qualified buyer within two weeks, and managed every detail of the process. The result exceeded my expectations. I will not use anyone else for my Dubai portfolio.",
+  },
+  {
+    name: "Sophie Andreou",
+    location: "Athens → Dubai",
+    avatar: "https://i.pravatar.cc/96?img=32",
+    text: "What impressed me most was how Dulce balanced professionalism with genuine warmth. She guided me through my first property purchase in Dubai with patience, clarity, and zero pressure. Every question I had was answered promptly and honestly. I felt like I had a trusted friend in the industry.",
   },
 ];
 
@@ -73,9 +78,6 @@ export default function Testimonials() {
               className="bg-white rounded-2xl p-7 flex flex-col gap-5 relative"
               style={{ boxShadow: "0 2px 20px rgba(0,0,0,0.06)" }}
             >
-              {/* Quote icon */}
-              <Quote className="text-[#C5A059] opacity-30 absolute top-6 right-6" size={28} />
-
               {/* Text */}
               <p className="font-body text-[14.5px] text-[#4A4A4A] leading-[1.8] font-light">
                 "{item.text}"
