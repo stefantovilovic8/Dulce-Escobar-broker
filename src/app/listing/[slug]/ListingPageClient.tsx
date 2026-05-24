@@ -29,7 +29,7 @@ const EXTENDED_SPECS: Record<string, {
   paymentTerms?: string;
   amenities?: { category: string; items: string[] }[];
 }> = {
-  "binghatti-tulip-3007": {
+  "binghatti-tulip-1": {
     unitTitle: "Unit 3007",
     view: "Marina View",
     status: "Vacant",
@@ -77,7 +77,7 @@ const EXTENDED_SPECS: Record<string, {
       },
     ],
   },
-  "binghatti-tulip-2806": {
+  "binghatti-tulip-2": {
     unitTitle: "Unit 2806",
     view: "Community View",
     status: "Vacant",
@@ -125,7 +125,7 @@ const EXTENDED_SPECS: Record<string, {
       },
     ],
   },
-  "neva-residences-1br": {
+  "neva-residences": {
     unitTitle: "Unit 1 B/R",
     view: "Community View",
     status: "Vacant",
@@ -212,7 +212,7 @@ const EXTENDED_SPECS: Record<string, {
       },
     ],
   },
-  "binghatti-azure-sale": {
+  "binghatti-azure": {
     floor: "Investment Grade",
     view: "City View",
     status: "Tenanted",
@@ -259,7 +259,7 @@ const EXTENDED_SPECS: Record<string, {
       },
     ],
   },
-  "binghatti-aurora-sale": {
+  "binghatti-aurora": {
     floor: "Investment Grade",
     view: "City View",
     status: "Tenanted",
@@ -400,7 +400,7 @@ const EXTENDED_SPECS: Record<string, {
       },
     ],
   },
-  "binghatti-emerald-1br": {
+  "binghatti-emerald": {
     status: "Vacant",
     paymentTerms: "62,000 AED / 2 Cheques · 65,000 AED / 4 Cheques",
     amenities: [
@@ -431,7 +431,7 @@ const EXTENDED_SPECS: Record<string, {
       },
     ],
   },
-  "damac-courestia-villa-152": {
+  "damac-courestia-villa": {
     status: "Available",
     paymentTerms: "155,000 AED / Yearly",
     amenities: [
@@ -485,7 +485,7 @@ const EXTENDED_SPECS: Record<string, {
       },
     ],
   },
-  "reef-residence-2206": {
+  "reef-residence": {
     unitTitle: "Unit 2206",
     status: "Vacant",
     paymentTerms: "45,000 AED / 2 Cheques",
@@ -516,7 +516,7 @@ const EXTENDED_SPECS: Record<string, {
       },
     ],
   },
-  "rent-tulip-exclusive": {
+  "binghatti-tulip-3": {
     status: "Vacant",
     paymentTerms: "55,000 AED / Year",
     amenities: [
@@ -546,7 +546,7 @@ const EXTENDED_SPECS: Record<string, {
       },
     ],
   },
-  "rent-tulip-studio": {
+  "binghatti-tulip-4": {
     status: "Vacant",
     paymentTerms: "60,000 AED / 6 Cheques",
     amenities: [
@@ -643,7 +643,7 @@ function ListingDetail({
   // Build specs bar
   const specs = [
     { icon: <Building2 size={16} />, label: "Type", value: listing.category },
-    { icon: <Bed size={16} />, label: "Bedrooms", value: listing.beds === 0 ? "Studio" : listing.slug === "damac-courestia-villa-152" ? "5 + Maid" : `${listing.beds}` },
+    { icon: <Bed size={16} />, label: "Bedrooms", value: listing.beds === 0 ? "Studio" : listing.slug === "damac-courestia-villa" ? "5 + Maid" : `${listing.beds}` },
     { icon: <Bath size={16} />, label: "Bathrooms", value: `${listing.baths}` },
     { icon: <Maximize2 size={16} />, label: "Size", value: `${listing.sqft} Sq.Ft` },
     ...(extended.floor ? [{ icon: <Layers size={16} />, label: "Floor", value: extended.floor }] : []),
@@ -710,7 +710,7 @@ function ListingDetail({
                     ? listing.salePrice
                     : isPhantom
                       ? "110,000 AED Yearly"
-                      : (listing.slug === "binghatti-tulip-2806" || listing.slug === "binghatti-tulip-3007")
+                      : (listing.slug === "binghatti-tulip-2" || listing.slug === "binghatti-tulip-1")
                         ? "From 75,000 AED Yearly"
                         : listing.slug === "binghatti-lavender"
                           ? "60,000 AED / Year"
@@ -857,7 +857,7 @@ function ListingDetail({
               </motion.div>
 
               {/* QR Code — Tulip 2806 only */}
-              {listing.slug === "binghatti-tulip-2806" && (
+              {listing.slug === "binghatti-tulip-2" && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -888,7 +888,7 @@ function ListingDetail({
               )}
 
               {/* QR Code — Tulip 3007 only */}
-              {listing.slug === "binghatti-tulip-3007" && (
+              {listing.slug === "binghatti-tulip-1" && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -919,7 +919,7 @@ function ListingDetail({
               )}
 
               {/* QR Code — NEVA Residences 1BR only */}
-              {listing.slug === "neva-residences-1br" && (
+              {listing.slug === "neva-residences" && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -1012,7 +1012,7 @@ function ListingDetail({
               )}
 
               {/* QR Code — Reef Residence 2206 only */}
-              {listing.slug === "reef-residence-2206" && (
+              {listing.slug === "reef-residence" && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -1043,7 +1043,7 @@ function ListingDetail({
               )}
 
               {/* QR Code — Binghatti Emerald 1BR only */}
-              {listing.slug === "binghatti-emerald-1br" && (
+              {listing.slug === "binghatti-emerald" && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -1074,7 +1074,7 @@ function ListingDetail({
               )}
 
               {/* QR Code — Tulip Exclusive only */}
-              {listing.slug === "rent-tulip-exclusive" && (
+              {listing.slug === "binghatti-tulip-3" && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -1105,7 +1105,7 @@ function ListingDetail({
               )}
 
               {/* QR Code — Tulip Studio only */}
-              {listing.slug === "rent-tulip-studio" && (
+              {listing.slug === "binghatti-tulip-4" && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -1136,7 +1136,7 @@ function ListingDetail({
               )}
 
               {/* QR Code — Courestia Villa 152 only */}
-              {listing.slug === "damac-courestia-villa-152" && (
+              {listing.slug === "damac-courestia-villa" && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -1222,7 +1222,7 @@ function ListingDetail({
                         </div>
                       )}
                     </div>
-                  ) : (listing.slug === "binghatti-tulip-2806" || listing.slug === "binghatti-tulip-3007") ? (
+                  ) : (listing.slug === "binghatti-tulip-2" || listing.slug === "binghatti-tulip-1") ? (
                     <div className="flex flex-col gap-1.5 mt-1">
                       <div className="flex items-baseline gap-2">
                         <p className="font-display text-[28px] text-[#1A1A1A] leading-none">75,000 AED</p>
@@ -1233,7 +1233,7 @@ function ListingDetail({
                         <span className="font-body text-[12px] text-[#9A9A9A]">6 Cheques</span>
                       </div>
                     </div>
-                  ) : listing.slug === "binghatti-emerald-1br" ? (
+                  ) : listing.slug === "binghatti-emerald" ? (
                     <div className="flex flex-col gap-1.5 mt-1">
                       <div className="flex items-baseline gap-2">
                         <p className="font-display text-[28px] text-[#1A1A1A] leading-none">62,000 AED</p>
@@ -1244,28 +1244,28 @@ function ListingDetail({
                         <span className="font-body text-[12px] text-[#9A9A9A]">4 Cheques</span>
                       </div>
                     </div>
-                  ) : listing.slug === "reef-residence-2206" ? (
+                  ) : listing.slug === "reef-residence" ? (
                     <div className="flex flex-col gap-1.5 mt-1">
                       <div className="flex items-baseline gap-2">
                         <p className="font-display text-[28px] text-[#1A1A1A] leading-none">45,000 AED</p>
                         <span className="font-body text-[12px] text-[#9A9A9A]">2 Cheques</span>
                       </div>
                     </div>
-                  ) : listing.slug === "rent-tulip-exclusive" ? (
+                  ) : listing.slug === "binghatti-tulip-3" ? (
                     <div className="flex flex-col gap-1.5 mt-1">
                       <div className="flex items-baseline gap-2">
                         <p className="font-display text-[28px] text-[#1A1A1A] leading-none">55,000 AED</p>
                         <span className="font-body text-[12px] text-[#9A9A9A]">4 Cheques</span>
                       </div>
                     </div>
-                  ) : listing.slug === "rent-tulip-studio" ? (
+                  ) : listing.slug === "binghatti-tulip-4" ? (
                     <div className="flex flex-col gap-1.5 mt-1">
                       <div className="flex items-baseline gap-2">
                         <p className="font-display text-[28px] text-[#1A1A1A] leading-none">60,000 AED</p>
                         <span className="font-body text-[12px] text-[#9A9A9A]">6 Cheques</span>
                       </div>
                     </div>
-                  ) : listing.slug === "damac-courestia-villa-152" ? (
+                  ) : listing.slug === "damac-courestia-villa" ? (
                     <div className="flex flex-col gap-1.5 mt-1">
                       <div className="flex items-baseline gap-2">
                         <p className="font-display text-[28px] text-[#1A1A1A] leading-none">155,000 AED</p>
@@ -1288,7 +1288,7 @@ function ListingDetail({
                       {isPhantom ? "110,000 AED" : listing.slug === "binghatti-aurora" ? "6,000 AED" : "80,000 AED"}
                     </p>
                   )}
-                  {extended.paymentTerms && !isSaleListing && listing.slug !== "binghatti-tulip-2806" && listing.slug !== "binghatti-tulip-3007" && listing.slug !== "rent-tulip-studio" && listing.slug !== "rent-tulip-exclusive" && listing.slug !== "reef-residence-2206" && listing.slug !== "binghatti-emerald-1br" && listing.slug !== "damac-courestia-villa-152" && (
+                  {extended.paymentTerms && !isSaleListing && listing.slug !== "binghatti-tulip-2" && listing.slug !== "binghatti-tulip-1" && listing.slug !== "binghatti-tulip-4" && listing.slug !== "binghatti-tulip-3" && listing.slug !== "reef-residence" && listing.slug !== "binghatti-emerald" && listing.slug !== "damac-courestia-villa" && (
                     <div className="flex items-center gap-2 mt-3">
                       <CreditCard size={13} className="text-[#C5A059]" />
                       <span className="font-body text-[13px] text-[#5A5A5A]">{extended.paymentTerms}</span>

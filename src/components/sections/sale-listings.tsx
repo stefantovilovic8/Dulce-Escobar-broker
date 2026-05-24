@@ -159,7 +159,7 @@ function SaleCard({
       >
         {/* Clickable overlay for card navigation */}
         <Link
-          href={`/listing/${listing.slug}`}
+          href={`/sale/${listing.slug}`}
           className="absolute inset-0 z-[1]"
           aria-label={`View ${listing.project}`}
         />

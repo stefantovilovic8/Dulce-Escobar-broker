@@ -39,7 +39,7 @@ export const LISTINGS_DATA = [
   },
   {
     id: 4,
-    slug: "binghatti-tulip-3007",
+    slug: "binghatti-tulip-1",
     project: "Binghatti Tulip",
     category: "Apartment",
     location: "JVC, Dubai",
@@ -65,7 +65,7 @@ export const LISTINGS_DATA = [
   },
   {
     id: 5,
-    slug: "binghatti-tulip-2806",
+    slug: "binghatti-tulip-2",
     project: "Binghatti Tulip",
     category: "Apartment",
     location: "JVC, Dubai",
@@ -92,7 +92,7 @@ export const LISTINGS_DATA = [
   },
   {
     id: 10,
-    slug: "neva-residences-1br",
+    slug: "neva-residences",
     project: "NEVA Residences",
     category: "Apartment",
     location: "JVC, Dubai",
@@ -118,7 +118,7 @@ export const LISTINGS_DATA = [
   },
   {
     id: 6,
-    slug: "binghatti-azure-sale",
+    slug: "binghatti-azure",
     project: "Binghatti Azure",
     category: "Studio",
     location: "JVC, Dubai",
@@ -149,7 +149,7 @@ export const LISTINGS_DATA = [
   },
   {
     id: 7,
-    slug: "binghatti-aurora-sale",
+    slug: "binghatti-aurora",
     project: "Binghatti Aurora",
     category: "Studio",
     location: "JVC, Dubai",
@@ -267,7 +267,7 @@ export const LISTINGS_DATA = [
   },
   {
     id: 14,
-    slug: "rent-tulip-exclusive",
+    slug: "binghatti-tulip-3",
     project: "Binghatti Tulip",
     category: "Studio",
     location: "JVC, Dubai",
@@ -295,7 +295,7 @@ export const LISTINGS_DATA = [
   },
   {
     id: 13,
-    slug: "rent-tulip-studio",
+    slug: "binghatti-tulip-4",
     project: "Binghatti Tulip",
     category: "Studio",
     location: "JVC, Dubai",
@@ -323,7 +323,7 @@ export const LISTINGS_DATA = [
   },
   {
     id: 15,
-    slug: "reef-residence-2206",
+    slug: "reef-residence",
     project: "Reef Residence",
     category: "1 Bedroom",
     location: "Al Barsha South Fourth, Dubai",
@@ -351,7 +351,7 @@ export const LISTINGS_DATA = [
   },
   {
     id: 16,
-    slug: "binghatti-emerald-1br",
+    slug: "binghatti-emerald",
     project: "Binghatti Emerald",
     category: "1 Bedroom",
     location: "JVC, Dubai",
@@ -379,7 +379,7 @@ export const LISTINGS_DATA = [
   },
   {
     id: 17,
-    slug: "damac-courestia-villa-152",
+    slug: "damac-courestia-villa",
     project: "Courestia Cluster – DAMAC Hills 2",
     category: "Villa",
     location: "DAMAC HILLS 2, Dubai",
@@ -498,7 +498,7 @@ function PropertyCard({
       >
         {/* Clickable overlay for card navigation (sits below interactive elements) */}
         <Link
-          href={`/listing/${listing.slug}`}
+          href={listing.status === "for-sale" ? `/sale/${listing.slug}` : `/rent/${listing.slug}`}
           className="absolute inset-0 z-[1]"
           aria-label={`View ${listing.project}`}
         />
