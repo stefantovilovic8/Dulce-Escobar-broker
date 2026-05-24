@@ -70,10 +70,10 @@ export default function ExpertInsight() {
               ))}
             </h2>
             <div className="w-10 h-px bg-[#C5A059] mb-8" />
-            <p className="font-body font-light text-[15px] text-[#5A5A5A] leading-[1.85] mb-6">
+            <p className="font-body font-light text-[15px] text-[#5A5A5A] leading-[1.85] mb-6 whitespace-pre-line">
               {t("expertInsight.para1")}
             </p>
-            <p className="font-body font-light text-[15px] text-[#5A5A5A] leading-[1.85]">
+            <p className="font-body font-light text-[15px] text-[#5A5A5A] leading-[1.85] whitespace-pre-line">
               {t("expertInsight.para2")}
             </p>
           </div>
