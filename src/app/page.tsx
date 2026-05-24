@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/sections/header";
 import HeroClean from "@/components/sections/hero-clean";
 import { PartnerCarousel } from "@/components/sections/who-we-are";
+import { FriendsAndPartnersTitle } from "@/components/sections/services-we-offer";
 import VideoCTA from "@/components/sections/video-cta";
 import CityLifestyleGuide from "@/components/sections/city-lifestyle-guide";
 import WhyChooseDulce from "@/components/sections/why-choose-dulce";
@@ -42,6 +43,7 @@ export default function Home() {
         <CityLifestyleGuide />
         <VideoCTA />
         <Testimonials />
+        <FriendsAndPartnersTitle />
         <PartnerCarousel />
         <CtaContact />
       </main>
