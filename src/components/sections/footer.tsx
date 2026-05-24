@@ -133,8 +133,18 @@ export default function Footer({ bgColor }: { bgColor?: string }) {
 
         </div>
 
-        {/* Copyright */}
+        {/* RERA / BRN */}
         <div className="text-center pt-6 mt-6 border-t border-[#efe7d8]">
+          <p className="text-xs text-[#9A9A9A] tracking-[0.12em] uppercase mb-2">
+            Licensed Real Estate Broker · Dubai Land Department
+          </p>
+          <p className="text-xs text-[#9A9A9A]">
+            BRN / RERA: <span className="text-[#C5A059] font-medium">[YOUR BRN NUMBER]</span>
+          </p>
+        </div>
+
+        {/* Copyright */}
+        <div className="text-center pt-4">
           <p className="text-sm text-[#4A4A4A]">{t("footer.copyright")}</p>
         </div>
 

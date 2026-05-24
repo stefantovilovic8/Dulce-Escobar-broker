@@ -10,8 +10,8 @@ import Footer from "@/components/sections/footer";
 import OffPlanMoreLinks from "./OffPlanMoreLinks";
 
 export const metadata: Metadata = {
-  title: "About Dulce Escobar | 30+ Years Dubai Real Estate Experience",
-  description: "Meet Dulce Escobar – a trusted Dubai real estate expert with over 30 years in the industry. Residential sales, off-plan, holiday homes and global investments.",
+  title: "About Dulce Escobar | Luxury Real Estate Broker in Dubai",
+  description: "Meet Dulce Escobar – a dedicated Dubai real estate broker specialising in luxury rentals, off-plan investments, and bespoke property solutions. Transparent, exclusive, precise.",
   keywords: "Dulce Escobar, Dubai real estate expert, about Dubai broker, luxury real estate Dubai, experienced property agent Dubai",
   alternates: { canonical: "https://dulcescobar.ae/off-plan" },
   openGraph: {

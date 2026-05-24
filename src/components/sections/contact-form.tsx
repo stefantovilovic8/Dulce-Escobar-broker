@@ -57,6 +57,25 @@ export default function ContactForm() {
           <p className="font-body text-base md:text-lg text-white/90 max-w-2xl leading-relaxed">
             {t("cta.text")}
           </p>
+          {/* Direct contact info */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8">
+            <a
+              href="https://wa.me/971588473125"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 text-white hover:bg-white/20 transition-all duration-300"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m22 16.92-.38 2.29a2 2 0 0 1-2 1.79A19.86 19.86 0 0 1 3 5.38a2 2 0 0 1 1.79-2L7.08 3a2 2 0 0 1 2 1.72l.49 3.09a2 2 0 0 1-.45 1.67L7.8 10.8a16 16 0 0 0 5.39 5.39l1.32-1.32a2 2 0 0 1 1.67-.45l3.09.49A2 2 0 0 1 22 16.92z"/></svg>
+              <span className="font-body text-sm font-medium">+971 58 847 3125</span>
+            </a>
+            <a
+              href="mailto:Rescobardulce@gmail.com"
+              className="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 text-white hover:bg-white/20 transition-all duration-300"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <span className="font-body text-sm font-medium">Rescobardulce@gmail.com</span>
+            </a>
+          </div>
         </div>
 
         <div className="max-w-3xl mx-auto flex flex-col items-center text-center">
