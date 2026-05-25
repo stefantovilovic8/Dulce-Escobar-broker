@@ -1483,18 +1483,18 @@ function ListingDetail({
                     <div className="flex flex-col gap-1.5 mt-1">
                       <div className="flex items-baseline gap-2">
                         <p className="font-display text-[28px] text-[#1A1A1A] leading-none">380,000 AED</p>
-                        <span className="font-body text-[12px] text-[#9A9A9A]">Yearly</span>
+                        <span className="font-body text-[12px] text-[#9A9A9A]">{t("listing.yearly")}</span>
                       </div>
                     </div>
                   ) : listing.slug === "binghatti-lavender" ? (
                     <div className="flex flex-col gap-1.5 mt-1">
                       <div className="flex items-baseline gap-2">
                         <p className="font-display text-[28px] text-[#1A1A1A] leading-none">5,000 AED</p>
-                        <span className="font-body text-[12px] text-[#9A9A9A]">Monthly · 12 Cheques</span>
+                        <span className="font-body text-[12px] text-[#9A9A9A]">{t("listing.monthly")} · 12 Cheques</span>
                       </div>
                       <div className="flex items-baseline gap-2">
                         <p className="font-display text-[28px] text-[#1A1A1A] leading-none">60,000 AED</p>
-                        <span className="font-body text-[12px] text-[#9A9A9A]">Yearly</span>
+                        <span className="font-body text-[12px] text-[#9A9A9A]">{t("listing.yearly")}</span>
                       </div>
                     </div>
                   ) : (
