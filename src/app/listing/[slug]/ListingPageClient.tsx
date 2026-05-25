@@ -791,8 +791,8 @@ function ListingDetail({
     { icon: <Bed size={16} />, label: t("card.bed") + "s", value: listing.beds === 0 ? t("card.studio") : listing.slug === "damac-courestia-villa" ? "5 + Maid" : `${listing.beds}` },
     { icon: <Bath size={16} />, label: t("card.bath") + "s", value: `${listing.baths}` },
     { icon: <Maximize2 size={16} />, label: t("card.sqft"), value: `${listing.sqft}` },
-    ...(extended.floor ? [{ icon: <Layers size={16} />, label: t("listing.floor"), value: extended.floor }] : []),
-    ...(extended.view ? [{ icon: <Eye size={16} />, label: t("listing.view"), value: extended.view }] : []),
+    ...(extended.floor ? [{ icon: <Layers size={16} />, label: t("listing.floor"), value: ta(extended.floor) }] : []),
+    ...(extended.view ? [{ icon: <Eye size={16} />, label: t("listing.view"), value: ta(extended.view) }] : []),
     ...(extended.parking ? [{ icon: <Car size={16} />, label: t("listing.parking"), value: extended.parking }] : []),
     ...(extended.status ? [{ icon: <CircleDot size={16} />, label: t("listing.status_prefix"), value: ts(extended.status) }] : []),
   ];
@@ -1363,7 +1363,7 @@ function ListingDetail({
                       {listing.saleContract && (
                         <div className="flex items-center gap-2 mt-3">
                           <CreditCard size={13} className="text-[#C5A059]" />
-                          <span className="font-body text-[13px] text-[#5A5A5A]">{listing.saleContract}</span>
+                          <span className="font-body text-[13px] text-[#5A5A5A]">{listing.saleContract ? `${t("listing.rented_until")} ${listing.saleContract.replace(/^Rented until\s*/i, "")}` : ""}</span>
                         </div>
                       )}
                     </div>
