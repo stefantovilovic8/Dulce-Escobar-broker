@@ -346,6 +346,8 @@ export const translations: Record<Language, Record<string, string>> = {
 
       "listings.eyebrow": "Featured Listings",
       "listings.headline": "Properties for Rent in Dubai",
+      "sale.eyebrow": "Featured Listings",
+      "sale.headline": "Properties For Sale",
       "listings.annual_rent": "Annual Rent",
       "listings.payment": "Payment",
       "listings.contract": "Contract",
@@ -905,6 +907,8 @@ export const translations: Record<Language, Record<string, string>> = {
 
         "listings.eyebrow": "عقارات مميزة",
         "listings.headline": "العقارات المتاحة",
+        "sale.eyebrow": "قوائم مميزة",
+        "sale.headline": "عقارات للبيع",
         "listings.annual_rent": "الإيجار السنوي",
         "listings.payment": "الدفع",
         "listings.contract": "العقد",
@@ -1189,6 +1193,8 @@ export const translations: Record<Language, Record<string, string>> = {
     "offplanPage.cta.button": "Contáctame hoy",
     "listings.eyebrow": "Propiedades destacadas",
     "listings.headline": "Propiedades en alquiler en Dubái",
+    "sale.eyebrow": "Propiedades destacadas",
+    "sale.headline": "Propiedades en venta",
     "listings.annual_rent": "Alquiler anual",
     "listings.payment": "Pago",
     "listings.contract": "Contrato",
