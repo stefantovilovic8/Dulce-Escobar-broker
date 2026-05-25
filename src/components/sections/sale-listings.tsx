@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, Bed, Bath, Maximize2, MapPin, Phone, MessageCircle } from "lucide-react";
+import { useLanguage } from "@/lib/language-context";
 
 const SALE_LISTINGS = [
   {
@@ -123,6 +124,7 @@ function SaleCard({
 }) {
   const [currentImg, setCurrentImg] = useState(0);
   const hasMultiple = listing.images.length > 1;
+  const { t } = useLanguage();
 
   const prev = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -174,12 +176,12 @@ function SaleCard({
 
           {/* Category badge */}
           <span className="absolute top-3 left-3 z-10 font-body text-[11px] tracking-[0.14em] uppercase px-3 py-1 rounded-md bg-white text-[#1A1A1A] font-medium shadow-sm">
-            {listing.category}
+            {listing.category === "Studio" ? t("listing.category_studio") : listing.category === "Villa" ? t("listing.category_villa") : t("listing.category_apartment")}
           </span>
 
           {/* For Sale badge */}
           <span className="absolute top-3 right-3 z-10 font-body text-[11px] tracking-[0.14em] uppercase px-3 py-1 rounded-md bg-[#C5A059] text-white font-medium shadow-sm">
-            For Sale
+            {t("listing.for_sale")}
           </span>
 
           {hasMultiple && (
@@ -214,25 +216,25 @@ function SaleCard({
             <div className="flex items-center gap-1.5">
               <Bed size={13} className="text-[#C5A059]" />
               <span className="font-body text-[12px] text-[#5A5A5A]">
-                {listing.beds === 0 ? "Studio" : `${listing.beds} Bed`}
+                {listing.beds === 0 ? t("card.studio") : `${listing.beds} ${t("card.bed")}`}
               </span>
             </div>
             <div className="flex items-center gap-1.5">
               <Bath size={13} className="text-[#C5A059]" />
-              <span className="font-body text-[12px] text-[#5A5A5A]">{listing.baths} Bath</span>
+              <span className="font-body text-[12px] text-[#5A5A5A]">{listing.baths} {t("card.bath")}</span>
             </div>
             <div className="flex items-center gap-1.5">
               <Maximize2 size={13} className="text-[#C5A059]" />
-              <span className="font-body text-[12px] text-[#5A5A5A]">{listing.sqft} Sq.Ft</span>
+              <span className="font-body text-[12px] text-[#5A5A5A]">{listing.sqft} {t("card.sqft")}</span>
             </div>
           </div>
 
           {/* Price box */}
           <div className="bg-[#FAFAF8] border border-[#EDE6D8] rounded-xl px-4 py-3 mb-4">
-            <p className="font-body text-[10px] text-[#9A9A9A] tracking-[0.16em] uppercase mb-0.5">{listing.pricePeriod}</p>
+            <p className="font-body text-[10px] text-[#9A9A9A] tracking-[0.16em] uppercase mb-0.5">{t("listing.sale_price")}</p>
             <p className="font-display text-[20px] text-[#1A1A1A] leading-none">{listing.price}</p>
             {listing.contract && (
-              <p className="font-body text-[11px] text-[#9A9A9A] mt-1">{listing.contract}</p>
+              <p className="font-body text-[11px] text-[#9A9A9A] mt-1">{`${t("listing.rented_until")} ${listing.contract.replace(/^Rented until\s*/i, "")}`}</p>
             )}
           </div>
 
@@ -244,7 +246,7 @@ function SaleCard({
               className="w-9 h-9 rounded-full object-cover flex-shrink-0 border-2 border-[#EDE6D8]"
             />
             <div className="flex-1 min-w-0">
-              <p className="font-body text-[10px] text-[#9A9A9A] leading-none mb-0.5">Listed By</p>
+              <p className="font-body text-[10px] text-[#9A9A9A] leading-none mb-0.5">{t("card.listed_by")}</p>
               <p className="font-body text-[12px] text-[#1A1A1A] font-medium truncate">Dulce Escobar</p>
             </div>
             <div className="flex items-center gap-2 flex-shrink-0">
