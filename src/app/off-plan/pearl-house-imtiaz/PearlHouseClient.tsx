@@ -6,10 +6,11 @@ import { motion } from "framer-motion";
 import {
   MapPin, Building2, Layers, CalendarCheck, Bed,
   ChevronLeft, ChevronRight, ArrowLeft,
-  Phone, MessageCircle, Dumbbell, Trees, Sofa, Users, Baby, Zap, BriefcaseBusiness, Waves,
+  Phone, MessageCircle, Dumbbell, Zap, Users,
 } from "lucide-react";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
+import { useLanguage } from "@/lib/language-context";
 
 const IMAGES = [
   "/pearl-3.jpg",
@@ -29,37 +30,160 @@ const IMAGES = [
   "/pearl-15.jpg",
 ];
 
-const AMENITIES = [
-  {
-    category: "Wellness",
-    icon: <Dumbbell size={18} />,
-    items: ["Club-style Gymnasium", "Rooftop Swimming Pool", "Courtyard & Leisure Deck"],
-  },
-  {
-    category: "Community",
-    icon: <Users size={18} />,
-    items: ["Resident Lounge", "Kids Play Area", "Lush Green Surroundings"],
-  },
-  {
-    category: "Convenience",
-    icon: <Zap size={18} />,
-    items: ["Fully Furnished Units", "Smart Home Features", "Built-in Office Spaces"],
-  },
-];
-
-const LOCATION_HIGHLIGHTS = [
-  { time: "5 min", place: "Circle Mall" },
-  { time: "10 min", place: "Dubai Sports City" },
-  { time: "15 min", place: "Dubai Marina" },
-  { time: "20 min", place: "Downtown Dubai" },
-  { time: "25 min", place: "Dubai International Airport" },
-];
-
 export default function PearlHouseClient() {
   const [activeImg, setActiveImg] = useState(0);
+  const { language } = useLanguage();
 
   const prev = () => setActiveImg((c) => (c === 0 ? IMAGES.length - 1 : c - 1));
   const next = () => setActiveImg((c) => (c === IMAGES.length - 1 ? 0 : c + 1));
+
+  const content = {
+    en: {
+      badge: "Apartment · Off-Plan",
+      units: "Studios & 1-Bedroom",
+      status: "Off-Plan · Under Construction",
+      backLink: "Back to Off-Plan Properties",
+      visionLabel: "Project Vision",
+      visionTitle: "Pearls of Wisdom",
+      visionText: "Pearl House by Imtiaz is a thoughtfully curated residential development in the heart of Jumeirah Village Circle — a community that balances urban connectivity with a serene, village-inspired lifestyle. Drawing inspiration from the timeless concept of 'Pearls of Wisdom', each residence is designed to be a sanctuary: blending refined modern aesthetics with practical elegance. Premium finishes, intelligent layouts, and resort-calibre building amenities come together to deliver a living experience that transcends the ordinary.",
+      amenitiesLabel: "Lifestyle & Amenities",
+      amenitiesTitle: "Premium Features",
+      connectivityLabel: "Connectivity",
+      locationTitle: "Location Highlights",
+      qrLabel: "View Project Brochure & Plans",
+      qrDesc: "Scan this code to instantly access the full project brochure, floor plans and booking details.",
+      qrSoon: "QR Code\nComing Soon",
+      startingFrom: "Starting From",
+      onRequest: "On Request",
+      flexiblePlans: "Flexible payment plans available",
+      developer: "Developer",
+      location: "Location",
+      statusLabel: "Status",
+      completion: "Completion",
+      statusValue: "Off-Plan / Under Construction",
+      enquireNow: "Enquire Now",
+      whatsapp: "WhatsApp",
+      agentTitle: "Luxury Property Specialist",
+      agentDesc: "Specialist in off-plan and luxury residential properties across Dubai. Reach out for personalised guidance on Pearl House and other premium developments.",
+      specsBar: [
+        { label: "Location", value: "JVC, Dubai" },
+        { label: "Structure", value: "G + 4 Podiums + 11 Floors + Rooftop" },
+        { label: "Unit Types", value: "Studios & 1-Bedroom" },
+        { label: "Furnished", value: "Fully Furnished" },
+        { label: "Completion", value: "Q4 2025" },
+      ],
+      amenities: [
+        { category: "Wellness", items: ["Club-style Gymnasium", "Rooftop Swimming Pool", "Courtyard & Leisure Deck"] },
+        { category: "Community", items: ["Resident Lounge", "Kids Play Area", "Lush Green Surroundings"] },
+        { category: "Convenience", items: ["Fully Furnished Units", "Smart Home Features", "Built-in Office Spaces"] },
+      ],
+      locations: [
+        { time: "5 min", place: "Circle Mall" },
+        { time: "10 min", place: "Dubai Sports City" },
+        { time: "15 min", place: "Dubai Marina" },
+        { time: "20 min", place: "Downtown Dubai" },
+        { time: "25 min", place: "Dubai International Airport" },
+      ],
+    },
+    es: {
+      badge: "Apartamento · Sobre Plano",
+      units: "Estudios y 1 Dormitorio",
+      status: "Sobre Plano · En Construcción",
+      backLink: "Volver a Propiedades Sobre Plano",
+      visionLabel: "Visión del Proyecto",
+      visionTitle: "Perlas de Sabiduría",
+      visionText: "Pearl House by Imtiaz es un desarrollo residencial cuidadosamente concebido en el corazón de Jumeirah Village Circle — una comunidad que equilibra la conectividad urbana con un estilo de vida sereno e inspirado en la aldea. Inspirándose en el concepto atemporal de las Perlas de Sabiduría, cada residencia está diseñada para ser un santuario: combinando una estética moderna refinada con una elegancia práctica. Acabados premium, distribuciones inteligentes y comodidades de edificio de nivel resort se unen para ofrecer una experiencia de vida que trasciende lo ordinario.",
+      amenitiesLabel: "Estilo de Vida y Comodidades",
+      amenitiesTitle: "Características Premium",
+      connectivityLabel: "Conectividad",
+      locationTitle: "Puntos de Interés",
+      qrLabel: "Ver Folleto y Planos del Proyecto",
+      qrDesc: "Escanea este código para acceder al folleto completo, planos de planta y detalles de reserva.",
+      qrSoon: "Código QR\nPróximamente",
+      startingFrom: "Desde",
+      onRequest: "Bajo Consulta",
+      flexiblePlans: "Planes de pago flexibles disponibles",
+      developer: "Promotor",
+      location: "Ubicación",
+      statusLabel: "Estado",
+      completion: "Entrega",
+      statusValue: "Sobre Plano / En Construcción",
+      enquireNow: "Solicitar Información",
+      whatsapp: "WhatsApp",
+      agentTitle: "Especialista en Propiedades de Lujo",
+      agentDesc: "Especialista en propiedades residenciales sobre plano y de lujo en Dubái. Contáctenos para recibir orientación personalizada sobre Pearl House y otros desarrollos premium.",
+      specsBar: [
+        { label: "Ubicación", value: "JVC, Dubái" },
+        { label: "Estructura", value: "PB + 4 Pódiums + 11 Plantas + Azotea" },
+        { label: "Tipos de Unidad", value: "Estudios y 1 Dormitorio" },
+        { label: "Amueblado", value: "Totalmente Amueblado" },
+        { label: "Entrega", value: "T4 2025" },
+      ],
+      amenities: [
+        { category: "Bienestar", items: ["Gimnasio estilo club", "Piscina en azotea", "Terraza y zona de ocio"] },
+        { category: "Comunidad", items: ["Salón de residentes", "Zona de juegos infantiles", "Entorno verde exuberante"] },
+        { category: "Comodidad", items: ["Unidades totalmente amuebladas", "Domótica", "Espacios de oficina integrados"] },
+      ],
+      locations: [
+        { time: "5 min", place: "Circle Mall" },
+        { time: "10 min", place: "Dubai Sports City" },
+        { time: "15 min", place: "Dubai Marina" },
+        { time: "20 min", place: "Downtown Dubai" },
+        { time: "25 min", place: "Aeropuerto Internacional de Dubái" },
+      ],
+    },
+    ar: {
+      badge: "شقة · خارج الخطة",
+      units: "استوديو وغرفة نوم واحدة",
+      status: "خارج الخطة · قيد الإنشاء",
+      backLink: "العودة إلى المشاريع خارج الخطة",
+      visionLabel: "رؤية المشروع",
+      visionTitle: "لآلئ الحكمة",
+      visionText: "Pearl House by Imtiaz هو مشروع سكني منسق بعناية في قلب Jumeirah Village Circle — مجتمع يوازن بين الاتصال الحضري وأسلوب الحياة الهادئ المستوحى من القرى. مستوحياً من المفهوم الخالد للآلئ الحكمة، صُمم كل مسكن ليكون ملاذاً يمزج بين الجماليات الحديثة الراقية والأناقة العملية. التشطيبات الفاخرة والتخطيطات الذكية ومرافق البناء على مستوى المنتجع تتحد لتقديم تجربة معيشية تتجاوز المألوف.",
+      amenitiesLabel: "نمط الحياة والمرافق",
+      amenitiesTitle: "مميزات فاخرة",
+      connectivityLabel: "الاتصال",
+      locationTitle: "أبرز المواقع",
+      qrLabel: "عرض كتيب المشروع والمخططات",
+      qrDesc: "امسح هذا الرمز للوصول الفوري إلى الكتيب الكامل للمشروع ومخططات الطوابق وتفاصيل الحجز.",
+      qrSoon: "رمز QR\nقريباً",
+      startingFrom: "ابتداءً من",
+      onRequest: "عند الطلب",
+      flexiblePlans: "خطط دفع مرنة متاحة",
+      developer: "المطور",
+      location: "الموقع",
+      statusLabel: "الحالة",
+      completion: "الإنجاز",
+      statusValue: "خارج الخطة / قيد الإنشاء",
+      enquireNow: "استفسر الآن",
+      whatsapp: "واتساب",
+      agentTitle: "متخصص في العقارات الفاخرة",
+      agentDesc: "متخصص في العقارات السكنية الفاخرة وخارج الخطة في جميع أنحاء دبي. تواصل معنا للحصول على إرشادات شخصية حول Pearl House والمشاريع المتميزة الأخرى.",
+      specsBar: [
+        { label: "الموقع", value: "JVC، دبي" },
+        { label: "الهيكل", value: "أرضي + 4 بوديوم + 11 طابق + سطح" },
+        { label: "أنواع الوحدات", value: "استوديو وغرفة نوم واحدة" },
+        { label: "الأثاث", value: "مفروشة بالكامل" },
+        { label: "الإنجاز", value: "الربع الرابع 2025" },
+      ],
+      amenities: [
+        { category: "العافية", items: ["صالة رياضية بأسلوب النادي", "مسبح على السطح", "ساحة وتراس ترفيهي"] },
+        { category: "المجتمع", items: ["صالة السكان", "منطقة ألعاب الأطفال", "محيط أخضر نضر"] },
+        { category: "الراحة", items: ["وحدات مفروشة بالكامل", "ميزات المنزل الذكي", "مساحات مكتبية مدمجة"] },
+      ],
+      locations: [
+        { time: "٥ دقائق", place: "سيركل مول" },
+        { time: "١٠ دقائق", place: "مدينة دبي الرياضية" },
+        { time: "١٥ دقيقة", place: "دبي مارينا" },
+        { time: "٢٠ دقيقة", place: "وسط مدينة دبي" },
+        { time: "٢٥ دقيقة", place: "مطار دبي الدولي" },
+      ],
+    },
+  };
+
+  const c = content[language] ?? content.en;
+  const specsIcons = [<MapPin size={16} />, <Building2 size={16} />, <Bed size={16} />, <Layers size={16} />, <CalendarCheck size={16} />];
+  const amenityIcons = [<Dumbbell size={18} />, <Users size={18} />, <Zap size={18} />];
 
   return (
     <div className="min-h-screen bg-white">
@@ -90,10 +214,10 @@ export default function PearlHouseClient() {
 
               <div className="absolute bottom-5 left-5 z-10">
                 <span className="font-body text-[11px] tracking-[0.18em] uppercase text-[#C5A059] block mb-1">
-                  Apartment · Off-Plan
+                  {c.badge}
                 </span>
                 <p className="font-display text-white text-[22px] leading-none">
-                  Studios & 1-Bedroom
+                  {c.units}
                 </p>
               </div>
             </div>
@@ -141,7 +265,7 @@ export default function PearlHouseClient() {
                 </div>
               </div>
               <span className="font-body text-[11px] tracking-[0.2em] uppercase text-[#C5A059] bg-white/5 border border-[#C5A059]/30 px-4 py-2 rounded-full self-start sm:self-auto">
-                Off-Plan · Under Construction
+                {c.status}
               </span>
             </motion.div>
           </div>
@@ -150,15 +274,9 @@ export default function PearlHouseClient() {
         {/* ── Specs Bar ── */}
         <div className="bg-[#1A1A1A] px-6 md:px-14 py-3">
           <div className="max-w-[1200px] mx-auto flex flex-wrap gap-x-6 gap-y-2 justify-between">
-            {[
-              { icon: <MapPin size={16} />, label: "Location", value: "JVC, Dubai" },
-              { icon: <Building2 size={16} />, label: "Structure", value: "G + 4 Podiums + 11 Floors + Rooftop" },
-              { icon: <Bed size={16} />, label: "Unit Types", value: "Studios & 1-Bedroom" },
-              { icon: <Layers size={16} />, label: "Furnished", value: "Fully Furnished" },
-              { icon: <CalendarCheck size={16} />, label: "Completion", value: "Q4 2025" },
-            ].map((s) => (
+            {c.specsBar.map((s, i) => (
               <div key={s.label} className="flex items-center gap-2">
-                <span className="text-[#C5A059]">{s.icon}</span>
+                <span className="text-[#C5A059]">{specsIcons[i]}</span>
                 <div>
                   <p className="font-body text-[9px] text-white/40 tracking-[0.14em] uppercase leading-none mb-0.5">{s.label}</p>
                   <p className="font-body text-[12px] text-white font-medium">{s.value}</p>
@@ -173,7 +291,7 @@ export default function PearlHouseClient() {
 
           <Link href="/off-plan-properties" className="inline-flex items-center gap-2 text-[#C5A059] font-body text-sm hover:gap-3 transition-all duration-200 mb-12 block">
             <ArrowLeft size={15} />
-            Back to Off-Plan Properties
+            {c.backLink}
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-12 lg:gap-16">
@@ -189,11 +307,11 @@ export default function PearlHouseClient() {
                 transition={{ duration: 0.8 }}
                 className="mb-14"
               >
-                <span className="text-[#C5A059] font-body text-xs tracking-[0.22em] uppercase mb-3 block">Project Vision</span>
-                <h2 className="font-display text-2xl md:text-3xl text-[#1A1A1A] mb-6">Pearls of Wisdom</h2>
+                <span className="text-[#C5A059] font-body text-xs tracking-[0.22em] uppercase mb-3 block">{c.visionLabel}</span>
+                <h2 className="font-display text-2xl md:text-3xl text-[#1A1A1A] mb-6">{c.visionTitle}</h2>
                 <div className="w-10 h-px bg-[#C5A059] mb-6" />
                 <p className="font-body text-[#5A5A5A] text-[15px] md:text-[16px] leading-[1.9] font-light">
-                  Pearl House by Imtiaz is a thoughtfully curated residential development in the heart of Jumeirah Village Circle — a community that balances urban connectivity with a serene, village-inspired lifestyle. Drawing inspiration from the timeless concept of "Pearls of Wisdom," each residence is designed to be a sanctuary: blending refined modern aesthetics with practical elegance. Premium finishes, intelligent layouts, and resort-calibre building amenities come together to deliver a living experience that transcends the ordinary.
+                  {c.visionText}
                 </p>
               </motion.div>
 
@@ -205,15 +323,15 @@ export default function PearlHouseClient() {
                 transition={{ duration: 0.8, delay: 0.1 }}
                 className="mb-14"
               >
-                <span className="text-[#C5A059] font-body text-xs tracking-[0.22em] uppercase mb-3 block">Lifestyle & Amenities</span>
-                <h2 className="font-display text-2xl md:text-3xl text-[#1A1A1A] mb-6">Premium Features</h2>
+                <span className="text-[#C5A059] font-body text-xs tracking-[0.22em] uppercase mb-3 block">{c.amenitiesLabel}</span>
+                <h2 className="font-display text-2xl md:text-3xl text-[#1A1A1A] mb-6">{c.amenitiesTitle}</h2>
                 <div className="w-10 h-px bg-[#C5A059] mb-10" />
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-                  {AMENITIES.map((group) => (
+                  {c.amenities.map((group, i) => (
                     <div key={group.category} className="bg-[#FAFAF8] border border-[#EDE6D8] rounded-2xl p-6">
                       <div className="w-10 h-10 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/20 flex items-center justify-center text-[#C5A059] mb-4">
-                        {group.icon}
+                        {amenityIcons[i]}
                       </div>
                       <h3 className="font-body text-[11px] tracking-[0.22em] uppercase text-[#C5A059] mb-4">
                         {group.category}
@@ -243,12 +361,12 @@ export default function PearlHouseClient() {
                 transition={{ duration: 0.8, delay: 0.15 }}
                 className="mb-14"
               >
-                <span className="text-[#C5A059] font-body text-xs tracking-[0.22em] uppercase mb-3 block">Connectivity</span>
-                <h2 className="font-display text-2xl md:text-3xl text-[#1A1A1A] mb-6">Location Highlights</h2>
+                <span className="text-[#C5A059] font-body text-xs tracking-[0.22em] uppercase mb-3 block">{c.connectivityLabel}</span>
+                <h2 className="font-display text-2xl md:text-3xl text-[#1A1A1A] mb-6">{c.locationTitle}</h2>
                 <div className="w-10 h-px bg-[#C5A059] mb-10" />
 
                 <div className="flex flex-col gap-3">
-                  {LOCATION_HIGHLIGHTS.map(({ time, place }) => (
+                  {c.locations.map(({ time, place }) => (
                     <div key={place} className="flex items-center gap-4 py-4 border-b border-[#F0EBE1] last:border-0">
                       <div className="w-16 flex-shrink-0">
                         <span className="font-display text-[22px] text-[#C5A059] leading-none">{time}</span>
@@ -272,22 +390,21 @@ export default function PearlHouseClient() {
               >
                 <div className="flex flex-col items-center text-center">
                   <span className="text-[#C5A059] font-body text-xs tracking-[0.28em] uppercase mb-4">
-                    View Project Brochure & Plans
+                    {c.qrLabel}
                   </span>
                   <div className="w-8 h-px bg-[#C5A059] mb-8" />
                   <div
                     className="p-4 bg-white rounded-2xl border border-[#EDE6D8]"
                     style={{ boxShadow: "0 4px 24px rgba(197,160,89,0.10)" }}
                   >
-                    {/* QR placeholder — replace src with actual QR image once provided */}
                     <div className="w-48 h-48 bg-[#F5F0E8] rounded-xl flex items-center justify-center">
-                      <span className="font-body text-[11px] text-[#9A9A9A] tracking-wider text-center px-4">
-                        QR Code<br />Coming Soon
+                      <span className="font-body text-[11px] text-[#9A9A9A] tracking-wider text-center px-4 whitespace-pre-line">
+                        {c.qrSoon}
                       </span>
                     </div>
                   </div>
                   <p className="font-body text-[13px] text-[#7A7A7A] mt-5 max-w-[300px] leading-relaxed font-light">
-                    Scan this code to instantly access the full project brochure, floor plans and booking details.
+                    {c.qrDesc}
                   </p>
                 </div>
               </motion.div>
@@ -306,18 +423,18 @@ export default function PearlHouseClient() {
                   className="bg-white border border-[#EDE6D8] rounded-2xl p-6"
                   style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}
                 >
-                  <p className="font-body text-[11px] text-[#9A9A9A] tracking-[0.18em] uppercase mb-1">Starting From</p>
-                  <p className="font-display text-[36px] text-[#1A1A1A] leading-none mb-1">On Request</p>
-                  <p className="font-body text-[12px] text-[#9A9A9A] mt-2">Flexible payment plans available</p>
+                  <p className="font-body text-[11px] text-[#9A9A9A] tracking-[0.18em] uppercase mb-1">{c.startingFrom}</p>
+                  <p className="font-display text-[36px] text-[#1A1A1A] leading-none mb-1">{c.onRequest}</p>
+                  <p className="font-body text-[12px] text-[#9A9A9A] mt-2">{c.flexiblePlans}</p>
 
                   <div className="w-full h-px bg-[#F0EBE1] my-5" />
 
                   <div className="flex flex-col gap-3 mb-6">
                     {[
-                      { label: "Developer", value: "Imtiaz Developments" },
-                      { label: "Location", value: "JVC, Dubai" },
-                      { label: "Status", value: "Off-Plan / Under Construction" },
-                      { label: "Completion", value: "Q4 2025" },
+                      { label: c.developer, value: "Imtiaz Developments" },
+                      { label: c.location, value: "JVC, Dubai" },
+                      { label: c.statusLabel, value: c.statusValue },
+                      { label: c.completion, value: "Q4 2025" },
                     ].map(({ label, value }) => (
                       <div key={label} className="flex justify-between items-start gap-2">
                         <span className="font-body text-[12px] text-[#9A9A9A]">{label}</span>
@@ -331,7 +448,7 @@ export default function PearlHouseClient() {
                     className="w-full flex items-center justify-center gap-2 bg-[#C5A059] hover:bg-[#b8904a] text-white font-body text-[13px] tracking-[0.12em] uppercase py-3.5 rounded-xl transition-colors duration-200"
                   >
                     <Phone size={14} />
-                    Enquire Now
+                    {c.enquireNow}
                   </a>
                   <a
                     href="https://wa.me/971588473125"
@@ -340,7 +457,7 @@ export default function PearlHouseClient() {
                     className="w-full flex items-center justify-center gap-2 mt-3 border border-[#EDE6D8] hover:border-[#C5A059] text-[#1A1A1A] hover:text-[#C5A059] font-body text-[13px] tracking-[0.12em] uppercase py-3.5 rounded-xl transition-all duration-200"
                   >
                     <MessageCircle size={14} />
-                    WhatsApp
+                    {c.whatsapp}
                   </a>
                 </motion.div>
 
@@ -360,12 +477,12 @@ export default function PearlHouseClient() {
                     />
                     <div>
                       <p className="font-display text-[16px] text-[#1A1A1A]">Dulce Escobar</p>
-                      <p className="font-body text-[12px] text-[#9A9A9A]">Luxury Property Specialist</p>
+                      <p className="font-body text-[12px] text-[#9A9A9A]">{c.agentTitle}</p>
                     </div>
                   </div>
                   <div className="w-full h-px bg-[#F0EBE1] mb-4" />
                   <p className="font-body text-[13px] text-[#5A5A5A] leading-relaxed font-light">
-                    Specialist in off-plan and luxury residential properties across Dubai. Reach out for personalised guidance on Pearl House and other premium developments.
+                    {c.agentDesc}
                   </p>
                 </motion.div>
 
