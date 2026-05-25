@@ -234,7 +234,13 @@ function SaleCard({
             <p className="font-body text-[10px] text-[#9A9A9A] tracking-[0.16em] uppercase mb-0.5">{t("listing.sale_price")}</p>
             <p className="font-display text-[20px] text-[#1A1A1A] leading-none">{listing.price}</p>
             {listing.contract && (
-              <p className="font-body text-[11px] text-[#9A9A9A] mt-1">{`${t("listing.rented_until")} ${listing.contract.replace(/^Rented until\s*/i, "")}`}</p>
+              <p className="font-body text-[11px] text-[#9A9A9A] mt-1">
+                {/^Rented until/i.test(listing.contract)
+                  ? `${t("listing.rented_until")} ${listing.contract.replace(/^Rented until\s*/i, "")}`
+                  : listing.contract === "Ready to Move"
+                    ? t("listing.ready_to_move")
+                    : listing.contract}
+              </p>
             )}
           </div>
 
