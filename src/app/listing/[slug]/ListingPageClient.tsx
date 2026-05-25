@@ -663,6 +663,62 @@ const EXTENDED_SPECS: Record<string, {
       },
     ],
   },
+  "nakheel-villa-152-jvc": {
+    floor: "Low to Mid Floor",
+    parking: "2 Dedicated Spaces",
+    status: "Vacant",
+    paymentTerms: "380,000 AED / Year",
+    amenities: [
+      {
+        category: "Property Layout & Comfort",
+        items: [
+          "3 Bedrooms + Maid's Room",
+          "4 Bathrooms",
+          "Marble Floors",
+          "Built-in Wardrobes",
+          "Balcony",
+          "Central A/C",
+        ],
+      },
+      {
+        category: "Furnishing & Kitchen",
+        items: [
+          "Part Furnished",
+          "Fully Fitted Kitchen",
+          "Modern Kitchen Appliances",
+        ],
+      },
+      {
+        category: "Private Outdoor & Parking",
+        items: [
+          "Private Garden",
+          "Private Garage",
+          "Covered Parking",
+          "Private Swimming Pool",
+          "BBQ Area",
+        ],
+      },
+      {
+        category: "Leisure & Lifestyle",
+        items: [
+          "Gymnasium",
+          "Shared Swimming Pool",
+          "Entertaining Area",
+          "Children's Play Area",
+          "Pets Allowed",
+        ],
+      },
+      {
+        category: "Community Amenities (JVC / Nakheel)",
+        items: [
+          "Communal Gardens",
+          "Public Park",
+          "Public Parking",
+          "Mall Nearby",
+        ],
+      },
+    ],
+  },
 };
 
 export default function ListingPageClient() {
@@ -775,6 +831,12 @@ function ListingDetail({
     "Public Park (nearby)": "amenity.public_park_nearby",
     "Public Park nearby": "amenity.public_park_nearby",
     "Community Amenities (DAMAC Hills 2)": "amenity.community_amenities_damac",
+    "Community Amenities (JVC / Nakheel)": "amenity.community_amenities_jvc",
+    "Low to Mid Floor": "amenity.low_to_mid_floor",
+    "3 Bedrooms + Maid's Room": "amenity.3br_maid",
+    "4 Bathrooms": "amenity.4_bathrooms",
+    "Modern Kitchen Appliances": "amenity.modern_kitchen_appliances",
+    "Mall Nearby": "amenity.mall_nearby",
   };
   const STATUS_KEYS: Record<string, string> = {
     "Vacant": "status.vacant",
@@ -788,7 +850,7 @@ function ListingDetail({
   // Build specs bar
   const specs = [
     { icon: <Building2 size={16} />, label: t("listing.details"), value: listing.category === "Studio" ? t("listing.category_studio") : listing.category === "Villa" ? t("listing.category_villa") : t("listing.category_apartment") },
-    { icon: <Bed size={16} />, label: t("card.bed") + "s", value: listing.beds === 0 ? t("card.studio") : listing.slug === "damac-courestia-villa" ? "5 + Maid" : `${listing.beds}` },
+    { icon: <Bed size={16} />, label: t("card.bed") + "s", value: listing.beds === 0 ? t("card.studio") : listing.slug === "damac-courestia-villa" ? "5 + Maid" : listing.slug === "nakheel-villa-152-jvc" ? "3 + Maid" : `${listing.beds}` },
     { icon: <Bath size={16} />, label: t("card.bath") + "s", value: `${listing.baths}` },
     { icon: <Maximize2 size={16} />, label: t("card.sqft"), value: `${listing.sqft}` },
     ...(extended.floor ? [{ icon: <Layers size={16} />, label: t("listing.floor"), value: ta(extended.floor) }] : []),
@@ -1417,6 +1479,13 @@ function ListingDetail({
                         <span className="font-body text-[12px] text-[#9A9A9A]">4 Cheques</span>
                       </div>
                     </div>
+                  ) : listing.slug === "nakheel-villa-152-jvc" ? (
+                    <div className="flex flex-col gap-1.5 mt-1">
+                      <div className="flex items-baseline gap-2">
+                        <p className="font-display text-[28px] text-[#1A1A1A] leading-none">380,000 AED</p>
+                        <span className="font-body text-[12px] text-[#9A9A9A]">Yearly</span>
+                      </div>
+                    </div>
                   ) : listing.slug === "binghatti-lavender" ? (
                     <div className="flex flex-col gap-1.5 mt-1">
                       <div className="flex items-baseline gap-2">
@@ -1433,7 +1502,7 @@ function ListingDetail({
                       {isPhantom ? "110,000 AED" : listing.slug === "binghatti-aurora" ? "6,000 AED" : "80,000 AED"}
                     </p>
                   )}
-                  {extended.paymentTerms && !isSaleListing && listing.slug !== "binghatti-tulip-2" && listing.slug !== "binghatti-tulip-1" && listing.slug !== "binghatti-tulip-4" && listing.slug !== "binghatti-tulip-3" && listing.slug !== "reef-residence" && listing.slug !== "binghatti-emerald" && listing.slug !== "damac-courestia-villa" && (
+                  {extended.paymentTerms && !isSaleListing && listing.slug !== "binghatti-tulip-2" && listing.slug !== "binghatti-tulip-1" && listing.slug !== "binghatti-tulip-4" && listing.slug !== "binghatti-tulip-3" && listing.slug !== "reef-residence" && listing.slug !== "binghatti-emerald" && listing.slug !== "damac-courestia-villa" && listing.slug !== "nakheel-villa-152-jvc" && (
                     <div className="flex items-center gap-2 mt-3">
                       <CreditCard size={13} className="text-[#C5A059]" />
                       <span className="font-body text-[13px] text-[#5A5A5A]">{extended.paymentTerms}</span>
