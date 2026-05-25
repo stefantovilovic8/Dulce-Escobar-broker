@@ -443,6 +443,7 @@ export const translations: Record<Language, Record<string, string>> = {
       "offplan.badge_studio": "Studio / 1-Bed",
       "offplan.badge_offplan": "Off-Plan",
       "offplan.status_label": "Status",
+      "offplan.status_ready": "Ready",
 
       "listing.back": "Back to Listings",
       "listing.overview": "Overview",
@@ -986,6 +987,7 @@ export const translations: Record<Language, Record<string, string>> = {
       "offplan.badge_studio": "استوديو / غرفة نوم",
       "offplan.badge_offplan": "على الخارطة",
       "offplan.status_label": "الحالة",
+      "offplan.status_ready": "جاهز",
 
       "listing.back": "العودة إلى القوائم",
       "listing.overview": "نظرة عامة",
@@ -1320,6 +1322,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "offplan.badge_studio": "Estudio / 1 hab.",
     "offplan.badge_offplan": "Sobre plano",
     "offplan.status_label": "Estado",
+    "offplan.status_ready": "Listo",
 
     "listing.back": "Volver a los listados",
     "listing.overview": "Resumen",
