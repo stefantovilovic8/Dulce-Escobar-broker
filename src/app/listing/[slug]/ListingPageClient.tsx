@@ -667,7 +667,7 @@ const EXTENDED_SPECS: Record<string, {
     floor: "Low to Mid Floor",
     parking: "2 Dedicated Spaces",
     status: "Vacant",
-    paymentTerms: "380,000 AED / Year",
+    paymentTerms: "390,000 AED / Year",
     amenities: [
       {
         category: "Property Layout & Comfort",
@@ -1482,7 +1482,7 @@ function ListingDetail({
                   ) : listing.slug === "nakheel-villa-152-jvc" ? (
                     <div className="flex flex-col gap-1.5 mt-1">
                       <div className="flex items-baseline gap-2">
-                        <p className="font-display text-[28px] text-[#1A1A1A] leading-none">380,000 AED</p>
+                        <p className="font-display text-[28px] text-[#1A1A1A] leading-none">390,000 AED</p>
                         <span className="font-body text-[12px] text-[#9A9A9A]">{t("listing.yearly")}</span>
                       </div>
                     </div>

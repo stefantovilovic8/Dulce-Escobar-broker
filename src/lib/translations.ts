@@ -399,7 +399,7 @@ export const translations: Record<Language, Record<string, string>> = {
       "listings.courestia.price": "155,000 AED / Year",
       "listings.nakheel152.status": "Available",
       "listings.nakheel152.type": "3 Bedroom + Maid Villa",
-      "listings.nakheel152.price": "380,000 AED / Year",
+      "listings.nakheel152.price": "390,000 AED / Year",
 
       "about.eyebrow": "About Me",
       "servicesHero.eyebrow": "Sale & Rent",
@@ -954,7 +954,7 @@ export const translations: Record<Language, Record<string, string>> = {
           "listings.lavender.price": "٦٠٬٠٠٠ درهم / سنوياً",
           "listings.nakheel152.status": "متاح",
           "listings.nakheel152.type": "فيلا 3 غرف + غرفة خادمة",
-          "listings.nakheel152.price": "٣٨٠٬٠٠٠ درهم / سنوياً",
+          "listings.nakheel152.price": "٣٩٠٬٠٠٠ درهم / سنوياً",
 
           "about.eyebrow": "نبذة عني",
         "servicesHero.eyebrow": "بيع وإيجار",
@@ -1261,7 +1261,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "listings.courestia.price": "155.000 AED / año",
     "listings.nakheel152.status": "Disponible",
     "listings.nakheel152.type": "Villa 3 hab. + cuarto de servicio",
-    "listings.nakheel152.price": "380.000 AED / año",
+    "listings.nakheel152.price": "390.000 AED / año",
     "about.eyebrow": "Sobre mí",
     "servicesHero.eyebrow": "Venta y Alquiler",
     "servicesHero.headline": "Encuentra tu próximo capítulo.",
