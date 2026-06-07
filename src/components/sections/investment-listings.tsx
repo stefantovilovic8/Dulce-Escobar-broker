@@ -473,7 +473,6 @@ export const LISTINGS_DATA = [
       "/nakheel-villa-12.jpg",
       "/nakheel-villa-13.jpg",
       "/nakheel-villa-14.jpg",
-      "/nakheel-villa-15.jpg",
       "/nakheel-villa-16.jpg",
       "/nakheel-villa-17.jpg",
       "/nakheel-villa-18.jpg",
