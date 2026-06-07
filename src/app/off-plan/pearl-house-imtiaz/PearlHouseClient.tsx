@@ -210,7 +210,7 @@ export default function PearlHouseClient() {
                   className="w-full h-full object-cover transition-all duration-500"
                 />
               </button>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none" />
 
               <button onClick={prev} aria-label="Previous"
                 className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-black/45 hover:bg-black/70 text-white flex items-center justify-center backdrop-blur-sm transition-all">
