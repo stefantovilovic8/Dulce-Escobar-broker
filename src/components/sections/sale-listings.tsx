@@ -83,6 +83,31 @@ const SALE_LISTINGS = [
       "/orchid-10.jpg",
     ],
   },
+  {
+    id: 4,
+    slug: "binghatti-royale",
+    project: "Binghatti Royale",
+    category: "Apartment",
+    location: "JVC, Dubai",
+    beds: 1,
+    baths: 2,
+    sqft: 921.18,
+    price: "1,750,000 AED",
+    pricePeriod: "Sale Price",
+    contract: "Ready & Vacant",
+    images: [
+      "/binghatti-royale/royale-1.jpg",
+      "/binghatti-royale/royale-2.jpg",
+      "/binghatti-royale/royale-3.jpg",
+      "/binghatti-royale/royale-4.jpg",
+      "/binghatti-royale/royale-5.jpg",
+      "/binghatti-royale/royale-6.jpg",
+      "/binghatti-royale/royale-7.jpg",
+      "/binghatti-royale/royale-8.jpg",
+      "/binghatti-royale/royale-9.jpg",
+      "/binghatti-royale/royale-10.jpg",
+    ],
+  },
 ];
 
 export default function SaleListings() {

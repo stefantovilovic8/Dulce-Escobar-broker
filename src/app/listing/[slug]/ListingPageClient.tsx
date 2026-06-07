@@ -720,6 +720,59 @@ const EXTENDED_SPECS: Record<string, {
       },
     ],
   },
+  "binghatti-royale": {
+    floor: "High Floor",
+    view: "Road View",
+    parking: "Dedicated Parking",
+    status: "Vacant",
+    amenities: [
+      {
+        category: "Interior & Comfort",
+        items: [
+          "1 Bedroom",
+          "2 Bathrooms",
+          "Balcony",
+          "Built-in Wardrobes",
+          "Fully Fitted Kitchen",
+          "Premium Kitchen Appliances",
+          "Central A/C",
+          "Floor-to-Ceiling Windows",
+        ],
+      },
+      {
+        category: "Wellness & Leisure",
+        items: [
+          "Infinity Pool",
+          "Kids Pool",
+          "Shared Swimming Pool",
+          "Gymnasium",
+          "Outdoor Gym",
+          "Paddle Tennis Court",
+        ],
+      },
+      {
+        category: "Lifestyle & Building",
+        items: [
+          "Kids Play Area",
+          "Outdoor Seating Area",
+          "Multi-purpose Lawn",
+          "Landscaped Gardens",
+          "Lobby in Building",
+          "Retail Outlets",
+          "High Speed Elevators",
+        ],
+      },
+      {
+        category: "Building & Security",
+        items: [
+          "24/7 Security",
+          "CCTV Security",
+          "Fire Alarm",
+          "Dedicated Parking",
+        ],
+      },
+    ],
+  },
 };
 
 export default function ListingPageClient() {
