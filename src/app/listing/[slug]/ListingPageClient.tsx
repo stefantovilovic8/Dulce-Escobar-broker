@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
+import Lightbox from "@/components/sections/lightbox";
 import { LISTINGS_DATA } from "@/components/sections/investment-listings";
 import { useLanguage } from "@/lib/language-context";
 
@@ -737,6 +738,8 @@ function ListingDetail({
   extended: typeof EXTENDED_SPECS[string];
 }) {
   const [activeImg, setActiveImg] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
   const pageBg = "#FFFFFF";
   const { t, language } = useLanguage();
   const localizedDescription = language === "es" && listing.descriptionEs
@@ -889,11 +892,17 @@ function ListingDetail({
 
             {/* Main large image — left ~62% */}
             <div className="relative overflow-hidden flex-[62]">
-              <img
-                src={listing.images[activeImg]}
-                alt={listing.project}
-                className="w-full h-full object-cover transition-all duration-500"
-              />
+              <button
+                onClick={() => { setLightboxIndex(activeImg); setLightboxOpen(true); }}
+                className="w-full h-full block cursor-pointer text-left"
+                aria-label="Open full-screen view"
+              >
+                <img
+                  src={listing.images[activeImg]}
+                  alt={listing.project}
+                  className="w-full h-full object-cover transition-all duration-500"
+                />
+              </button>
               {/* gradient for text */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
@@ -935,7 +944,7 @@ function ListingDetail({
                   return (
                     <button
                       key={realIdx}
-                      onClick={() => setActiveImg(realIdx)}
+                      onClick={() => { setActiveImg(realIdx); setLightboxIndex(realIdx); setLightboxOpen(true); }}
                       className="relative overflow-hidden w-full h-full"
                     >
                       <img
@@ -1570,6 +1579,14 @@ function ListingDetail({
           </div>
         </div>
       </main>
+
+      <Lightbox
+        images={listing.images}
+        initialIndex={lightboxIndex}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        onNavigate={(i) => { setLightboxIndex(i); setActiveImg(i); }}
+      />
 
       <Footer bgColor={pageBg} />
     </div>

@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
+import Lightbox from "@/components/sections/lightbox";
 import { useLanguage } from "@/lib/language-context";
 
 const IMAGES = [
@@ -32,6 +33,8 @@ const IMAGES = [
 
 export default function PearlHouseClient() {
   const [activeImg, setActiveImg] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
   const { language } = useLanguage();
 
   const prev = () => setActiveImg((c) => (c === 0 ? IMAGES.length - 1 : c - 1));
@@ -196,11 +199,17 @@ export default function PearlHouseClient() {
 
             {/* Main large image */}
             <div className="relative overflow-hidden flex-[62]">
-              <img
-                src={IMAGES[activeImg]}
-                alt="Pearl House by Imtiaz"
-                className="w-full h-full object-cover transition-all duration-500"
-              />
+              <button
+                onClick={() => { setLightboxIndex(activeImg); setLightboxOpen(true); }}
+                className="w-full h-full block cursor-pointer text-left"
+                aria-label="Open full-screen view"
+              >
+                <img
+                  src={IMAGES[activeImg]}
+                  alt="Pearl House by Imtiaz"
+                  className="w-full h-full object-cover transition-all duration-500"
+                />
+              </button>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
               <button onClick={prev} aria-label="Previous"
@@ -229,7 +238,7 @@ export default function PearlHouseClient() {
                 return (
                   <button
                     key={realIdx}
-                    onClick={() => setActiveImg(realIdx)}
+                    onClick={() => { setActiveImg(realIdx); setLightboxIndex(realIdx); setLightboxOpen(true); }}
                     className="relative overflow-hidden w-full h-full"
                   >
                     <img
@@ -512,6 +521,14 @@ export default function PearlHouseClient() {
           <Phone size={20} />
         </a>
       </div>
+
+      <Lightbox
+        images={IMAGES}
+        initialIndex={lightboxIndex}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        onNavigate={(i) => { setLightboxIndex(i); setActiveImg(i); }}
+      />
 
       <Footer bgColor="#FFFFFF" />
     </div>
