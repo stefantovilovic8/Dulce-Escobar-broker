@@ -44,6 +44,11 @@ export const translations: Record<Language, Record<string, string>> = {
     "services.intro2": "Our team provides personalized guidance at every\nstep, ensuring a seamless and sophisticated experience.",
     "services.intro3": "Whether for investment or a serene escape,\nget in touch and let us help you find your perfect holiday home.",
     "services.intro4": "Get in touch with us today and let us help you find your perfect holiday home.",
+
+    "shortRentals.eyebrow": "Short Rentals",
+    "shortRentals.headline": "Flexible Stays in Dubai",
+    "shortRentals.subtext": "Fully furnished apartments available for short-term rental in prime Dubai locations. Book by the night, week, or month — with all bills included and concierge-level service.",
+
     "welm.title": "What Is Vidals Club",
     "welm.text": "Vidals Club is a private elite club designed to elevate its members' lifestyles to an entirely new level. From fulfilling the most ambitious requests to curating extraordinary experiences, we handle every detail with precision and discretion. Confidentiality is guaranteed.",
     "destinations.title": "Projects",
@@ -623,6 +628,11 @@ export const translations: Record<Language, Record<string, string>> = {
     "services.intro2": "يوفر فريقنا توجيهات شخصية في كل خطوة، مما يضمن لكم تجربة سلسة تتسم بالرقي والاحترافية.",
     "services.intro3": "سواء كنتم تبحثون عن الاستثمار أو ملاذ هادئ، تواصلوا معنا لنساعدكم في العثور على منزلكم المثالي.",
     "services.intro4": "تواصلوا معنا اليوم لنساعدكم في العثور على بيت العطلات المثالي الذي تحلمون به.",
+
+    "shortRentals.eyebrow": "إيجار قصير",
+    "shortRentals.headline": "إقامة مرنة في دبي",
+    "shortRentals.subtext": "شقق مفروشة بالكامل للإيجار القصير في أفضل مواقع دبي. احجز بالليلة أو الأسبوع أو الشهر — مع جميع الفواتير مشمولة وخدمة كونسيرج راقية.",
+
     "services.heroDescription": "تواصلوا مع وكلائنا واستكشفوا\nمجموعتنا الحصرية من المنازل الفاخرة.",
     "welm.title": "ما هو نادي فيدالز",
     "welm.text": "نادي فيدالز هو نادي حصري للنخبة مصمم للارتقاء بنمط حياة أعضائه إلى آفاق جديدة. بدءاً من تلبية الطلبات الأكثر طموحاً وصولاً إلى تنظيم تجارب فريدة، نتولى كافة التفاصيل بدقة واحترافية تامة، مع ضمان السرية المطلقة.",
@@ -1326,6 +1336,11 @@ export const translations: Record<Language, Record<string, string>> = {
     "offplan.more_opportunities": "Muchas más oportunidades por explorar.",
     "offplan.contact_guide_prefix": "Contáctame",
     "offplan.contact_guide_suffix": " y te guiaré hacia tu próximo hogar de lujo.",
+
+    "shortRentals.eyebrow": "Alquileres Cortos",
+    "shortRentals.headline": "Estancias Flexibles en Dubái",
+    "shortRentals.subtext": "Apartamentos totalmente amueblados disponibles para alquiler corto en las mejores ubicaciones de Dubái. Reserva por noche, semana o mes — con todas las facturas incluidas y servicio de conserjería.",
+
     "articles.label": "ÚLTIMOS ARTÍCULOS",
     "articles.read_more": "LEER ARTÍCULO",
     "articles.item1_title": "Un viaje inspirador: cómo una madre soltera se convirtió en magnate inmobiliaria en Dubái",
