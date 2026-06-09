@@ -86,10 +86,7 @@ export function PartnerCarousel() {
                     "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/partners1-1767374964643.png?width=8000&height=8000&resize=contain",
                     "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/partners2-1767375046441.png?width=8000&height=8000&resize=contain",
                     "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/partners3-1767375400641.png?width=8000&height=8000&resize=contain",
-                    "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/partners4-1767375510997.png?width=8000&height=8000&resize=contain",
-                    "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/partners5-resized-1767375608614.webp?width=8000&height=8000&resize=contain",
                     "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/partners8-1767376314953.png?width=8000&height=8000&resize=contain",
-                    "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/partners10-resized-1767376665276.webp?width=8000&height=8000&resize=contain",
                     "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/partners17-1767379385763.png?width=8000&height=8000&resize=contain",
                     "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/partners18-1767381132885.png?width=8000&height=8000&resize=contain",
                     ].map((logo, num) => (
