@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { VisualEditsMessenger } from "orchids-visual-edits";
 import { LanguageProvider } from "@/lib/language-context";
 import { Toaster } from "sonner";
 import Script from "next/script";
@@ -87,8 +86,7 @@ export default function RootLayout({
           {children}
           <Toaster position="top-center" richColors />
         </LanguageProvider>
-        <VisualEditsMessenger />
-      </body>
+        </body>
     </html>
   );
 }
