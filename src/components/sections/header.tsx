@@ -13,6 +13,7 @@ export default function Header({ bgColor }: { bgColor?: string }) {
       { label: t("nav.offplan"), href: "/about" },
       { label: t("nav.offplan_properties"), href: "/off-plan" },
       { label: t("nav.sale"), href: "/sale" },
+      { label: t("nav.holiday_homes"), href: "/holiday-homes" },
       { label: t("nav.holidayhomes"), href: "/rent" },
       { label: t("nav.contact"), href: "/contact-us" },
     ];
