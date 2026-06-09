@@ -43,6 +43,12 @@ export const translations: Record<Language, Record<string, string>> = {
     "services.intro2": "Our team provides personalized guidance at every\nstep, ensuring a seamless and sophisticated experience.",
     "services.intro3": "Whether for investment or a serene escape,\nget in touch and let us help you find your perfect holiday home.",
     "services.intro4": "Get in touch with us today and let us help you find your perfect holiday home.",
+
+    "holidayHero.eyebrow": "Holiday Homes",
+    "holidayHero.headline": "Your Home Away From Home.",
+    "holidayHero.subtext": "Curated luxury holiday homes in Dubai's most desirable neighbourhoods. Whether you seek a serene beachfront escape or a vibrant city-centre pied-à-terre, find the perfect setting for your next chapter.",
+    "holidayHero.cta_primary": "Explore Rentals",
+    "holidayHero.cta_secondary": "Get in Touch",
     "welm.title": "What Is Vidals Club",
     "welm.text": "Vidals Club is a private elite club designed to elevate its members' lifestyles to an entirely new level. From fulfilling the most ambitious requests to curating extraordinary experiences, we handle every detail with precision and discretion. Confidentiality is guaranteed.",
     "destinations.title": "Projects",
@@ -621,6 +627,13 @@ export const translations: Record<Language, Record<string, string>> = {
     "services.intro2": "يوفر فريقنا توجيهات شخصية في كل خطوة، مما يضمن لكم تجربة سلسة تتسم بالرقي والاحترافية.",
     "services.intro3": "سواء كنتم تبحثون عن الاستثمار أو ملاذ هادئ، تواصلوا معنا لنساعدكم في العثور على منزلكم المثالي.",
     "services.intro4": "تواصلوا معنا اليوم لنساعدكم في العثور على بيت العطلات المثالي الذي تحلمون به.",
+
+    "holidayHero.eyebrow": "بيوت العطلات",
+    "holidayHero.headline": "بيتك بعيداً عن البيت.",
+    "holidayHero.subtext": "مجموعة منتقاة من بيوت العطلات الفاخرة في أحياء دبي الأكثر جاذبية. سواء كنت تبحث عن ملاذ هادئ على الشاطئ أو شقة نابضة بالحياة في وسط المدينة، ستجد المكان المثالي لمغامرتك القادمة.",
+    "holidayHero.cta_primary": "استعرض خيارات الإيجار",
+    "holidayHero.cta_secondary": "تواصل معنا",
+
     "services.heroDescription": "تواصلوا مع وكلائنا واستكشفوا\nمجموعتنا الحصرية من المنازل الفاخرة.",
     "welm.title": "ما هو نادي فيدالز",
     "welm.text": "نادي فيدالز هو نادي حصري للنخبة مصمم للارتقاء بنمط حياة أعضائه إلى آفاق جديدة. بدءاً من تلبية الطلبات الأكثر طموحاً وصولاً إلى تنظيم تجارب فريدة، نتولى كافة التفاصيل بدقة واحترافية تامة، مع ضمان السرية المطلقة.",
