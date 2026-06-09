@@ -76,12 +76,6 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           strategy="beforeInteractive"
         />
-        <Script
-          id="orchids-browser-logs"
-          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts/orchids-browser-logs.js"
-          strategy="afterInteractive"
-          data-orchids-project-id="6363938c-1a0a-4fd7-80ff-6f78f509f220"
-        />
         <LanguageProvider>
           {children}
           <Toaster position="top-center" richColors />
